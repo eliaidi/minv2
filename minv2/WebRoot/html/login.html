@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>机务检修信息管理系统-登录</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    
+    <!-- uurframe页面框架 -------------------------- 开始-->
+	<!--uurframe框架必需  开始-->
+	<link href="../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link href="../mainframe/skins/sky/import_skin.css" rel="stylesheet" type="text/css" id="skin" themeColor="blue"/>
+	<script type="text/javascript" src="../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../mainframe/js/bsFormat.js"></script>
+	<!--uurframe框架必需  结束-->
+	
+	<!--uurframe浮动窗体、弹出窗体、消息组件  开始-->
+	<script type="text/javascript" src="../mainframe/js/attention/floatPanel.js"></script>
+	<script type="text/javascript" src="../mainframe/js/attention/messager.js"></script>
+	<!-- 
+	<script type="text/javascript" src="../mainframe/js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../mainframe/js/attention/zDialog/zDialog.js"></script>
+	 -->
+	<!-- 弹出对话框图片显示不出，进行jsp文件转换时，配置好urlctx路径就能显示了 -->
+	<script type="text/javascript" src="../js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../js/zDialog_split/zDialog.js"></script>
+	<!--uurframe浮动窗体、弹出窗体、消息组件  结束-->
+	<!-- uurframe页面框架 -------------------------- 结束-->
+    
+   	<!-- login登录页面组件   开始-->
+	<link href="../mainframe/login/skin1/style.css" rel="stylesheet" type="text/css" id="skin"/>
+	<script type="text/javascript" src="../mainframe/js/login.js"></script>
+	<!-- login登录页面组件   结束-->
+		
+	<!-- uur居中显示组件-->
+	<script type="text/javascript" src="../mainframe/js/method/center-plugin.js"></script>
+		
+	<!-- 自定义专门对应login.jsp页面的js文件-->
+	<script type="text/javascript" src="../js/users/login_script.js"></script>
+
+  </head>
+  
+  <body>
+    <!--login_main 登录主DIV                                                        开始  -->
+		<div class="login_main">
+			<!--login_top 登录上部DIV                                                        开始  -->
+			<div class="login_top">
+				<!--login_title 登录标题DIV  -->
+				<div class="login_title"></div>
+			</div>
+			<!--login_top 登录上部DIV                                                        结束  -->
+			
+			<!-- 上部分界线----------------------------------------------------------------------------------------------------------------------------- -->
+			
+			<!--login_middle 登录中部DIV                                                        开始  -->
+			<div class="login_middle">
+				<div class="login_middleleft"></div>
+				<div class="login_middlecenter">
+						<form name="loginForm" action="${urlctx}/main.jsp" class="login_form" method="post" onsubmit="return checkLogin();">
+							<div class="login_user"><input type="text" id="_username" name="username"/></div>
+							<div class="login_pass"><input type="password" id="_password" name="password"/></div>
+							<div class="clear"></div>
+							<div class="login_button">
+								<div class="login_button_left"><input type="submit" value="" /></div>
+								<div class="login_button_right"><input type="reset" value="" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+						<div class="login_info">登录错误信息显示</div>
+				</div>
+				<div class="login_middleright"></div>
+				<div class="clear"></div>
+			</div>
+			<!--login_middle 登录中部DIV                                                        结束  -->
+			
+			<!-- 中部分界线----------------------------------------------------------------------------------------------------------------------------- -->
+			
+			<!--login_bottom 登录下部DIV                                                        开始  -->
+			<div class="login_bottom">
+				<div class="login_copyright">广州铁路(集团)公司 COPYRIGHT 2012</div>
+			</div>
+			<!--login_bottom 登录下部DIV                                                        结束  -->
+		</div>
+		<!--login_main 登录主DIV                                                        结束  -->
+  </body>
+</html>

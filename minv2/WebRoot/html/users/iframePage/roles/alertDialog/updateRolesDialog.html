@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<!--uurframe框架--------------------------------------开始-->
+		<!--框架必需				开始-->
+		<script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+		<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" id="skin"   prePath="../../../../mainframe/" />
+		<!--框架必需				结束-->
+		
+		<!--截取文字						开始-->
+		<script type="text/javascript" src="../../../../js/text/text-overflow.js"></script>
+		<!--截取文字						结束-->
+		
+		<!--修正IE6支持透明PNG图 						开始-->
+		<script type="text/javascript" src="../../../../js/method/pngFix/supersleight.js"></script>
+		<!--修正IE6支持透明PNG图						结束-->
+		
+		<!--自定义js 弹出窗口                               						开始  -->
+
+		<!--自定义js 弹出窗口                               						结束  -->
+		<!--uurframe框架--------------------------------------开始-->
+	</head>
+	<body>
+			<input type="hidden" name="roleid" value="${role.roleid}"></input>
+			<table class="tableStyle" transMode="true">
+				<tr>
+					<td>
+						角色名称:
+					</td>
+					<td>
+						<input class="easyui-validatebox" type="text" name="role.rolename"
+							value="工人"></input>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						角色拼音:
+					</td>
+					<td>
+						<input class="easyui-validatebox" type="text" name="role.py"
+							value="GZ"></input>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						角色说明:
+					</td>
+					<td>
+						<input class="easyui-validatebox" type="text" name="role.rolenote"
+							value="班组工长"></input>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value=" 修改 " />
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value=" 重 置 " />
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>

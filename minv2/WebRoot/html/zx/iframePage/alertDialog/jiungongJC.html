@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+		<title>机车记录查询目录</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<meta http-equiv="description" content="This is my page" />
+		
+		
+		<!--uurframe框架必需  开始-->
+		<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+		
+		<script type="text/javascript" src="../../../../mainframejs/jquery.floatDiv.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/bsFormat.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+		<!-- 所有的css都从mainframe目录开始找 -->
+		<link  rel="stylesheet" id="skin" prePath="../../../../mainframe/"/>
+		<!--uurframe框架必需  结束-->
+		
+		<link href="../../../../js/zx/css/jcinfodetail.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="../../../../js/zx/js/jcinfodetail_script.js"></script>
+			
+	</head>
+
+<body>
+<center>
+<table class="tableStyle" style="width:550px;" id="infotable">
+	<tr>
+		<th align="center">车型</th>
+		<th align="center">车号</th>
+		<th align="center">修程</th>
+		<th align="center">扣车时间</th>
+		<th align="center">计划起机时间</th>
+		<th align="center">计划交车时间</th>
+		<th align="center">检修状态</th>
+	</tr>
+	<tr>
+		<td>DF4</td>
+		<td>1000</td>
+		<td>X1</td>
+		<td>xxxx-xx-xx</td>
+		<td>2015-12-3</td>
+		<td>2015-12-4</td>
+		<td>接车</td>
+	</tr>
+</table>
+<table class="tableStyle" style="width:550px;" id="jcinfo">
+	<tr>
+		<td>
+			<a href="" target="_blank">机车</a>
+		    <a href="" target="_blank">班组</a>
+		    <a href="" target="_blank">机车</a>
+			<a href="../jsp/history.jsp" target="_blank">历史</a>
+			<a href="" target="_blank">报活</a>
+			<a href="" target="_blank">竣工</a>
+		    <a href="" target="_blank">交车</a>
+			<a href="" target="_blank">化验单</a>
+		</td>
+		
+	</tr>
+	<tr>
+		<td>
+			<table width="100%">
+				<tr>
+				<td align="right">
+					股道号：<input type="text" value="13" style="width: 40px;" id="gdh" onkeyup="this.value=this.value.replace(/\D/g,'')"/>&nbsp;&nbsp;
+					台位号：<input type="text" value="1" id="twh" style="width: 40px;" onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+				</td>
+				<td align="left"><a href="javascript:void(0);" onclick="move('${datePlan.rjhmId}')">股道转移</a></td>
+				<td align="right">
+					机车号：<input type="text" value="1000" style="width: 80px;" id="jcnum"/>
+				</td>
+				<td align="left">
+					<a href="javascript:void(0);" onclick="searchJC()">查询</a>
+				</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table id="bzFinishiInfo" class="tableStyle" style="width:550px;">
+	<tr><th align="center">检修班组</th><th align="center">完成时间</th><th align="center">检修情况</th><th align="center">所处节点</th></tr>
+		<tr>
+			<td align="center">电器上车组</td>
+			<td align="center">xxxx</td>
+			<td align="center"><a href="#">完成</a></td>
+			<td align="center">机车分解</td>
+		</tr>
+		<tr>
+			<td align="center">电器上车组</td>
+			<td align="center">xxxx</td>
+			<td align="center"><a href="#">完成</a></td>
+			<td align="center">机车分解</td>
+		</tr>
+		<tr>
+			<td align="center">电器上车组</td>
+			<td align="center">xxxx</td>
+			<td align="center"><a href="#">完成</a></td>
+			<td align="center">机车组装</td>
+		</tr>
+		<tr>
+			<td align="center">电器上车组</td>
+			<td align="center">xxxx</td>
+			<td align="center"><a href="#">完成</a></td>
+			<td align="center">机车组装</td>
+		</tr>
+		<tr>
+			<td align="center">电器上车组</td>
+			<td align="center">xxxx</td>
+			<td align="center"><a href="#">完成</a></td>
+			<td align="center">机车组装</td>
+		</tr>
+</table>
+</center>
+</body>

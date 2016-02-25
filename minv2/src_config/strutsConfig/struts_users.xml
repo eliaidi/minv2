@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 用户action配置信息 -->
+	<package name="usersPrivs" extends="json-default" >
+		<!-- 用户登录 -->
+		<action name="usersLogin"  class="com.repair.users.action.usersPrivs.UsersLoginAction">
+			<result name="success" type="redirect">/main.jsp</result>
+			<result name="login" type="redirect">/login.jsp</result>
+		</action>
+		
+		<!--通过拼音或名字模糊查询用户（不区分大小写）  -->	
+		<action name="findUsersListByNameOrPy"  class="com.repair.users.action.usersPrivs.FindUsersListByNameOrPyAction">
+			
+		</action>
+		
+		<!-- 通过条件进行用户查询 -->
+		<action name="queryProteamUsers" class="com.repair.users.action.usersPrivs.QueryUsersAction" method="executeProteam">
+			<result>/users/iframePage/proteam/usersManageChildIframe.jsp</result>
+		</action>
+		<!-- 通过条件进行用户查询  depart-->
+		<action name="queryDepartUsers" class="com.repair.users.action.usersPrivs.QueryUsersAction" method="executeDepart">
+			<result>/users/iframePage/depart/usersManageChildIframe.jsp</result>
+		</action>
+		<!-- 通过用户ID寻找用户 -->
+		<action name="findUsersById" class="com.repair.users.action.usersPrivs.FindUsersByIdAction">
+			<result>/users/iframePage/proteam/alertDialog/findUsersDialog.jsp</result>
+			<result name="userDepartPath">/users/iframePage/depart/alertDialog/findUsersDialog.jsp</result>
+		</action>
+		<!-- 通过机务段/地区ID寻找用户 -->
+		<action name="findUsersByDictAreaId" class="com.repair.users.action.usersPrivs.FindUsersByDictAreaIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过用户ID修改用户-->
+		<action name="updateUsersByIdByProteam" class="com.repair.users.action.usersPrivs.UpdateUsersByIdAction">
+			<result name="proteamAddUsersDialog"  type="redirect">findAllDictProteam.action</result>
+		</action>
+		<!-- 通过用户ID修改用户 depart-->
+		<action name="updateUsersByIdByDepart" class="com.repair.users.action.usersPrivs.UpdateUsersByIdAction">
+			<result name="departAddUsersDialog" type="redirect">findAllDictDepart.action</result>
+		</action>
+		<!-- 通过用户ID删除用户 -->
+		<action name="delUsersByIdByProteam"  class="com.repair.users.action.usersPrivs.DelUsersByIdAction" >
+			<result type="redirect">findAllDictProteam.action?returnUrl=${returnUrl}</result>
+		</action>
+		<!-- 获取所有用户 -->
+		<action name="findAllUsers" class="com.repair.users.action.usersPrivs.FindAllUsersAction" method="executeDepart">
+			<result>/users/iframePage/depart/usersManageChildIframe.jsp</result>
+		</action>
+		<!-- 获取所有用户 proteam-->
+		<action name="findAllUsers" class="com.repair.users.action.usersPrivs.FindAllUsersAction" method="executeProteam">
+			<result>/users/iframePage/proteam/usersManageChildIframe.jsp</result>
+		</action>
+		<!-- 通过用户名查询用户 -->
+		<action name="findUsersByName" class="com.repair.users.action.usersPrivs.FindUsersByNameAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过班组ID查询 -->
+		<action name="findUsersByDictProteamId" class="com.repair.users.action.usersPrivs.FindUsersByDictProteamIdAction">
+			<result name="success">/users/iframePage/proteam/usersManageChildIframe.jsp</result>
+		</action>
+
+		<!-- 添加用户数据 -->
+		<action name="addUsersByProteam" class="com.repair.users.action.usersPrivs.AddUsersAction">
+			<result name="proteamProteamManageChildIframe" type="redirectAction">findAllDictProteam.action</result>
+		</action>
+		
+		<!-- 添加depart用户数据 -->
+		<action name="addUsersByDepart" class="com.repair.users.action.usersPrivs.AddUsersAction">
+			<result name="departProteamManageChildIframe" type="redirectAction">findAllDictDepart.action</result>
+		</action>
+
+		<!-- 通过用户工号查询数据 -->
+		<action name="findUsersByJobNum"  class="com.repair.users.action.usersPrivs.FindUsersByJobNumAction">
+			<result>/test/test.jsp</result>
+		</action>
+      
+		<!-- 通过用户卡号查询数据 FindUsersByCardNumAction -->
+		<action name="findUsersByCardNum"  class="com.repair.users.action.usersPrivs.FindUsersByCardNumAction">
+			<result>/test/test.jsp</result>
+		</action>
+
+		<!-- 通过班组ID查询 -->
+		<action name="findUsersByDictProteamId" class="com.repair.users.action.usersPrivs.FindUsersByDictProteamIdAction">
+			<result>/users/iframePage/proteam/usersManageChildIframe.jsp</result>
+		</action>
+		<!-- 通过部门ID查询 -->
+		<action name="findUsersByDictDepartId" class="com.repair.users.action.usersPrivs.FindUsersByDictDepartIdAction">
+			<result>/users/iframePage/depart/usersManageChildIframe.jsp</result>
+		</action>
+		
+		
+	</package>
+
+	<!-- 菜单（功能）配置信息 -->
+	<package name="functionPrivs" extends="json-default">
+		<!-- 获取所有功能菜单 -->
+		<action name="findAllFunction" class="com.repair.users.action.functionPrivs.FindAllFunctionAction">
+			<result name="success">/users/iframePage/roles/alertDialog/grantRolesDialog.jsp</result>
+		</action>
+		<!-- 调至角色授权页面 -->
+		<action name="toRoleGrantByRoleId" class="com.repair.users.action.functionPrivs.ToRoleGrantByRoleIdAction">
+			<result name="success">/users/iframePage/roles/alertDialog/grantRolesDialog.jsp</result>
+		</action>
+		
+		<!--显示角色授权信息 -->
+		<action name="findFunctinPrivsAll" class="com.repair.users.action.functionPrivs.FindFunctinPrivsAllAction">
+			<result name="success">/users/iframePage/roles/alertDialog/showRolesGrantFunction.jsp</result>
+		</action>
+		
+		<!-- 通过功能父级Id获取菜单信息 -->
+		<action name="findFunctionByParentId"
+			class="com.repair.users.action.functionPrivs.FindFunctionByParentIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 查询所有，按菜单（操作功能）名顺序，升序 -->
+		<action name="findAllOfFunctionOrderASC"
+			class="com.repair.users.action.functionPrivs.FindAllOfFunctionOrderASCAction">
+			<result>/test/test.jsp</result>
+		</action>
+	</package>
+
+	<!-- 角色功能表菜单 -->
+	<package name="roleFunctionPrivs" extends="json-default"   >
+		<!-- 通过角色菜单ID删除角色菜单 -->
+		<action name="delRoleFunctionById"
+			class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过角色功能ID删除 -->
+		<action name="delById"
+			class="com.repair.users.action.roleFunctionPrivs.DelByIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过菜单（操作功能）ID删除 角色菜单-->
+		<action name="delRoleFunctionByFunctionPrivsId"
+			class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByFunctionPrivsIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过角色ID删除角色菜单 -->
+		<action name="delRoleFunctionByRolePrivsId"
+			class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByRolePrivsIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		<!-- 通过角色ID删除 -->
+		<action name="delByRolePrivsId"
+			class="com.repair.users.action.roleFunctionPrivs.DelByRolePrivsIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		
+		<action name="roleGrant" class="com.repair.users.action.roleFunctionPrivs.RoleGrantAction"></action>
+	</package>
+
+	<!--部门action配置信息 -->
+	<package name="dictDepart" extends="json-default">
+		<!-- 添加部门数据 -->
+		<action name="addDictDepart"
+			class="com.repair.users.action.dictDepart.AddDictDepartAction">
+			<result name="success" type="redirectAction">findAllDictDepart.action</result>
+		</action>
+		<!-- 查询所有部门 -->
+		<action name="findAllDictDepart"
+			class="com.repair.users.action.dictDepart.FindAllDictDepartAction">
+			<result name="success">/users/iframePage/depart/departManageIframe.jsp</result>
+			
+		</action>
+		
+		<!-- 跳至转移用户部门页面，并获得所有部门信息 -->
+		<action name="toUpdateUsersDepartDialog"
+			class="com.repair.users.action.dictDepart.ToUpdateUsersDepartDialog">
+			<result name="success">/users/iframePage/depart/alertDialog/updateUsersDepartDialog.jsp</result>
+			
+		</action>
+		
+		
+		<!--根据部门表的id，删除  -->
+		<action name="delDictDepartById"
+			class="com.repair.users.action.dictDepart.DelDictDepartByIdAction">
+			<result name="success">findAllDictDepart.action?departProteamStatus=1</result>
+		</action>
+		<!-- 根据部门name，删除 -->
+		<action name="delDictDepatByName"
+			class="com.repair.users.action.dictDepart.DelDictDepartByNameAction">
+			<result name="delByDepartName">/test/users/dictDepart/index.jsp</result>
+		</action>
+		<!--根据部门id，查找  -->
+		<action name="findDictDepatById"
+			class="com.repair.users.action.dictDepart.FindDictDepartByIdAction">
+			<result name="success">/users/iframePage/depart/alertDialog/updateDepartDialog.jsp</result>
+		</action>
+		<!--根据部门id，修改  -->
+		<action name="updateDictDepatById"
+			class="com.repair.users.action.dictDepart.UpdateDictDepartByIdAction">
+			<result name="success" type="redirectAction">findAllDictDepart.action</result>
+		</action>
+		<!-- 根据部门name，查找 -->
+		<action name="findDictDepatByName"
+			class="com.repair.users.action.dictDepart.FindDictDepartByNameAction">
+			<result name="findByName">/test/users/dictDepart/index.jsp</result>
+		</action>
+	</package>
+
+	<!--班组action配置信息 -->
+	<package name="dictProteam" extends="json-default">
+		<!-- 添加班组信息 -->
+		<action name="addDictProteam" 
+			class="com.repair.users.action.dictProteam.AddDictProteamAction">
+			<result name="success" type="redirectAction">/findAllDictProteam.action
+			</result>
+		</action>
+		<!--根据班组id，删除-->
+		<action name="delDictProteamById"
+			class="com.repair.users.action.dictProteam.DelDictProteamByIdAction">
+			<result name="success" type="redirectAction">/findAllDictProteam.action
+			</result>
+		</action>
+		<!-- 根据班name，删除 -->
+		<action name="delDictProteamByName"
+			class="com.repair.users.action.dictProteam.DelByProteamNameAction">
+			<result name="delByName">/test/users/dictDepart/index.jsp</result>
+		</action>
+		<!--查询班组所有信息  -->
+		<action name="findAllDictProteam"
+			class="com.repair.users.action.dictProteam.FindAllDictProteamAction">
+			<result name="success">/users/iframePage/proteam/proteamManageIframe.jsp</result>
+			
+		</action>
+		
+		<!--  跳至转移班组页面，查询所有班组信息 -->
+		<action name="toUpdateUsersProteamDialog"
+			class="com.repair.users.action.dictProteam.ToUpdateUsersProteamDialogAction">
+			<result name="success">/users/iframePage/proteam/alertDialog/updateUsersProteamDialog.jsp</result>
+		</action>
+		
+		
+		<!-- 根据班组名，查询 -->
+		<action name="findDictProteamByName"
+			class="com.repair.users.action.dictProteam.FindDictProteamByNameAction">
+			<result>/test/users/dictDepart/index.jsp</result>
+		</action>
+		<!-- 根据班组，小辅修、中修判别字段，查询 -->
+		<action name="findDictProteamByWorkFlag"
+			class="com.repair.users.action.dictProteam.FindDictProteamByWorkFlagAction">
+			<result name="findByWorkFlag">/test/users/dictDepart/index.jsp</result>
+		</action>
+		<!-- 根据班组，考勤判别字段，查询 -->
+		<action name="findDictProteamByAttendanceFlag"
+			class="com.repair.users.action.dictProteam.FindDictProteamByAttendanceFlagAction">
+			<result name="findByAttendanceFlag">/test/users/dictDepart/index.jsp</result>
+		</action>
+		<!-- 根据班组id修改数据-->
+		<action name="updateDictProteamById"
+			class="com.repair.users.action.dictProteam.UpdateDictProteamByIdAction">
+			<result name="success" type="redirectAction">/findAllDictProteam.action
+			</result>
+		</action>
+		<!-- 根据班组id，查询相关班组信息-->
+		<action name="findDictProteamById"
+			class="com.repair.users.action.dictProteam.FindDictProteamByIdAction">
+			<result>/users/iframePage/proteam/alertDialog/updateProteamDialog.jsp
+			</result>
+		</action>
+	</package>
+
+	<!--地区（机务段）action配置信息 -->
+	<package name="dictArea" extends="json-default">
+		<!-- 添加DICTAREA -->
+		<action name="addDictArea"
+			class="com.repair.users.action.dictArea.AddDictAreaAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过ID查询DICTAREA数据 -->
+		<action name="findDictAreaById"
+			class="com.repair.users.action.dictArea.FindDictAreaByIdAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过jwdCode查询DICTAREA数据 -->
+		<action name="findDictAreaByJwdCode"
+			class="com.repair.users.action.dictArea.FindDictAreaByJwdCodeAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过areaName查询DICTAREA数据 -->
+		<action name="findDictAreaByName"
+			class="com.repair.users.action.dictArea.FindDictAreaByNameAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 查询DICTAREA所有数据   班组-->
+		<action name="findDictAreaAllByProteam"
+			class="com.repair.users.action.dictArea.FindDictAreaAllAction">
+			<result name="proteamAddUsersDialog">/users/iframePage/proteam/alertDialog/addUsersDialog.jsp</result>
+		</action>
+		<!-- c=查询DICTAREA所有数据   部门-->
+		<action name="findDictAreaAllByDepart" 
+			class="com.repair.users.action.dictArea.FindDictAreaAllAction">
+			<result name="departAddUsersDialog">/users/iframePage/depart/alertDialog/addUsersDialog.jsp</result>
+		</action>
+		<!-- 通过ID删除DICTAREA数据 -->
+		<action name="deleteDictAreaById"
+			class="com.repair.users.action.dictArea.DeleteDictAreaByIdAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过areaName删除DICTAREA数据 -->
+		<action name="deleteDictAreaByAreaName"
+			class="com.repair.users.action.dictArea.DeleteDictAreaByAreaNameAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过jwdCode删除DICTAREA数据 -->
+		<action name="deleteDictAreaByJwdCode"
+			class="com.repair.users.action.dictArea.DeleteDictAreaByJwdCodeAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+		<!-- 通过ID修改DICTAREA数据 -->
+		<action name="updateDictAreaById"
+			class="com.repair.users.action.dictArea.UpdateDictAreaByIdAction">
+			<result name="success">test/users/dictArea/dictAreaTestResult.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 角色表 action配置-->
+	<package name="rolePrivs" extends="json-default" namespace="/">
+
+		<!-- 通过roleNameROLEPRIVS数据 -->
+		<action name="deleteRolePrivsByRoleName"
+			class="com.repair.users.action.rolePrivs.DeleteRolePrivsByRoleNameAction">
+			<result>test/users/rolePrivs/rolePrivsResult.jsp</result>
+		</action>
+		 <!-- 查询ROLEPRIVS所有数据（分页） -->
+		<action name="findRolePrivsAll"
+			class="com.repair.users.action.rolePrivs.FindRolePrivsAllAction">
+			<result name="success">/users/iframePage/roles/rolesManagerIframe.jsp
+			</result>
+		</action>
+		<!-- 通过ID查询ROLEPRIVS数据 -->
+		<action name="findRolePrivsById"
+			class="com.repair.users.action.rolePrivs.FindRolePrivsByIdAction">
+			<result name="success">/users/iframePage/roles/alertDialog/updateRolesDialog.jsp
+			</result>
+		</action>
+		<!-- 查询所有的rolePrivs数据 -->
+		<action name="findRolePrivsInUsers"
+			class="com.repair.users.action.rolePrivs.FindRolePrivsInUsersAction">
+			<result name="selectRolesInUsersDialogProteam">/users/iframePage/proteam/alertDialog/selectRolesInUsersDialog.jsp</result>
+			<result name="selectRolesInUsersDialogDepart">/users/iframePage/depart/alertDialog/selectRolesInUsersDepartDialog.jsp</result>
+		</action>
+		<!-- 通过ID修改ROLEPRIVS数据 -->
+		<action name="updateRolePrivsById"
+			class="com.repair.users.action.rolePrivs.UpdateRolePrivsByIdAction">
+			<result name="success" type="redirect">findRolePrivsAll.action</result>
+		</action>
+
+		<!-- 通过ID删除ROLEPRIVS数据 -->
+		<action name="deleteRolePrivsById"
+			class="com.repair.users.action.rolePrivs.DeleteRolePrivsByIdAction">
+			<result name="success" type="redirect">findRolePrivsAll.action
+			</result>
+		</action>
+		<!-- 添加ROLEPRIVS数据 -->
+		<action name="addRolePrivs"
+			class="com.repair.users.action.rolePrivs.AddRolePrivsAction">
+			<result name="success" type="redirect">findRolePrivsAll.action</result>
+			<result name="invalid.token">findRolePrivsAll.action</result>
+			<interceptor-ref name="token"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!--通过roleName查询数据 -->
+		<action name="findRolePrivsByName"
+			class="com.repair.users.action.rolePrivs.FindRolePrivsByNameAction">
+			<result name="success" type="redirect">findRolePrivsAll.action</result>
+		</action>
+	    <!-- 通过角色ID，查找角色Name -->
+	    <action name="findRolePrivsNameByRoleId" class="com.repair.users.action.rolePrivs.FindRolePrivsNameByRoleIdAction">
+	    	<result></result>
+	    </action>
+		<!-- 通过班组用户ID删除用户 -->
+		<action name="delUsersByIdByProteam"  class="com.repair.users.action.usersPrivs.DelUsersByIdAction" >
+			<result name="proteamProteamManageChildIframe" type="redirect">findAllDictProteam.action?returnUrl=${returnUrl}</result>
+		</action>
+		<!-- 通过部门用户ID删除用户 -->
+		<action name="delUsersByIdByDepart"  class="com.repair.users.action.usersPrivs.DelUsersByIdAction" >
+			<result name="departProteamManageChildIframe" type="redirect">findAllDictDepart.action?returnUrl=${returnUrl}</result>
+		</action>
+	</package>
+</struts>

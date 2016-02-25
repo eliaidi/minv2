@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="testPkg" extends="json-default"  namespace="/">
+		<action name="addTest" class="com.repair.action.AddTestAction">
+			<result name="success">
+				/test/testResult.jsp
+			</result>
+		</action>
+		
+		<action name="testAction" class="com.repair.action.test.TestAction">
+			<result name="success">/test/testResult.jsp</result>
+		</action>
+		
+		<!-- 下拉框联动查询 -->
+		<action name="gangedTest" class="com.repair.action.GangedTestAction">
+
+		</action>
+		
+		<!-- 联想查询 静态配件名称   -->
+		<action name="findAllPjStoreStaticInfoByPjName" class="com.repair.action.test.FindAllPjStoreStaticInfoByPjNameAction">
+			<result name="success">/test/lenovoInput/lenoveIndex.jsp</result>
+		</action>
+		
+		<!-- 通过用户ID寻找用户 -->
+		<action name="findUserById" class="com.repair.users.action.usersPrivs.FindUserByIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		 
+		 <!-- 通过机务段/地区ID寻找用户 -->
+		<action name="findUserByDictAreaId" class="com.repair.users.action.usersPrivs.FindUserByDictAreaIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		
+		<!-- 通过用户ID修改用户密码-->
+		<action name="updateUserPassById" class="com.repair.users.action.usersPrivs.UpdateUserPassByIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		
+		<!-- 通过用户ID删除用户 -->
+		<action name="delUserById" class="com.repair.users.action.usersPrivs.DelUserByIdAction">
+			<result>/test/test.jsp</result>
+		</action>
+		
+		<!-- 测试分页，查询用户列表 -->
+		<action name="queryUserList" class="com.repair.action.TestPageAction">
+			<result name="success">/test/testPage.jsp</result>
+		</action>
+		
+		<!-- 测试智能联想 -->
+		<action name="autocompleteEx" class="com.repair.action.test.AutocompleteTestAction">
+			<result name="success">/test/testAutocomplete.jsp</result>
+		</action>
+		
+		<action name="smartTipsTest" class="com.repair.action.SmartTipsTestAction">
+			<result name="success">/test/testAutocomplete.jsp</result>
+		</action>
+		
+		<action name="findAllJcName" class="com.repair.action.FindAllJcNameAction">
+			<result name="success">/html/jfreeChart/animated1.jsp"</result>
+		</action>
+	</package>
+	
+	
+</struts>

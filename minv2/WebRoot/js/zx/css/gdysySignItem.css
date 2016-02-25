@@ -1,0 +1,26 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+.gdStyle table{
+	height:1000;
+	
+}
+.gdStyle table tr {
+	text-algin: center;
+}
+
+.gdStyle table  tr td {
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding-top: 12px
+}
+
+
+a:LINK,a:VISITED {
+	color: blue;
+	width: 100%;
+	text-align: center;
+}

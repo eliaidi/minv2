@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>机务检修系统--查询配件检修记录</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+   <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+    <script type="text/javascript" src="../../../../mainframe/js/table/treeTable.js"></script>
+    <!--引入弹出窗组件 不使用mainframe/js/attention/zDialg整合组件（图标不能显示），使用js/zDialog_split独立组件（uur独立组件）， start-->
+	<script type="text/javascript" src="../../../../mainframe/js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/zDialog_split/zDialog.js"></script>
+	<!--引入弹出窗组件end-->
+    <!-- 框架必需  	结束-->
+  
+  </head>
+  
+  <body>
+      <!-- 动态配件管理 功能操作和数据显示区域    start ************ -->
+		<div class="box2" panelTitle="配件动态信息管理--专业分类">
+			<table width="100%">
+				<!-- *********	操作功能区  start  ********** -->
+				<tr>
+					<td width="100%">
+							<input type="checkbox" id="jcType" />
+							<label for="jcType">机车型号</label>
+							<input type="checkbox" id="pjName" />
+							<label for="pjName">配件名称</label>
+							<input type="checkbox" id="pjAssemblyType" />
+							<label for="pjAssemblyType">配件状态</label>
+							<input type="checkbox" id="jcId" />
+							<label for="jcId">机车编号</label>
+							<input type="checkbox" id="pjId" />
+							<label for="pjId">配件编号</label>
+							<input type="checkbox" id="storageLocation" />
+							<label for="storageLocation">存储位置</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="minv2_unitManageIframe_findBtn_class" id="find"><span class="icon_find">查询</span></button>
+							<br />
+							<div id="" style="float:left">
+								机车型号：
+								<select id="" name="">
+								    <option value="">请选择</option>
+								    <option value="">DF4</option>
+								</select>
+							</div>
+
+							<div id="" style="float:left">
+								配件名称：
+								<input type="text" id="" name="" value=""/>
+							</div>
+ 						   
+							<div id=""  style="float:left">
+								配件状态：
+								<select id="" class="">
+									<option value="">请选择配件状态</option>
+									<option value="">合格</option>
+								</select>
+							</div>
+
+							<div id=""  style="float:left">
+								机车编号：
+								<select id="" class="">
+									<option value="">请选择机车编号</option>
+									<option value="">DF80089</option>
+									<option value="">DF80087</option>
+								</select>
+							</div>
+							
+							<div id=""  class="float_left">
+								配件编号：
+								<input type="text" id="" name="" value=""/>
+							</div>
+							
+							<div id="" style="positin:absolute;float:left;top:80px">
+								存储位置：
+								<select id="" class="">
+									<option value="">请选择配件存储位置</option>
+									<option value="">班组仓库</option>
+									<option value="">主仓库</option>
+								</select>
+							</div>
+					</td>
+				</tr>
+
+				<!-- *********	操作功能区  end  ********** -->
+
+				<!-- ************************************************************************************************* -->
+
+				<!-- *********	数据显示区  start  ********** -->
+				<tr>
+					<td>
+						<table class="treeTable">
+								<tr>
+									<th width="5%">序号</th>
+									<th width="15%">配件名称</th>
+									<th width="15%">配件编号</th>
+									<th width="10%">机车类型</th>
+									<th width="15%">存储位置</th>
+									<th width="8%">配件状态</th>
+									<th width="10%">操作</th>
+								</tr>
+								<tr id="node-2" class="child-of-node-1">
+									<td>1</td>
+									<td><span>交流辅助电机</span></td>
+									<td colspan="4"></td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>
+								</tr>
+								<tr id="node-8" class="child-of-node-2">
+									<td>1-1</td>
+									<td></td>
+									<td>404-11-22</td>
+									<td>SS3B</td>
+									<td>中心仓库</td>
+									<td>合格</td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>
+								</tr>
+								<tr id="node-8" class="child-of-node-2">
+									<td>1-2</td>
+									<td></td>
+									<td>404-11-33</td>
+									<td>SS3B</td>
+									<td>电机班组库</td>
+									<td>待修</td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>								</tr>
+								
+								<tr id="node-4" class="child-of-node-1">
+									<td>2</td>
+									<td><span>逻辑控制单元（LCU）</span></td>
+									<td colspan="4"></td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>
+								</tr>
+								<tr id="node-5" class="child-of-node-4">
+									<td>2-1</td>
+									<td></td>
+									<td>404-44-55</td>
+									<td>DF4</td>
+									<td>电机班组库</td>
+									<td>合格</td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>
+								</tr>
+								<tr id="node-14" class="child-of-node-4">
+									<td>2-2</td>
+									<td></td>
+									<td>404-44-66</td>
+									<td>DF5D</td>
+									<td>电机班组库</td>
+									<td>待修</td>
+									<td>
+										<a target="_blank" style="color:blue" href="../pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.html">检修记录</a>
+									</td>
+								</tr>
+								
+					</table>
+					<!-- 用户管理 功能操作和数据显示区域    end  ************* -->
+		
+					<!-- *********	分页信息显示区 			 start  ********** -->
+					<div style="height:35px;">
+		                <div style="height:35px;">
+							<div class="float_left padding5">
+				
+							</div>
+							<div class="float_right padding5 paging">
+								<div class="float_left padding_top4">
+									<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+									<span class="paging_current"><a href="javascript:;">1</a></span>
+									<span><a href="javascript:;">2</a></span>
+									<span><a href="javascript:;">3</a></span>
+									<span><a href="javascript:;">4</a></span>
+									<span><a href="javascript:;">5</a></span>
+									<span>...</span>
+									<span><a href="javascript:;">20</a></span>
+									<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+								</div>
+								<div class="float_left">
+									<select autoWidth="true">
+										<option>50</option>
+										<option>100</option>
+										<option>150</option>
+									</select>
+								</div>
+								<div class="float_left padding_top4">条记录</div>
+							<div class="clear"></div>
+						</div>
+					<div class="clear"></div>
+				  </div>
+		            <!-- *********	分页信息显示区 			end  ********** -->           
+			</div>
+		</div>
+  </body>
+</html>

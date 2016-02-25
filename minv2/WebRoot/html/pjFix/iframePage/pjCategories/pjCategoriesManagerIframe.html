@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>机务检修系统--配件检修-配件大类</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!--引入弹出窗组件 不使用mainframe/js/attention/zDialg整合组件（图标不能显示），使用js/zDialog_split独立组件（uur独立组件）， start-->
+	<script type="text/javascript" src="../../../../mainframe/js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/zDialog_split/zDialog.js"></script>
+	<!--引入弹出窗组件end-->
+    <!-- 框架必需  	结束-->
+  </head>
+  
+  <body>
+       <!-- 用户管理 功能操作和数据显示区域    start ************ -->
+  	<div  class="position" panelTitle="配件大类" roller="false" overflow="true">
+		<table width="100%">
+			<!-- *********	操作功能区  start  ********** -->
+			<tr>
+				<td>
+					<div>	
+						<table  border="0px">
+							 	<input type="checkbox" id="selByjcType"/>车型
+							 	<input type="checkbox" id="selByfirstUnitName"/>专业
+							 	<input type="checkbox" id="selByStoreStaticPjName"/>配件名称
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							 	<button id="queryStorePosition"><span class="icon_find">查询</span></button>
+							 	<br/>
+								<tr>
+									<td >
+										<div id="">
+											车型 
+											<select autoWidth="true"  name="jcType" id="jcTypeId">
+												<option value="请选择">请选择</option>
+													<option value='' >DF5</option>
+													<option value='' >DF12</option>
+													<option value='' >SS3B</option>
+											</select>
+										</div>
+									</td>
+									<td >
+										<div id="">
+											专业 
+											<select autoWidth="true"  name="firstUnitName" id="firstUnitName">
+												<option value="请选择">请选择</option>
+													<option value='' ></option>
+											</select>
+										</div>
+									</td>
+									<td >
+										<div id="">
+											配件名称
+											<input type="text"   name="PjName" id="PjName" />
+										</div>
+									</td>
+								</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	操作功能区  end  ********** -->
+			
+			<!-- ************************************************************************************************* -->
+			
+			<!-- *********	数据显示区  start  ********** -->
+			<tr>
+				<td colspan="11">
+					<div id="scrollContent" class="border_gray">
+						<table class="tableStyle">
+						<thead>
+							<tr>
+								<th width="5%">序号</th>
+								<th width="15%">配件名称</th>
+								<th width="5%">最小库存</th>
+								<th width="15%">所属专业</th>
+								<th width="15%">机车类型</th>
+								<th width="20%">操作</th>
+							</tr>
+						</thead>
+						    <tr>
+						        <td>1</td>
+						        <td>制动器</td>
+						        <td>30</td>
+						        <td>走行</td>
+						        <td>SS3</td>
+						        <td>
+						        <button onclick='top.Dialog.open({URL:"../pjFix/iframePage/accessoriesCategories/alertDialog/addUnattendedAccessoriesDialogl.html",Title:"添加待修配件"});'><span class="icon_edit">添加待修配件</span></button>
+						        </td>
+						    </tr>
+						    <tr>
+						        <td>2</td>
+						        <td>车钩及缓冲器</td>
+						        <td>20</td>
+						        <td>走行</td>
+						        <td>DF4</td>
+						        <td>
+						        <button id=""  name="" onclick='top.Dialog.open({URL:"../pjFix/iframePage/accessoriesCategories/alertDialog/addUnattendedAccessoriesDialogl.html",Title:"添加待修配件"});'><span class="icon_edit">添加待修配件</span></button>
+						        </td>
+						    </tr>
+						     <tr>
+						        <td>3</td>
+						        <td>交流辅助电机</td>
+						        <td>20</td>
+						        <td>电机</td>
+						        <td>XH5</td>
+						        <td>
+						        <button id=""  name="" onclick='top.Dialog.open({URL:"../pjFix/iframePage/accessoriesCategories/alertDialog/addUnattendedAccessoriesDialogl.html",Title:"添加待修配件"});'><span class="icon_edit">添加待修配件</span></button>
+						        </td>
+						    </tr>
+						    <tr><!-- addUnattendedAccessories -->
+						        <td>4</td>
+						        <td>真空主断路器</td>
+						        <td>40</td>
+						        <td>电器</td>
+						        <td>G6</td>
+						        <td>
+						        <button id=""  name="" onclick='top.Dialog.open({URL:"../pjFix/iframePage/accessoriesCategories/alertDialog/addUnattendedAccessoriesDialogl.html",Title:"添加待修配件"});'><span class="icon_edit">添加待修配件</span></button>
+						        </td>
+						    </tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	数据显示区  end  ********** -->
+		</table>
+		<!-- *********	分页信息显示区		 start  ********** -->
+		<div style="height:35px;">
+			<div style="height:35px;">
+							<div class="float_left padding5">
+				
+							</div>
+							<div class="float_right padding5 paging">
+								<div class="float_left padding_top4">
+									<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+									<span class="paging_current"><a href="javascript:;">1</a></span>
+									<span><a href="javascript:;">2</a></span>
+									<span><a href="javascript:;">3</a></span>
+									<span><a href="javascript:;">4</a></span>
+									<span><a href="javascript:;">5</a></span>
+									<span>...</span>
+									<span><a href="javascript:;">20</a></span>
+									<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+								</div>
+								<div class="float_left">
+									<select autoWidth="true">
+										<option>50</option>
+										<option>100</option>
+										<option>150</option>
+									</select>
+								</div>
+								<div class="float_left padding_top4">条记录</div>
+							<div class="clear"></div>
+						</div>
+					<div class="clear"></div>
+				  </div>
+		  </div>
+	 <!-- *********	分页信息显示区  end  ********** -->
+	 </div>
+ 	 <!-- 用户管理 功能操作和数据显示区域  	  end  ************* -->
+  </body>
+</html>

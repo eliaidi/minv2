@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="minv2">
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_common"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_config"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_dict"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_users"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_pj"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_pjFix"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_plan"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_zx"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_oil"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_report"/>
+        <property name="context-root" value="/minv2"/>
+        <property name="java-output-path" value="/minv2/WebRoot/WEB-INF/classes"/>
+        <property name="me-merge-utility-modules" value="true"/>
+    </wb-module>
+</project-modules>

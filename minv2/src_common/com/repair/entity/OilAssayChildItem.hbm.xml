@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="OilAssayChildItem" table="OIL_ASSAY_CHILD_ITEM">
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_OIL_ASSAY_CHILD_ITEM</param>
+			</generator>
+		</id>
+		
+		<property name="childItemName">
+			<column name="CHILD_ITEM_NAME">
+				<comment>油水化验子项目名称</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="item">
+			<column name="OIL_ASSAY_MAIN_ITEM_ID">
+				<comment>机车油水化验项目主表ID</comment>
+			</column>
+		</many-to-one>
+
+		
+		<many-to-one name="proteam">
+			<column name="PROTEAM_ID">
+				<comment>检修班组ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="orderNum">
+			<column name="ORDER_NUM">
+				<comment>序列号</comment>
+			</column>
+		</property>
+		
+		<property name="status">
+			<column name="STATUS">
+				<comment>是否启用(0、禁用；1、启用)</comment>
+			</column>
+		</property>
+		
+		<property name="minValue">
+			<column name="MIN_VALUE">
+				<comment>最小值，小数点后10</comment>
+			</column>
+		</property>
+		
+		<property name="maxValue">
+			<column name="MAX_VALUE">
+				<comment>最大值，小数点后10</comment>
+			</column>
+		</property>
+		
+		<property name="unitMeasure">
+			<column name="UNIT_MEASURE">
+				<comment>计量单位</comment>
+			</column>
+		</property>
+		
+		<property name="py">
+			<column name="PY">
+				<comment>拼音</comment>
+			</column>
+		</property>
+		
+		<property name="remark">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

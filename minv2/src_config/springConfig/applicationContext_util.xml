@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+                     
+ 	
+ 	<!-- util层 -->
+	
+	<!-- ServletContext全局信息空间操作类 -->
+	<bean id="servletContextUtil" class="com.repair.util.ServletContextUtil"></bean>
+	
+	
+	<!-- 字典缓存工具类 -->
+	<bean id="dictionaryBaseCacheUtil" class="com.repair.dict.util.DictionaryBaseCacheUtil">
+		<property name="dictionaryBaseService" ref="dictionaryBaseForDictService" />
+		<!-- 类注入-->
+		<property name="servletContextUtil" ref="servletContextUtil"></property>
+	</bean>
+	
+	<!-- 故障字典缓存工具类 -->
+	<bean id="dictFaultCacheUtil" class="com.repair.dict.util.DictFaultCacheUtil">
+		<property name="dictFaultService" ref="dictFaultForDictService" />
+		<!-- 类注入-->
+		<property name="servletContextUtil" ref="servletContextUtil"></property>
+	</bean>
+	
+	<!-- 班组缓存工具类 -->
+	<bean id="dictProteamCacheUtil" class="com.repair.dict.util.DictProteamCacheUtil">
+		<property name="dictProteamService" ref="dictProteamForDictService" />
+		<!-- 类注入-->
+		<property name="servletContextUtil" ref="servletContextUtil"></property>
+	</bean>
+	
+</beans>

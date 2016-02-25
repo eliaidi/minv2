@@ -1,0 +1,2 @@
+1、storeStaticInfoManagerIframe.html：配件静态信息管理主页
+2、alertDialog：配件静态信息管理主页中所需要用的的弹出页面

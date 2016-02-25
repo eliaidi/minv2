@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="OilAssayMainItemRec" table="OIL_ASSAY_MAIN_ITEM_REC">
+		<id name="id" column="ID" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_OIL_ASSAY_MAIN_ITEM_REC</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="planDate" cascade="save-update">
+			<column name="PLAN_DATE_ID">
+				<comment>机车检修日计划表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="jcType">
+			<column name="JC_TYPE_ID">
+				<comment>机车型号表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="sendUsers">
+			<column name="SEND_USERS">
+				<comment>送样人(如、张飞，页面使用联想输入显示，可以自己输)</comment>
+			</column>
+		</property>
+		
+		
+		<many-to-one name="receiveUsers" cascade="save-update">
+			<column name="RECEIVE_USERS_ID">
+				<comment>收样人ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="receiveTime">
+			<column name="RECEIVE_TIME">
+				<comment>接收待化验样品时间</comment>
+			</column>
+		</property>
+		
+		<property name="endTime">
+			<column name="END_TIME">
+				<comment>样品化验结束时间</comment>
+			</column>
+		</property>
+		
+		<property name="assayStatus">
+			<column name="ASSAY_STATUS">
+				<comment>化验状态（0、作废；1、待化验；2、化验完成）</comment>
+			</column>
+		</property>
+		
+		<property name="conditionStatus">
+			<column name="CONDITION_STATUS">
+				<comment>处理意见（0、其他油，更换；1、变压器，滤油）</comment>
+			</column>
+		</property>
+		
+		<property name="qualityStatus">
+			<column name="QUALITY_EVALUATION">
+				<comment>质量评定</comment>
+			</column>
+		</property>
+		
+		<property name="remark">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		<set name="childItemRec" cascade="save-update" inverse="true">
+			<comment>子项目记录集合</comment>
+			<key column="OIL_ASSAY_MAIN_ITEM_REC_ID"></key>
+			<one-to-many class="OilAssayChildItemRec" />
+		</set>
+	</class>
+</hibernate-mapping>

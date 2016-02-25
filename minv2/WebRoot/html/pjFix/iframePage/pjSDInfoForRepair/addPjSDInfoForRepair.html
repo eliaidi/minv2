@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>机务检修系统--配件管理--添加待修配件检查页面--待修配件入库</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+<meta http-equiv="description" content="this is my page" />
+
+<!--uurframe页面框架										开始 -->
+<!--uurframe框架必需											开始-->
+<script type="text/javascript"
+	src="../../../../mainframe/js/jquery-1.4.js"></script>
+<script type="text/javascript"
+	src="../../../../mainframe/js/framework.js"></script>
+<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet"
+	type="text/css" />
+<link rel="stylesheet" type="text/css" id="skin"
+	prePath="../../../../mainframe/" />
+<!--uurframe框架必需											结束-->
+<!--uurframe页面框架 										结束 -->
+<script>
+		$(function(){
+			$("#getCheckRow").click(function(){
+			    //返回行索引数组
+				var rowIndexArr=$.getCheckRowIndex("tbRepairParts");
+				//获取选中行，删除行
+				$.deleteTableRow("tbRepairParts",rowIndexArr);
+			});
+			
+			//全选、反选
+			$.checkAll("ckAll","ckPj");
+		});
+</script>
+</head>
+<body>
+	<!--uurframe盒子模型   上方					开始-->
+	<!-- 盒子模型								 					开始-->
+	<div class="box2" panelWidth="80%" panelHeight="600" showStatus="false" panelTitle="配件入库">
+		<span>收件人员:张飞</span>
+		<div class="float_right">
+			<button><span>入库</span></button>
+		</div>
+			<br/><br/>
+		<!-- 数据显示层												开始 -->
+		<table class="tableStyle" useMultColor="false" useCheckBox="true" id="tbRepairParts">
+			<tr>
+				<th><input type="checkbox" name="ckAll" id="ckAll">序号</th>
+				<th>配件编号</th>
+				<th>车型</th>
+				<th>配件大类(静态)</th>
+				<th>入库仓库</th>
+				<th>生产厂家</th>
+				<th>出厂日期</th>
+				<th>出厂价格</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ckPj"/>&nbsp;1</td>
+				<td><input type="text" value="404-13-45"/></td>
+				<td>
+					<select>
+						<option value="选择车型">选择车型</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option value="配件所属大类">配件所属大类</option>
+					</select>
+				</td>
+				<td>走行班组库</td>
+				<td><input type="text" value="非必填"/></td>
+				<td><input type="text" value="非必选"/></td>
+				<td><input type="text" value="非必填"/></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ckPj"/>&nbsp;1</td>
+				<td><input type="text" value="404-13-45"/></td>
+				<td>
+					<select>
+						<option value="选择车型">选择车型</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option value="配件所属大类">配件所属大类</option>
+					</select>
+				</td>
+				<td>走行班组库</td>
+				<td><input type="text" value="非必填"/></td>
+				<td><input type="text" value="非必选"/></td>
+				<td><input type="text" value="非必填"/></td>
+			</tr>
+		</table>
+		<!-- 数据显示层												结束 -->
+		<br>
+		<button id="getCheckRow"><span>删除</span></button>
+	</div>
+	<!-- 盒子模型								 					结束-->
+	<!--uurframe盒子模型下方						结束-->
+</body>
+<!-- 自定义js 删除行-->
+<script type="text/javascript" src="../../../../js/tableUtil/tableUtil.js"></script>
+<!-- 复选框全选 、反选 -->
+<script type="text/javascript" src="../../../../test/checkboxUtil/checkboxUtil.js"></script>
+</html>

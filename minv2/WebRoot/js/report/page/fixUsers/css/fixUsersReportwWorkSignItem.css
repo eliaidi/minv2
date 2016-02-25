@@ -1,0 +1,60 @@
+*html{
+	 background-image:url(about:blank);
+	 background-attachment:fixed;
+	 }
+	 
+	#sign1{
+	 _position:absolute;
+	 _bottom:auto;
+	 _top:expression(eval(document.documentElement.scrollTop));
+	 _margin-top:5px;
+	 _margin-left:5px;
+	 }
+	 
+	#allsign1{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	_margin-top:5px;
+	_margin-left:75px;
+	}
+	
+	#print1{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	_margin-top:5px;
+	_margin-left:5px;
+	}
+	
+	#newreport1{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	_margin-top:5px;
+	_margin-left:5px;
+	}
+	
+	#sign2{
+	 _position:absolute;
+	 _bottom:auto;
+	 _top:expression(eval(document.documentElement.scrollTop));
+	 _margin-top:5px;
+	 _margin-left:5px;
+	 }
+	
+	#print2{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	_margin-top:5px;
+	_margin-left:5px;
+	}
+	
+	#newreport2{
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+	_margin-top:5px;
+	_margin-left:5px;
+	}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcFixFlowRecorder" table="JC_FIX_FLOW_RECORDER">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_FIX_FLOW_RECORDER</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="jcFixFlow">
+			<column name="FIX_FLOW_ID">
+				<comment>(机车检修流程节点ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="dictProteam">
+			<column name="PROTEAM_ID">
+				<comment>(承修班组ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="jcPlanDate">
+			<column name="PLAN_DATE_ID">
+				<comment>(机车检修日计划ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="status">
+			<column name="STATUS">
+				<comment>(完成状态，0、未完成；1、完成)</comment>
+			</column>
+		</property>
+		
+		<property name="endTime">
+			<column name="END_TIME">
+				<comment>(完成时间)</comment>
+			</column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

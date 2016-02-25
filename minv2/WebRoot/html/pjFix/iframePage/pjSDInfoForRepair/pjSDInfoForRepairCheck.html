@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>机务检修系统--配件管理--添加待修配件检查页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+<meta http-equiv="description" content="this is my page" />
+
+<!--uurframe页面框架										开始 -->
+<!--uurframe框架必需											开始-->
+<script type="text/javascript"
+	src="../../../../mainframe/js/jquery-1.4.js"></script>
+<script type="text/javascript"
+	src="../../../../mainframe/js/framework.js"></script>
+<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet"
+	type="text/css" />
+<link rel="stylesheet" type="text/css" id="skin"
+	prePath="../../../../mainframe/" />
+<!--uurframe框架必需											结束-->
+<!--uurframe页面框架 										结束 -->
+<script>
+		$(function(){
+			$("#getCheckRow").click(function(){
+			    //返回行索引数组
+				var rowIndexArr=$.getCheckRowIndex("tbAddToRP");
+				//获取选中行，删除行
+				$.deleteTableRow("tbAddToRP",rowIndexArr);
+			});
+			//全选、反选
+			$.checkAll("ckAll","ckPj");
+		});
+</script>
+</head>
+<body>
+	<!--uurframe盒子模型   上方					开始-->
+	<!-- 盒子模型左侧								 		开始-->
+	<div style="float:left" class="box2" panelWidth="33%" panelHeight="200" showStatus="false" panelTitle="添加待修配件">
+		<span style="font-size:14;">添加待修配件数量:</span>
+		<input type="text" value="数字-4" style="width:50px" />&nbsp;
+		<button><span>确定</span></button>
+		<button><span>检查待修配件编号</span></button>
+		<br/><br/>	
+		<!-- 数据显示层												开始 -->
+		<table class="tableStyle" useMultColor="false" useCheckBox="true" id="tbAddToRP">
+			<tr>
+				<th><input type="checkbox" name="ckAll" id="ckAll"/><button id="getCheckRow"><span>删除</span></button></th>
+				<th style="text-align:center">配件编号</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><input type="checkBox" name="ckPj"/>1</td>
+				<td><input type="text" name="" value="404-12-44" /></td>
+				<td><button id="">删除</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkBox" name="ckPj"/>2</td>
+				<td><input type="text" name="" value="404-12-55" /></td>
+				<td><button id="">删除</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkBox" name="ckPj"/>3</td>
+				<td><input type="text" name="" value="404-12-66" /></td>
+				<td><button id="">删除</button></td>
+			</tr>
+		</table>
+		<!-- 数据显示层												开始 -->
+	</div>
+	<!-- 盒子模型左侧								 		结束-->
+	<!-- 盒子模型中部								 			开始-->
+	<div style="float:left" class="box2" panelWidth="30%" panelHeight="200" showStatus="false" panelTitle="动态库存在配件">
+		<div class="float_right">
+			<button><span>添加待修配件</span></button>&nbsp;&nbsp;&nbsp;
+		</div>
+		<br/>
+		<span>机车型号</span>
+		 <select>
+			<option value="请选择机车型号">请选择机车型号</option>
+		</select> 
+		<span>机车编号</span> 
+		<select>
+			<option value="请选择机车编号">请选择机车编号</option>
+		</select>
+		<br/>
+		<span>检修班组 <span style="color:blue">走行班组</span></span>
+		<!-- 数据显示层													开始 -->	
+		<table class="tableStyle" useMultColor="false" useCheckBox="true">
+			<tr>
+				<td>序号</td>
+				<td>配件编号</td>
+				<td>操作</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><input type="text" value="404-13-45(不可改)" /></td>
+				<td><button><span>删除</span></button></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><input type="text" value="404-12-34" /></td>
+				<td><button><span>删除</span></button></td>
+			</tr>
+		</table>
+		<!-- 数据显示层													结束 -->
+	</div>
+	<!-- 盒子模型中部								 			结束-->
+	<!-- 盒子模型右侧								 							开始-->
+	<div style="float:left" class="box2" panelWidth="30%" panelHeight="200" showStatus="false" panelTitle="动态库不存在配件">
+		<div class="float_right">
+			<button><span>添加待修配件入库</span></button>
+		</div>
+		<br/><br/>	
+		<!-- 数据显示层																	开始 -->
+		<table class="tableStyle" useMultColor="false" useCheckBox="true">
+			<tr>
+				<td>序号</td>
+				<td style="text-align:center">配件编号</td>
+				<td>操作</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><input type="text" value="404-13-45" /></td>
+				<td><button><span>删除</span></button></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><input type="text" value="404-12-34" /></td>
+				<td><button><span>删除</span></button></td>
+			</tr>
+		</table>
+		<!-- 数据显示层																	结束 -->
+	</div>
+	<!-- 盒子模型右侧								 							结束-->
+	<!--uurframe盒子模型下方						结束-->
+</body>
+<!-- 自定义js 删除行-->
+<script type="text/javascript" src="../../../../js/tableUtil/tableUtil.js"></script>
+<!-- 自定义js 全选反选复选框 -->
+<script type="text/javascript" src="../../../../test/checkboxUtil/checkboxUtil.js"></script>   
+</html>

@@ -1,0 +1,166 @@
+#nav, #nav ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	list-style-position:outside;
+	position:relative;
+	line-height:1.5em; 
+	}
+	
+	#nav a{
+	display:block;
+	padding:0px 5px;
+	border:1px solid #333;
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+	background-color:#328aa4;
+	}
+	
+	#nav a:link{
+	background-color:#328aa4;
+	}
+	
+    /*#nav a:visited{
+	background-color:#fff;
+	color:blue;
+	}*/
+	
+	#nav a:hover{
+	background-color:#fff;
+	color:red;
+	}
+	
+	#nav li{
+	float:left;
+	position:relative;
+	}
+	
+	#nav ul {
+	position:absolute;
+	display:none;
+	width:12em;
+	top:1.5em;
+	}
+	
+	#nav li ul a{
+	width:12em;
+	height:auto;
+	float:left;
+	}
+	
+	#nav ul ul{
+	top:auto;
+	}	
+	
+	#nav li ul ul {
+	left:12em;
+	margin:0px 0 0 10px;
+	}
+	
+	#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul{
+	display:none;
+	}
+	#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul{
+	display:block;
+	}
+	
+	TABLE.bluetable {
+		FONT: 100% Arial, Helvetica, sans-serif
+	}
+	TD {
+		FONT: 100% Arial, Helvetica, sans-serif
+	}
+	TABLE.bluetable {
+		MARGIN: 0.1em 0px; BORDER-COLLAPSE: collapse
+	}
+	TABLE.bluetable TH {
+		BORDER-BOTTOM: #2b3b58 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #2b3b58 1px solid; PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BORDER-TOP: #2b3b58 1px solid; BORDER-RIGHT: #2b3b58 1px solid; PADDING-TOP: 0.5em
+	}
+	TABLE.bluetable TD {
+		BORDER-BOTTOM: #2b3b58 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #2b3b58 1px solid; PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BORDER-TOP: #2b3b58 1px solid; BORDER-RIGHT: #2b3b58 1px solid; PADDING-TOP: 0.5em
+	}
+	TABLE.bluetable TH {
+		BACKGROUND: url(images/tr_back.gif) #328aa4 repeat-x; COLOR: #fff
+	}
+	TABLE.bluetable TD {
+		BACKGROUND: #FFFFFF
+	}
+	TABLE.bluetable TR.even TD {
+		BACKGROUND: #e5f1f4
+	}
+	TABLE.bluetable TR.odd TD {
+		BACKGROUND: #f8fbfc
+	}
+	TABLE.bluetable TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TR.even TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TR.odd TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TR.even TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TR.odd TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TH.selected {
+		
+	}
+	TABLE.bluetable TR.even TH.selected {
+		
+	}
+	TABLE.bluetable TR.odd TH.selected {
+		
+	}
+	TABLE.bluetable TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TR.even TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TR.odd TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TR.even TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TR.odd TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TR.even TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TR.odd TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TD.empty {
+		BACKGROUND: #fff
+	}
+	TABLE.bluetable TR.odd TD.empty {
+		BACKGROUND: #fff
+	}
+	TABLE.bluetable TR.even TD.empty {
+		BACKGROUND: #fff
+	}
+	body{margin:0; padding:0; font-size:12px;}
+		tr{text-algin:center;}
+		td{height:20px; line-height: 20px;}
+		input{width:100px;}
+	.zDialogCon {
+    background-color: #FFF;
+    padding-left: 200px;
+    padding-right: 5px;
+	}

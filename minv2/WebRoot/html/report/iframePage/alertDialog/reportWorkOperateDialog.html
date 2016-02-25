@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>报活 添加或修改</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<meta http-equiv="description" content="This is my page" />
+		
+		<!--uurframe框架必需  开始-->
+		<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/bsFormat.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+		<!-- 所有的css都从mainframe目录开始找 -->
+		<link rel="stylesheet" id="skin" prePath="../../../../mainframe/" />
+		<script type="text/javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+		<!--uurframe框架必需  结束-->
+		
+	
+</head>
+	<body>
+		<div class="box1" whiteBg="true"><!-- frmright  jcmain leadmain-->
+		    <c:choose>
+		      <c:when test="${roleType=='jcgz'}">
+		        <form action="reportWorkManage!jtPreDictConfirm.action" method="post" id="subform" target="jcmain" onsubmit="return submitValidate()" enctype="multipart/form-data">
+		      </c:when>
+		      <c:when test="${roleType=='lead'}">
+		        <form action="reportWorkManage!jtPreDictConfirm.action" method="post" id="subform" target="leadmain" onsubmit="return submitValidate()" enctype="multipart/form-data">
+		      </c:when>
+		      <c:otherwise>
+		        <form action="reportWorkManage!jtPreDictConfirm.action" method="post" id="subform" target="frmright" onsubmit="return submitValidate()" enctype="multipart/form-data">
+		      </c:otherwise>
+		    </c:choose>
+				<input type="hidden" id="rjhmId" name="rjhmId" value="${rjhmId}"/>
+				<input type="hidden" id="score" name="preDict.score" value="1"/>
+				<table width="100%">
+					<tr><td width="50%" valign="top">
+						<table>
+					<tr>
+						<td height="12px;">
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td width="30%">
+							<div style="text-align: right; margin-right: 20px;">报活类型：</div>
+						</td>
+						<td>
+							<input type="radio" name="type" value="0" onclick="zeroReport(this)"/>JT28报活
+							<input type="radio" name="type" value="1" onclick="zeroReport(this)"/>复检报活
+							<input type="radio" name="type" value="2" onclick="zeroReport(this)"/>过程报活
+							<input type="radio" name="type" value="6"/>零公里报活<br/>
+						</td>
+					</tr>
+				    <tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">班组：</div>
+						</td>
+						<td>
+							<select id="proteamId" name="preDict.proTeamId.proteamid" class="default" style="width: 209px;">
+				    	        <option value="">请选择班组名称</option>
+				    	        <c:if test="${!empty dictProTeams}">
+				    	        	<c:forEach var="entry" items="${dictProTeams}">
+					    	           <option value="${entry.proteamid}">${entry.proteamname}</option>
+					    	        </c:forEach>
+					    	        <option value="0">交车组</option>
+				    	        </c:if>
+				    	    </select>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="jczCheck" onclick="jczSelect();"/>交车组
+						</td>
+					</tr>
+					<!-- 
+					<tr id="preset">
+						<td>
+							<div style="text-align: right; margin-right: 20px;">预分工大类：</div>
+						</td>
+						<td>
+							<select id="division" name="preDict.divisionId" class="default" style="width: 209px;">
+							    <option value="">请选择预分工大类</option>
+				    	    </select>
+						</td>
+					</tr>
+					 -->
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">故障所处：</div>
+						</td>
+						<td>
+							<select id="yjbj" onchange="getSecUnit()" class="default" style="width: 209px;">
+							    <option value="0">请选择专业</option>
+							    <c:if test="${!empty dictFirstUnits}">
+							    	<c:forEach items="${dictFirstUnits}" var="entry">
+							    		<option value="${entry}">${entry}</option>
+							    	</c:forEach>
+							    </c:if>
+							</select><br/>
+							<select id="ejbj" class="default" onchange="getThirdUnit()" name="preDict.repPosi" style="margin-top: 5px;width: 209px;">
+							    <option value="">请选择部位</option>
+							</select><br/>
+							<select id="sjbj" class="default" name="preDict.repPosi" onchange="listDictFailure()" style="margin-top: 5px;width: 209px;">
+							    <option value="">请选择处所</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">故障说明：</div>
+						</td>
+						<td>
+							<textarea id="explain" name="preDict.repsituation"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">照片：</div>
+						</td>
+						<td valign="top">
+							<input id="fileupload" name="fileMaterial" type="file" /> 
+							<input type="button" onclick="uploadImage()" value="上传" />
+							<input type="hidden" id="imgUrl" value=""/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">提票签字：</div>
+						</td>
+						<td>
+							<input type="hidden" id="userId" name="id" value="${session_user.userid}"/>
+							<input type="hidden" id="gonghao" name="preDict.repempNo" value="${session_user.gonghao}"/>
+							<input type="text" id="repemp" value="${session_user.xm}" readonly="readonly" name="preDict.repemp"/>
+						</td>
+					</tr>
+					</table></td>
+						<td align="left" valign="top"><div style="overflow: auto;height: 435px;">
+							<table width="100%" id="radioTable" border="1px" cellpadding="0" cellspacing="0">
+								<tr bgcolor="lightblue"><th width="10px"></th><th>故障内容</th></tr>
+							</table></div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center" height="30px">
+							<input type="button" id="subEnter" value="提 交 " />
+							<input type="button" onclick="return getMyReport()"  value="查看报活信息" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+	</body>
+</html>

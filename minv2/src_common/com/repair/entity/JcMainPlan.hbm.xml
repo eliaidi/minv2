@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcMainPlan" table="JC_MAIN_PLAN">
+		<id name="id" column="id" type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_MAIN_PLAN</param>
+			</generator>
+		</id>
+		
+		<property name="startTime" column="START_TIME" type="timestamp"></property>
+		
+		<property name="endTime" column="END_TIME"  type="timestamp"></property>
+		
+		<property name="title" column="TITLE"></property>
+		
+		<property name="maker" column="MAKER" ></property>
+		
+		<property name="makeTime" column="MAKE_TIME"  type="timestamp"></property>
+		
+		<property name="status" column="STATUS"></property>
+	
+		<property name="remark" column="remark"></property>
+		
+		<set name="planRecorderSet" inverse="true" lazy="true" cascade="all">
+			<key column="JC_MAIN_PLAN_ID"></key>
+			<one-to-many class="JcMainPlanRecorder"/>
+		</set>
+	</class>
+</hibernate-mapping>

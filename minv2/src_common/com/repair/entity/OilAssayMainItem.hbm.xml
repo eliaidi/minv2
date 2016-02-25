@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="OilAssayMainItem" table="OIL_ASSAY_MAIN_ITEM">
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_OIL_ASSAY_MAIN_ITEM</param>
+			</generator>
+		</id>
+		
+		<property name="mainItemName" >
+			<column name="MAIN_ITEM_NAME">
+				<comment>油水化验主项目名称</comment>
+			</column>
+		</property>
+		
+		<property name="orderNum" >
+			<column name="ORDER_NUM">
+				<comment>油水化验项目顺序号</comment>
+			</column>
+		</property>
+		
+		<property name="status" >
+			<column name="STATUS">
+				<comment>是否启用(0、禁用；1、启用)</comment>
+			</column>
+		</property>
+		
+		<property name="py" >
+			<column name="PY">
+				<comment>拼音</comment>
+			</column>
+		</property>
+		
+		<property name="remark" >
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		<set name="childItemSet">
+			<key column="OIL_ASSAY_MAIN_ITEM_ID"></key>
+			<one-to-many class="OilAssayChildItem" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

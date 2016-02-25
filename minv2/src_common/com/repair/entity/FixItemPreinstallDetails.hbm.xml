@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="FixItemPreinstallDetails" table="FIX_ITEM_PREINSTALL_DETAILS">
+		<id name="id" column="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_FIX_ITEM_PREINSTALL_DETAILS</param>
+			</generator>
+		</id>
+		
+		
+		<many-to-one name="type">
+			<column name="PREINSTALL_TYPE_ID">
+				<comment>检修项目预设分类主表（常规项目，中修和小辅修）ID</comment>
+			</column>
+		</many-to-one>
+		
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+                     
+ 	 <!--  大部件专业  Action层                           									开始 -->
+ 	 <!-- 添加大部件专业信息 -->
+     <bean id="addDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.AddDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	 <!-- 删除数据 -->
+     <bean id="deleteDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.DeleteDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+	</bean>
+	
+	<!-- 查询数据.添加数据 -->
+	<bean id="toAddDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.ToAddDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	<!-- 通过大部件专业表UnitName查询数据 -->
+     <bean id="findDictPjFirstUnitByUnitName" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitByUnitNameAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	<!-- 通过专业名或拼音模糊查询大部件（不区分大小写） -->
+     <bean id="findDictPjFirstUnitListByNameOrPy" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitListByNameOrPyAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	<!-- 通过大部件专业表Id查询数据 -->
+     <bean id="findDictPjFirstUnitById" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitByIdAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+		<property name="jcTypePjFirstUnitService" ref="jcTypePjFirstUnitService"></property>
+		<property name="dictJcTypeService" ref="dictJcTypeService"></property>
+	</bean>
+	
+	<!-- 通过大部件(专业)表id查询数据,修改数据 -->
+	<bean id="toUpdateDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.ToUpdateDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	<!-- 查询大部件专业表信息 -->
+     <bean id="findAllDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.FindAllDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	 <!-- 跳至配件动态信息管理->专业分类（pj/iframePage/storeDynamicInfo/unitManageIframe.jsp）
+* 				页面，为树形菜单提供数据 -->
+     <bean id="toUnitManageIframe" class="com.repair.pj.action.dictPjFirstUnit.ToUnitManageIframeAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+	</bean>
+	
+	<!-- 修改大部件专业表信息 -->
+     <bean id="updateDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.UpdateDictPjFirstUnitAction">
+		<property name="dictPjFirstUnitService" ref="dictPjFirstUnitService" />
+		<property name="dictJcTypeService" ref="dictJcTypeService" />
+		<property name="jcTypePjFirstUnitService" ref="jcTypePjFirstUnitService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService" />
+	</bean>
+	
+	<!--  大部件专业  Action层                           									结束 -->
+	
+	<!-- **************************************************************************************************************************************** -->	
+	<!--  配件仓库静态/基本信息 Action层                  							开始 -->
+	<!-- 添加数据 -->
+	 <!-- 添加数据 -->
+	 <bean id="addPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.AddPjStoreStaticInfoAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+		<property name="dictProteamService" ref="dictProteamService" />
+		<property name="jcTypePjFirstUnitService" ref="jcTypePjFirstUnitService" />
+	 </bean>
+	 
+	 <!-- 删除数据 -->
+	 <bean id="deletePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.DeletePjStoreStaticInfoAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+	 </bean>
+	 
+	 <!-- 通过Id查询数据 -->
+	 <bean id="findPjStoreStaticInfoById" class="com.repair.pj.action.pjStoreStaticInfo.FindPjStoreStaticInfoByIdAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+	 </bean>
+	 
+	  <!-- 使用ajax判断数据库中静态配件名是否存在 -->
+      <bean name="findPjStoreStaticInfoByPjName" class="com.repair.pj.action.pjStoreStaticInfo.FindPjStoreStaticInfoByPjNameAction">
+    	<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService"></property>		 	
+      </bean>
+ 
+	 <!-- 分页数据 -->
+	 <bean id="findPagePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.FindPagePjStoreStaticInfoAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+	 </bean>
+	 
+	 <!-- 修改数据 -->
+	 <bean id="updatePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.UpdatePjStoreStaticInfoAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+		<property name="proteamPjStaticService" ref="proteamPjStaticService" />
+		<property name="pjStaticJcTypePjFUService" ref="pjStaticJcTypePjFUService" />
+		<property name="dictProteamService" ref="dictProteamService" />
+		<property name="jcTypePjFirstUnitService" ref="jcTypePjFirstUnitService" />
+	 </bean>
+	 
+	  <!--通过id查询数据， 修改数据-->
+	 <bean id="toUpdatePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.ToUpdatePjStoreStaticInfoAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+		<property name="jcTypePjFirstUnitService" ref="jcTypePjFirstUnitService"></property>
+		<property name="dictProteamService" ref="dictProteamService"></property>
+		<property name="dictJcTypeService" ref="dictJcTypeService"></property>
+		<property name="proteamPjStaticService" ref="proteamPjStaticService"></property>
+	 </bean>
+	 
+	  <!-- 查询所有静态配件信息 -->
+	 <bean name="findAllPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.FindAllPjStoreStaticInfoAction">
+	 	<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService"></property>		
+	 </bean>
+	 
+  	<!-- 配件动态信息管理-专业分类-查询 -->
+	 <bean name="queryPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.QueryPjStoreStaticInfoAction">
+	 	<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService"></property>
+	 	<property name="dictStorePositionService" ref="dictStorePositionService"></property>		
+	 </bean>
+	 
+	<!-- 通过配件名称或者拼音查询数据，返回json数据 -->
+	 <bean id="findPjSSInfoListByNameOrPy" class="com.repair.pj.action.pjStoreStaticInfo.FindPjSSInfoListByNameOrPyAction">
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+	 </bean> 
+	 
+	<!--  配件仓库静态/基本信息 Action层                  							结束 -->
+	
+	<!-- *************************************************************************************** -->
+	<!--  配件所在位置/仓库 													开始-->
+	<!-- 通过地区ID查询仓库  -->
+   <bean id="findDictStorePositionByDictAreaId" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByDictAreaIdAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+
+    <!-- 通过Name查询仓库  -->
+    <bean id="findDictStorePositionByName" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByNameAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+    
+    <!-- 通过Type查询仓库  -->
+    <bean id="findDictStorePositionByType" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByTypeAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+    
+     <!-- 查询所有仓库  -->
+    <bean id="findAllDictStorePosition" class="com.repair.pj.action.dictStorePosition.FindAllDictStorePositionAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+   
+    <!-- 通过模型驱动修改仓库数据  -->
+    <bean id="updateDictStorePosition" class="com.repair.pj.action.dictStorePosition.UpdateDictStorePositionAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    	<property name="dictAreaService" ref="dictAreaService"></property>
+    </bean>
+    
+    <!-- 通过模型驱动删除仓库数据 -->
+    <bean id="deleteDictStorePosition" class="com.repair.pj.action.dictStorePosition.DeleteDictStorePositionAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+    <!-- 通过ID删除仓库数据 -->
+   <bean id="delDictStorePositionById" class="com.repair.pj.action.dictStorePosition.DelDictStorePositionByIdAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+    <!-- 通过模型驱动添加仓库数据 -->
+    <bean id="addDictStorePosition" class="com.repair.pj.action.dictStorePosition.AddDictStorePositionAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+    
+    <!-- ajax判断仓库下是否存在配件  -->
+    <bean id="findDictStorePositionByIdToPj" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByIdToPjAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    </bean>
+   
+    <!-- 分页数据-->
+    <bean id="queryDictStorePosition" class="com.repair.pj.action.dictStorePosition.QueryDictStorePositionAction">
+    	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+    	<property name="dictAreaService" ref="dictAreaService"></property>
+    </bean>
+    <!-- 仓库新增页面弹出 -->
+     <bean id="toAddStorePositionDialog" class="com.repair.pj.action.dictStorePosition.ToAddStorePositionDialogAction">
+ 	   		<property name="dictAreaService" ref="dictAreaService"></property>
+ 	   		<property name="dictProteamService" ref="dictProteamService"></property>
+ 	   </bean>
+ 	   
+ 	     <!-- 仓库新增页面弹出 -->
+     <bean id="toUpdateDictStorePosition" class="com.repair.pj.action.dictStorePosition.ToUpdateDictStorePositionAction">
+ 	   		<property name="dictAreaService" ref="dictAreaService"></property>
+ 	   		<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+ 	   		<property name="dictProteamService" ref="dictProteamService"></property>
+ 	   </bean>
+ 	   
+	<!--  配件所在位置/仓库表												结束-->
+	<!-- *********************************************************************************** -->
+	<!-- 机车型号														开始 -->
+	<!-- 查询所有的机车型号 -->
+ 	<bean id="findAllDictJcType" class="com.repair.pj.action.dictJcType.FindAllDictJcTypeAction">
+    	<property name="dictJcTypeService" ref="dictJcTypeService"></property>
+    </bean>
+    <!-- 跳至配件动态信息管理->车型分类（pj/iframePage/storeDynamicInfo/unitManageIframe.jsp）
+ 						页面，为树形菜单提供数据 -->
+    <bean id="toJcTypeManageIframe" class="com.repair.pj.action.dictJcType.ToJcTypeManageIframeAction">
+    	<property name="dictJcTypeService" ref="dictJcTypeService"></property>
+    </bean>
+    
+    <!-- 机车型号														开始 -->
+    <!-- **********************************************************************************************-->
+	<!-- 配件仓库动态/库存信息 action层										开始 -->
+	  <!-- 动态配件信息管理 ->专业分类、车型分类->查询 -->
+	  <bean name="queryPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.QueryPjStoreDynamicInfoAction">
+	  	<property name="dictJcTypeService" ref="dictJcTypeService"></property>
+	  	<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+	  	<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService"></property>
+	  </bean>
+	  
+	  
+	 <!-- 添加配件仓库动态/库存信息 -->
+	 <bean id="addPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.AddPjStoreDynamicInfoAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService" />
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService" />
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+	<!-- 删除配件仓库动态/库存信息 -->
+	<bean id="deletePjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.DeletePjStoreDynamicInfoAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+	</bean>
+	
+	<!-- 通过ajax查询pjdCode是否唯一 -->
+	<bean id="findPjStoreDynamicInfoByPjdCode" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjStoreDynamicInfoByPjdCodeAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+	</bean>
+
+	<!-- 查询配件仓库动态/库存信息 -->
+	<bean id="findAllPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.FindAllPjStoreDynamicInfoAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService" />
+	</bean>
+	
+	 <!--通过大部件（专业）ID查询配件仓库动态/库存信息 -->
+	<bean id="findPagePjStoreDynamicInfoByDictFirstUnitId" class="com.repair.pj.action.pjStoreDynamicInfo.FindPagePjStoreDynamicInfoByDictFirstUnitIdAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService" />
+	</bean>
+	
+	<!-- 根据Id查询配件仓库动态/库存信息 -->
+	<bean id="findPjStoreDynamicInfoById" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjStoreDynamicInfoByIdAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+	</bean>
+	
+	<!-- 修改配件仓库动态/库存信息 -->
+	<bean id="updatePjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.UpdatePjStoreDynamicInfoAction">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+		<property name="pjStoreStaticInfoService" ref="pjStoreStaticInfoService"></property>
+	</bean>
+	
+	<!-- 跳到动态信息修改窗口需要显示的信息  -->
+	<bean id="toUpdateDynamicInfoDialog" class="com.repair.pj.action.pjStoreDynamicInfo.ToUpdateDynamicInfoDialog">
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService" />
+	</bean>
+	
+	<!-- 通过静态配件ID获得配件仓库动态/库存信息集合 -->
+    <bean id="findPjSDInfoListByPssiId" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjSDInfoListByPssiIdAction">
+  		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService"></property>
+  	</bean>
+	
+	<!-- 配件仓库动态/库存信息 action层											结束 -->
+	<!-- 添加动态配件出入库子记录action 层<Sp>	-->
+	<bean id="addPjSDInfoRecordSp" class="com.repair.pj.action.pjSDInfoRecord.AddStorePjSDInfoRecordSpAction">
+		<property name="pjSDInfoRecordService" ref="pjSDInfoRecordService" />
+		<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+		<property name="pjStoreDynamicInfoService" ref="pjStoreDynamicInfoService"></property>
+	</bean>
+	<!-- 添加动态配件出入库子记录action 层 <Pp>	-->
+	<bean id="addStorePjSDInfoRecordPp" class="com.repair.pj.action.pjSDInfoRecord.AddStorePjSDInfoRecordPpAction">
+		<property name="pjSDInfoRecordService" ref="pjSDInfoRecordService" />
+	</bean>
+	
+	<!-- 查询所有动态配件出入库记录 -->
+	<bean id="queryPjSDInfoRecord" class="com.repair.pj.action.pjSDInfoRecord.QueryPjSDInfoRecordAction">
+		<property name="pjSDInfoRecordService" ref="pjSDInfoRecordService"></property>
+		
+	</bean>
+	
+	<!-- 动态配件出入库主记录action 层											结束-->
+	
+	
+	<!-- 用户相关															开始 -->
+	<!--通过仓库ID获得班组所属班组，然后通过班组获得用户集合（json格式）  -->	
+	<bean id="findUsersListByStorePositionId"  class="com.repair.pj.action.usersPrivs.FindUsersListByStorePositionIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+		<property name="dictStorePositionService" ref="dictStorePositionService"></property>
+	</bean>	
+	<!-- 用户相关															结束 -->
+	
+</beans>

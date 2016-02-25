@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+     
+<!--   地区机务段action(com.repair.users.action.dictArea)                                                  开始-->
+	<!-- 添加DICTAREA -->  
+	<bean id="addDictArea" class="com.repair.users.action.dictArea.AddDictAreaAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过ID查询DICTAREA数据 -->
+	<bean id="findDictAreaById" class="com.repair.users.action.dictArea.FindDictAreaByIdAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过jwdCode查询DICTAREA数据 -->
+	<bean id="findDictAreaByJwdCode" class="com.repair.users.action.dictArea.FindDictAreaByJwdCodeAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过areaName查询DICTAREA数据 -->
+	<bean id="findDictAreaByName" class="com.repair.users.action.dictArea.FindDictAreaByNameAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 查询DICTAREA所有数据 -->
+    <bean id="findDictAreaAll" class="com.repair.users.action.dictArea.FindDictAreaAllAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+		<property name="dictDepartService" ref="dictDepartService" />
+		<property name="rolePrivsService" ref="rolePrivsService" />
+		<property name="dictProteamService" ref="dictProteamService" />	
+	</bean>
+	<!-- 通过ID删除DICTAREA数据 -->
+    <bean id="deleteDictAreaById" class="com.repair.users.action.dictArea.DeleteDictAreaByIdAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过areaName删除DICTAREA数据 -->
+    <bean id="deleteDictAreaByAreaName" class="com.repair.users.action.dictArea.DeleteDictAreaByAreaNameAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过jwdCode删除DICTAREA数据 -->
+    <bean id="deleteDictAreaByJwdCode" class="com.repair.users.action.dictArea.DeleteDictAreaByJwdCodeAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+	<!-- 通过ID修改DICTAREA数据 -->
+    <bean id="updateDictAreaById" class="com.repair.users.action.dictArea.UpdateDictAreaByIdAction">
+		<property name="dictAreaService" ref="dictAreaService" />
+	</bean>
+<!--   地区机务段action(com.repair.users.action.dictArea)                                                  结束-->
+
+<!-- ******************************************************************************************************* -->
+
+<!--   班组action(com.repair.users.action.dictProteam)-->
+      <!-- 添加班组信息 -->
+      <bean id="addDictProteam" class="com.repair.users.action.dictProteam.AddDictProteamAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!--根据班组id，删除--> 
+       <bean id="delDictProteamById" class="com.repair.users.action.dictProteam.DelDictProteamByIdAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!-- 根据班name，删除 -->
+      <bean id="delDictProteamByName" class="com.repair.users.action.dictProteam.DelByProteamNameAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!--查询班组所有信息  -->
+      <bean id="findAllDictProteam" class="com.repair.users.action.dictProteam.FindAllDictProteamAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+	  
+	  <!--  跳至转移班组页面，查询所有班组信息 -->
+      <bean id="toUpdateUsersProteamDialog" class="com.repair.users.action.dictProteam.ToUpdateUsersProteamDialogAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+	  
+	  
+      <!-- 根据班组名，查询 --> 
+      <bean id="findDictProteamByName" class="com.repair.users.action.dictProteam.FindDictProteamByNameAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!-- 根据班组，小辅修、中修判别字段，查询 -->
+      <bean id="findDictProteamByWorkFlag" class="com.repair.users.action.dictProteam.FindDictProteamByWorkFlagAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!-- 根据班组，考勤判别字段，查询 -->
+      <bean id="findDictProteamByAttendanceFlag" class="com.repair.users.action.dictProteam.FindDictProteamByAttendanceFlagAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!-- 根据班组id修改数据-->
+      <bean id="UpdateDictProteamById" class="com.repair.users.action.dictProteam.UpdateDictProteamByIdAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+      <!-- 根据班组id，查询数据-->
+      <bean id="findDictProteamById" class="com.repair.users.action.dictProteam.FindDictProteamByIdAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+<!--   班组action(com.repair.users.action.dictProteam)                                                    结束-->
+
+<!-- ******************************************************************************************************* -->
+
+<!--   部门action(com.repair.users.action.dictDepart)-->
+      <!-- 添加部门信息 -->
+       <bean id="addDictDepart" class="com.repair.users.action.dictDepart.AddDictDepartAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	   </bean>
+      <!-- 查询所有部门 -->
+      <bean id="findAllDictDepart" class="com.repair.users.action.dictDepart.FindAllDictDepartAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+	  
+	  <!--  跳至转移班组页面，查询所有班组信息 -->
+      <bean id="toUpdateUsersDepartDialog" class="com.repair.users.action.dictProteam.ToUpdateUsersProteamDialogAction">
+		<property name="dictProteamService" ref="dictProteamService"/>
+	  </bean>
+	  
+	  
+      <!--根据部门表的id，删除  -->
+      <bean id="delDictDepartById" class="com.repair.users.action.dictDepart.DelDictDepartByIdAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+      <!-- 根据部门name，删除 -->
+       <bean id="delDictDepartByName" class="com.repair.users.action.dictDepart.DelDictDepartByNameAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+      <!--根据部门id，查找  -->
+       <bean id="findDictDepatById" class="com.repair.users.action.dictDepart.FindDictDepartByIdAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+      <!--根据部门id，修改  -->
+       <bean id="updateDictDepatById" class="com.repair.users.action.dictDepart.UpdateDictDepartByIdAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+      <!-- 根据部门name，查找 -->
+      <bean id="findDictDepartByName" class="com.repair.users.action.dictDepart.FindDictDepartByNameAction">
+		<property name="dictDepartService" ref="dictDepartService"/>
+	  </bean>
+<!-- 部门action(com.repair.users.action.dictDepart)                                                     结束-->
+
+<!-- ******************************************************************************************************* -->  
+  
+<!--   功能资源action(com.repair.users.action.functionPrivs)                                               开始-->
+
+	<!-- 获取所有功能菜单 -->
+	<bean name="findAllFunction" class="com.repair.users.action.functionPrivs.FindAllFunctionAction">
+		<property name="functionPrivsService" ref="functionPrivsService"></property>
+	</bean>
+	
+	<!-- 获取所有菜单(操作功能)-->
+	<bean name="toRoleGrantByRoleId" class="com.repair.users.action.functionPrivs.ToRoleGrantByRoleIdAction">
+		<property name="functionPrivsService" ref="functionPrivsService"></property>
+	</bean>
+	
+	<!-- 通过功能父级Id获取菜单信息(操作功能) -->
+	<bean name="findFunctionByParentId" class="com.repair.users.action.functionPrivs.FindFunctionByParentIdAction">
+		<property name="functionPrivsService" ref="functionPrivsService"></property>
+	</bean>
+	
+	<!-- 查询所有，按菜单（操作功能）名顺序，升序 -->
+	<bean name="findAllOfFunctionOrderASC" class="com.repair.users.action.functionPrivs.FindAllOfFunctionOrderASCAction">
+		<property name="functionPrivsService" ref="functionPrivsService"></property>
+	</bean>
+	
+	<!-- 查询所有，按菜单（操作功能）名顺序，升序 -->
+	<bean name="findFunctinPrivsAll" class="com.repair.users.action.functionPrivs.FindFunctinPrivsAllAction">
+		<property name="rolePrivsService" ref="rolePrivsService"></property>
+	</bean>
+	
+<!--   功能资源action(com.repair.users.action.functionPrivs)                                               结束-->
+
+<!-- ******************************************************************************************************* -->
+
+<!--   角色(职位)，功能资源中间action(com.repair.users.action.roleFunctionPrivs)                             开始-->
+
+	<!-- 通过角色菜单ID删除角色菜单 -->
+	<bean name="delRoleFunctionById" class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByIdAction">
+		<property name="roleFunctionPrivsService" ref="roleFunctionPrivsService"></property>
+	</bean>
+	
+	<!-- 通过菜单（操作功能）ID删除 角色菜单-->
+	<bean name="delRoleFunctionByFunctionPrivsId" class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByFunctionPrivsIdAction">
+		<property name="roleFunctionPrivsService" ref="roleFunctionPrivsService"></property>
+	</bean>
+	
+	<!-- 通过角色ID删除角色菜单 -->
+	<bean name="delRoleFunctionByRolePrivsId" class="com.repair.users.action.roleFunctionPrivs.DelRoleFunctionByRolePrivsIdAction">
+		<property name="roleFunctionPrivsService" ref="roleFunctionPrivsService"></property>
+	</bean>
+	
+
+	
+<!--   角色(职位)，功能资源中间action(com.repair.users.action.roleFunctionPrivs)                             结束-->
+
+<!-- ******************************************************************************************************* -->
+
+<!--   角色(职位)action(com.repair.users.action.rolePrivs)                                                 开始-->
+	<!-- 添加ROLEPRIVS数据 -->
+	<bean id="addRolePrivs" class="com.repair.users.action.rolePrivs.AddRolePrivsAction">
+		 <property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 通过ID删除ROLEPRIVS数据 -->
+	<bean id="deleteRolePrivsById" class="com.repair.users.action.rolePrivs.DeleteRolePrivsByIdAction">
+		 <property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 通过roleNameROLEPRIVS数据 -->
+	 <bean id="DeleteRolePrivsByRoleName" class="com.repair.users.action.rolePrivs.DeleteRolePrivsByRoleNameAction">
+		 <property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 查询ROLEPRIVS所有数据 -->
+	 <bean id="findRolePrivsAll" class="com.repair.users.action.rolePrivs.FindRolePrivsAllAction">
+		 <property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 通过ID查询ROLEPRIVS数据 -->
+	 <bean id="findRolePrivsById" class="com.repair.users.action.rolePrivs.FindRolePrivsByIdAction">
+	 	<property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 通过ID修改ROLEPRIVS数据 -->
+	 <bean id="updateRolePrivsById" class="com.repair.users.action.rolePrivs.UpdateRolePrivsByIdAction">
+		<property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 通过 name修改ROLEPRIVS数据 -->
+	 <bean id="findRolePrivsByName" class="com.repair.users.action.rolePrivs.UpdateRolePrivsByIdAction">
+		<property name="rolePrivsService" ref="rolePrivsService" />
+	</bean>
+	<!-- 查询所有的rolePrivs数据     -->
+	 <bean name="findRolePrivsInUsers" class="com.repair.users.action.rolePrivs.FindRolePrivsInUsersAction">
+		<property name="rolePrivsService" ref="rolePrivsService"></property>	
+	</bean>
+	
+	 <bean name="findRolePrivsNameByRoleId" class="com.repair.users.action.rolePrivs.FindRolePrivsNameByRoleIdAction">
+		<property name="rolePrivsService">
+			<ref bean="rolePrivsService"></ref>
+		</property>
+    </bean>
+
+<!--   角色(职位)action(com.repair.users.action.rolePrivs)                                                 结束-->
+
+<!-- ******************************************************************************************************* -->
+
+<!--   用户action(com.repair.users.action.usersPrivs)                                                     开始-->	
+<!-- 通过用户ID寻找用户 -->
+	<bean name="findUsersById" class="com.repair.users.action.usersPrivs.FindUsersByIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+		 
+	 <!-- 通过机务段/地区ID寻找用户 -->
+	<bean name="findUsersByDictAreaId" class="com.repair.users.action.usersPrivs.FindUsersByDictAreaIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+	<!-- 通过用户ID修改用户-->
+	<bean name="updateUsersById" class="com.repair.users.action.usersPrivs.UpdateUsersByIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+		<property name="dictAreaService" ref="dictAreaService"></property>
+		<property name="dictDepartService" ref="dictDepartService"></property>
+		<property name="dictProteamService" ref="dictProteamService"></property>
+		<property name="rolePrivsService" ref="rolePrivsService"></property>
+		<property name="usersRolePrivsService" ref="usersRolePrivsService"></property>
+	</bean>
+	
+	<!-- 通过用户ID删除用户 -->
+	<bean name="delUsersById" class="com.repair.users.action.usersPrivs.DelUsersByIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>	
+	
+	<!-- 获取所有用户 -->
+	<bean name="findAllUsers" class="com.repair.users.action.usersPrivs.FindAllUsersAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>	
+	
+	<!-- 通过用户名查询用户 -->
+	<bean name="findUsersByName" class="com.repair.users.action.usersPrivs.FindUsersByNameAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+		<!-- 通过用户工号，查询用户-->
+	<bean name="findUsersByJobNum" class="com.repair.users.action.usersPrivs.FindUsersByJobNumAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+	<!-- 通过用户卡号，查询用户 -->
+	<bean name="findUsersByCardNum" class="com.repair.users.action.usersPrivs.FindUsersByCardNumAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+	<!-- 根据部门id，查询用户-->
+	<bean name="findUsersByDictDepartId" class="com.repair.users.action.usersPrivs.FindUsersByDictDepartIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>
+	
+	<!-- 通过班组ID查询 -->
+	<bean name="findUsersByDictProteamId" class="com.repair.users.action.usersPrivs.FindUsersByDictProteamIdAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>	
+	
+	<!-- 添加用户<班组和部门>页面<需要进行查询的 地区数据、部门数据、班组数据、角色数据> -->
+	<bean name="addUsers" class="com.repair.users.action.usersPrivs.AddUsersAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+		<property name="dictAreaService" ref="dictAreaService"></property>
+		<property name="dictDepartService" ref="dictDepartService"></property>
+		<property name="dictProteamService" ref="dictProteamService"></property>
+		<property name="rolePrivsService" ref="rolePrivsService"></property>
+		<property name="usersRolePrivsService" ref="usersRolePrivsService"></property>
+	</bean>	
+	
+	<!-- 多条件查询用户 -->
+	<bean name="queryUsers" class="com.repair.users.action.usersPrivs.QueryUsersAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+		<property name="rolePrivsService" ref="rolePrivsService"></property>
+	</bean>	
+	
+	
+	<!--通过拼音或名字模糊查询用户（不区分大小写）  -->	
+	<bean id="findUsersListByNameOrPy"  class="com.repair.users.action.usersPrivs.FindUsersListByNameOrPyAction">
+		<property name="usersPrivsService" ref="usersPrivsService"></property>
+	</bean>	
+	
+	
+<!--   用户action(com.repair.users.action.usersPrivs)                                                     结束-->	
+</beans>

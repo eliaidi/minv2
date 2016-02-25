@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>机务检修信息管理系统-头部页面</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!-- uurframe页面框架 -------------------------- 开始-->
+	<!--uurframe框架必需  开始-->
+	<link href="../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../../mainframe/js/bsFormat.js"></script>
+	<script type="text/javascript" src="../../mainframe/js/framework.js"></script>
+	<!-- 所有的css都从mainframe目录开始找 -->
+	<link  rel="stylesheet" id="skin" prePath="../../mainframe/"/>
+	<!--uurframe框架必需  结束-->
+	
+	
+	
+	<!--uurframe浮动窗体、弹出窗体、消息组件  开始-->
+	<script type="text/javascript" src="../../mainframe/js/attention/floatPanel.js"></script>
+	<script type="text/javascript" src="../../mainframe/js/attention/messager.js"></script>
+	<!-- 
+	<script type="text/javascript" src="../mainframe/js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../mainframe/js/attention/zDialog/zDialog.js"></script>
+	 -->
+	<script type="text/javascript" src="../../js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../js/zDialog_split/zDialog.js"></script>
+	<!--uurframe浮动窗体、弹出窗体、消息组件  结束-->
+	<!-- uurframe页面框架 -------------------------- 结束-->
+	
+	<!-- 下拉菜单组件   开始-->
+	<link href="../../js/pro_dropdown_2/pro_dropdown_2.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../../js/pro_dropdown_2/stuHover.js"></script> 
+	<!-- 下拉菜单组件   结束-->
+	
+	<!--修正IE6支持透明png图片start-->
+	<script type="text/javascript" src="../../mainframe/js/method/pngFix/supersleight.js"></script>
+	<!--修正IE6支持透明png图片end-->
+	
+	<link rel="stylesheet" type="text/css" href="../../js/style.css" />
+
+  </head>
+  
+  <body>
+    <div class="hmenuFunction">
+		<a href="#"><span class="icon_home hand">帮助文档</span></a>
+		<span class="icon_mark hand" onclick='top.Dialog.open({URL:"leftPages/skin_menu_h.html",Title:"帮助文档",Width:720,Height:490});'>修改密码</span>
+		<span class="icon_no hand" onclick='top.Dialog.confirm("确定要退出系统吗",function(){window.location="login.html"});'>退出系统</span>
+		<div class="clear"></div>
+	</div>
+	<div class="hmenuUserInfo">
+		<li class="top">
+			<span class="top_link">
+				欢迎-<span class="minv2_main_important_text">长沙机务段</span>-，
+				用户-<span class="minv2_main_important_text">张飞</span>-，
+				职务-
+				<span class="minv2_main_important_text">工长</span>-，
+				您现在位于：<span class="minv2_main_important_text">首页</span>
+				</span>
+		</li>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+名称：users模块，dicArea[地区（机务段）]，action层
+说明：
+	1、AddDictAreaAction.java：添加地区(机务段)
+	2、DeleteDictAreaByAreaNameAction.java：通过地区（机务段）名称删除地区（机务段）。
+	3、DeleteDictAreaByIdAction.java：通过地区（机务段）id删除地区（机务段）。
+	4、DeleteDictAreaByJwdCodeAction.java：通过地区（机务段）代码删除地区（机务段）。
+	5、FindDictAreaAllAction.java：查询所有地区（机务段）。
+	6、FindDictAreaByIdAction.java：通过id查找地区（机务段）。
+	7、FindDictAreaByJwdCodeAction.java：通过地区（机务段）代码查找机务段。
+	8、FindDictAreaByNameAction.java：通过地区（机务段）名查找机务段。
+	9、UpdateDictAreaByIdAction.java：通过地区（机务段）id修改地区（机务段）。

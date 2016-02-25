@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcPlanDate" table="JC_PLAN_DATE">
+		<id name="id" column="id" type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_PLAN_DATE</param>
+			</generator>
+		</id>
+		
+		<property name="jcType" type="string">
+			<column name="JC_TYPE">
+				<comment>(机车类型)</comment>
+			</column>
+		</property>
+		
+		<property name="jcTypeValue"  type="string">
+			<column name="JC_TYPE_VALUE">
+				<comment>(机车型号值)</comment>
+			</column>
+		</property>
+		
+		<property name="jcNumber"  type="string">
+			<column name="JC_NUMBER">
+				<comment>(机车编号)</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="dictJcFixMileage"  cascade="save-update" >
+			<column name="JC_FIX_MILEAGE_ID">
+				<comment>(机车修程修次ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="extraFixMileage" cascade="save-update" not-null="true">
+			<column name="EXTRA_FIX_MILEAGE_ID" >
+				<comment>附加的修程修次</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="jcDetainTime"  type="timestamp">
+			<column name="JC_DETAIN_TIME">
+				<comment>(扣车时间)</comment>
+			</column>
+		</property>
+		
+		<property name="jcPlanStarTime" type="timestamp">
+			<column name="JC_PLAN_START_TIME">
+				<comment>(计划起机时间)</comment>
+			</column>
+		</property>
+		
+		<property name="jcPlanReceiveTime" type="timestamp">
+			<column name="JC_PLAN_RECEIVE_TIME">
+				<comment>(计划交车时间)</comment>
+			</column>
+		</property>
+		
+		
+		<many-to-one name="qcUsers" cascade="save-update">
+			<column name="QC_USERS_ID">
+				<comment>(质检ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="commitLeadUsers" cascade="save-update">
+			<column name="COMMIT_LEAD_USERS_ID">
+				<comment>(交车工长ID)</comment>
+			</column>
+		</many-to-one>
+	
+		
+		<property name="jcPlanStatus" type="integer">
+			<column name="JC_PLAN_STATUS">
+				<comment>(计划状态：1、新建；2、在修；3、待验；3、已交；4、转出)</comment>
+			</column>
+		</property>
+		
+		<property name="stationRacksNumber" type="string">
+			<column name="STATION_RACKS_NUMBER">
+				<comment>(股道号)</comment>
+			</column>
+		</property>
+		
+		<property name="stationNmber" type="string">
+			<column name="STATION_NUMBER">
+				<comment>(台位号)</comment>
+			</column>
+		</property>
+		
+		<property name="planMaker" type="string">
+			<column name="PLAN_MAKER">
+				<comment>(计划编制人)</comment>
+			</column>
+		</property>
+		
+		<property name="planMakeTime" type="timestamp">
+			<column name="PLAN_MAKE_TIME">
+				<comment>(计划制定时间)</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="jcFixFlow" cascade="save-update">
+			<column name="FIX_FLOW_ID">
+				<comment>(机车检修流程节点表ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="extraJcFixFlow" cascade="save-update">
+			<column name="EXTRA_FIX_FLOW_ID">
+				<comment>附加修次的流程节点</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="acceptanceUsers" cascade="save-update">
+			<column name="ACCEPTANCE_USERS_ID">
+				<comment>(验收员ID-用户ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="technicianUsers" cascade="save-update">
+			<column name="TECHNICIAN_USERS_ID">
+				<comment>(技术员ID-用户ID)</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="projectType" type="integer">
+			<column name="PROJECT_TYPE">
+				<comment>(项目类型：1、小辅修；2中修)</comment>
+			</column>
+		</property>
+		
+		<property name="actualStarTime" type="timestamp">
+			<column name="ACTUAL_STAR_TTIME">
+				<comment>(实际起机时间)</comment>
+			</column>
+		</property>
+		
+		<property name="actualReceiveTime" type="timestamp">
+			<column name="ACTUAL_RECEIVE_TIME">
+				<comment>(实际交车时间)</comment>
+			</column>
+		</property>
+	
+		
+		
+		<property name="remark" type="string">
+			<column name="REMARK">
+				<comment>(备注)</comment>
+			</column>
+		</property>
+		
+		<set name="oilAMIRecSet" cascade="save-update" inverse="true">
+			<comment>日计划ID</comment>
+			<key column="PLAN_DATE_ID"></key>
+			<one-to-many class="OilAssayMainItemRec" />
+		</set>
+	</class>
+</hibernate-mapping>

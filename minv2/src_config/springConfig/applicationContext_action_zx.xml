@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+     
+       <!-- 级车中修验收员查看检修项目 -->
+      <bean id="viewZxFixItemRecordByAcceptanceForZx" class="com.repair.zx.action.jcZxFixItemRecord.acceptance.ViewZxFixItemRecordAction">
+      		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"/>
+      		<property name="jcPlanDateService" ref="jcPlanDateForZxService"/>
+      </bean>
+      <!-- 级车中修验收员查看检修项目 -->
+      <bean id="AjaxSignZxFixItemRecordForZx" class="com.repair.zx.action.jcZxFixItemRecord.acceptance.AjaxSignZxFixItemRecordAction">
+      		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"/>
+      </bean>
+      <!-- 机车中修技术员查看检修项目ajax 签认-->    
+    <bean id="ajaxSignZxFixItemRecordByTechnicianForZx" class="com.repair.zx.action.jcZxFixItemRecord.technician.AjaxSignZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>	
+    
+      <!-- 机车中修技术员查看检修项目 -->   
+    <bean id="ViewZxFixItemRecordByTechnicianForZx" class="com.repair.zx.action.jcZxFixItemRecord.technician.ViewZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    	<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+    </bean>	
+     
+     <!-- 机车中修质检员查看检修项目 -->    
+    <bean id="viewZxFixItemRecordByQcForZx" class="com.repair.zx.action.jcZxFixItemRecord.qc.ViewZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    	<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+    </bean>	
+    
+     <!-- 机车中修质检员查看检修项目ajax 签认-->    
+    <bean id="ajaxSignZxFixItemRecordByQcForZx" class="com.repair.zx.action.jcZxFixItemRecord.qc.AjaxSignZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>	
+                    
+     <!-- 机车中修项目交车工长查看检修项目ajax 签认-->    
+    <bean id="ajaxSignAllZxFixItemByCommitLeadForZx" class="com.repair.zx.action.jcZxFixItemRecord.commitLead.AjaxSignAllZxFixItemAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>	
+
+	<!-- 机车中修项目交车工长查看检修项目 -->    
+    <bean id="viewZxFixItemRecordByCommitLeadForZx" class="com.repair.zx.action.jcZxFixItemRecord.commitLead.ViewZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    	<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+    </bean>
+     
+                     
+	<!-- 机车中修项目工长查看检修项目ajax 签认-->    
+    <bean id="ajaxSignAllZxFixItemByLeadForZx" class="com.repair.zx.action.jcZxFixItemRecord.lead.AjaxSignAllZxFixItemAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>	
+
+	<!-- 机车中修项目工长查看检修项目 -->    
+    <bean id="viewZxFixItemRecordByLeadForZx" class="com.repair.zx.action.jcZxFixItemRecord.lead.ViewZxFixItemRecordAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    	<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+    </bean>
+	
+	<!-- 机车中修工人项目签认 -->    
+    <bean id="ajaxSignZxFixItemByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.fixUsers.AjaxSignZxFixItemAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>
+    
+     <!-- 机车中修项目取消工人签认 -->    
+    <bean id="ajaxCancelSignZxFixItemByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.fixUsers.AjaxCancelSignZxFixItemAction">
+    	<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+    </bean>
+    
+    <!-- 机车中修项查询工人检查项目中对数据进行一键禁用或禁用 -->
+    <bean id="ajaxDisabledZxFixItemRecordByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.AjaxDisabledZxFixItemRecordAction">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+	</bean>
+	
+	<!-- 机车中修项查询工人检测项目中对数据进行一键启用或启用 -->
+    <bean id="ajaxEnableZxFixItemRecordByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.AjaxEnableZxFixItemRecordAction">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+	</bean>
+    
+     <!-- 机车中修项查询工人检测项目 -->
+    <bean id="viewFixUsersDetectionItemByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.fixUsers.ViewDetectionItemAction">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+	</bean>
+    
+    <!-- 机车中修项查询工人检查项目 -->
+    <bean id="viewFixUsersCheckItemByFixUsersForZx" class="com.repair.zx.action.jcZxFixItemRecord.fixUsers.ViewCheckItemAction">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+	</bean>
+
+    <!--  机车检修历史查询-->
+	<bean id="viewJcFixHistoryForZx" class="com.repair.zx.action.jcPlanDate.ViewJcFixHistoryAction">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+	</bean>
+    
+    <!--  整车记录查询 -->
+	<bean id="viewZxRecordForZx" class="com.repair.zx.action.jcZxFixItemRecord.ViewZxRecordAction">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"/>
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService"></property>
+	</bean>
+    
+    <!-- ajax返回未交车的 日计划 -->
+	<bean id="ajaxListUnOutJcPlanDateForZx" class="com.repair.zx.action.jcPlanDate.AjaxListUnOutJcPlanDateAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+    
+    <!-- 跳至选择修次页面 -->
+	<bean id="toChoiceJcMPRecorderForZx" class="com.repair.zx.action.jcMainPlanRecorder.ToChoiceJcMPRecorderAction" scope="prototype">
+		<property name="jcMainPlanRecorderService" ref="jcMainPlanRecorderForZxService" />
+	</bean>
+    
+    
+    <!-- 跳至选择修次页面 -->
+	<bean id="toChoiceFixMileageForZx" class="com.repair.zx.action.dictJcFixMileage.ToChoiceFixMileageAction" scope="prototype">
+		<property name="dictJcFixMileageService" ref="dictJcFixMileageForZxService" />
+	</bean>
+	
+	
+	<!-- 跳至显示本周所有待修机车页面 -->
+	<bean id="toChoiceBZJcMPRecorderForZx" class="com.repair.zx.action.jcMainPlanRecorder.ToChoiceBZJcMPRecorderAction">
+		<property name="jcMainPlanRecorderService" ref="jcMainPlanRecorderForZxService"/>
+	</bean>
+	
+	
+	 <!-- 跳至选择车型车号页面 -->
+	<bean id="toChoiceJcInfoForZx" class="com.repair.zx.action.jcInformation.ToChoiceJcInformationAction" scope="prototype">
+		<property name="jcInformationService" ref="jcInformationForZxService" />
+	</bean>
+     
+                     
+ 	
+ 	<!-- 列出所有未交车的机车日计划 -->
+ 	 <bean id="listUnOutJcPlanDateForZx" class="com.repair.zx.action.jcPlanDate.ListUnOutJcPlanDateAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!-- 删除日计划扣车信息 -->
+ 	 <bean id="deleteJcPlanDateForZx" class="com.repair.zx.action.jcPlanDate.DeleteJcPlanDateAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!-- 接车 -->
+ 	 <bean id="ajaxPickCarJcPlanDateForZx" class="com.repair.zx.action.jcPlanDate.AjaxPickCarJcPlanDateAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+		<property name="jcFixFlowService" ref="jcFixFlowForZxService"></property>
+		<property name="jcFixFlowRecorderService" ref="jcFixFlowRecorderForZxService"></property>
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService"></property>
+		<property name="jcZxFixItemService" ref="jcZxFixItemForZxService"></property>
+		<property name="jcMainPlanRecorderService" ref="jcMainPlanRecorderForZxService"></property>
+	</bean>
+	
+	<!-- 制定日计划 -->
+	<bean id="saveJcPlanDateForZx" class="com.repair.zx.action.jcPlanDate.SaveJcPlanDateAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+		<property name="jcFixFlowService" ref="jcFixFlowForZxService"></property>
+		<property name="dictJcFixMileageService" ref="dictJcFixMileageForZxService"></property>
+	</bean>
+	
+	<!--通过日计划Id 查询对应的日计划扣车信息 -->
+ 	 <bean id="findJcPlanDateByIdForZx" class="com.repair.zx.action.jcPlanDate.FindJcPlanDateById" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!--通过日计划id，查询对应的机车信息和班组信息(机车信息) -->
+ 	 <bean id="listByPlanDateIdForZx" class="com.repair.zx.action.jcFixFlowRecorder.ListByPlanDateIdAction" scope="prototype">
+		<property name="jcFixFlowRecorderService" ref="jcFixFlowRecorderForZxService" />
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!--机车股道转移 -->
+ 	 <bean id="stationRacksTransferForZx" class="com.repair.zx.action.jcFixFlowRecorder.StationRacksTransferAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!--机车部件 -->
+ 	 <bean id="viewFirstUnitRecordForZx" class="com.repair.zx.action.jcZxFixItemRecord.ViewFirstUnitRecordAction" scope="prototype">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService" />
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	<!--检修班组 -->
+ 	 <bean id="viewZxProteamRecordForZx" class="com.repair.zx.action.jcZxFixItemRecord.ViewZxProteamRecordAction" scope="prototype">
+		<property name="jcZxFixItemRecordService" ref="jcZxFixItemRecordForZxService" />
+		<property name="jcPlanDateService" ref="jcPlanDateForZxService" />
+	</bean>
+	
+	
+</beans>

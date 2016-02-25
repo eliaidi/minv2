@@ -1,0 +1,342 @@
+﻿@charset "utf-8";
+/*自定义CSS文件*/
+
+html{
+	height: 100%;
+	width: 100%;
+	margin: 0px auto;
+}
+
+body{
+	font-size: 12px;
+	width:100%;
+	margin: 0px auto;
+	padding: 0px;
+}
+a{
+	color:blue;
+}
+table{
+   	font-size:10;
+   	border-width: 1px;
+   	border-collapse: collapse;
+}
+
+
+.text_align_center{
+	text-align:center;
+	align:center;
+	font-size: 12px;
+}
+
+.span_text_class{
+	color: blue;
+	font-weight: 900;
+	font-size: 12px;
+}
+
+.minv2_bottom_page_class{
+	height:35px; 
+	width: 100%;
+	border-bottom: 1px #7ebffc solid;
+}
+
+/*main.jsp[主页]  样式                                                                                           开始*/
+.minv2_main_important_text{
+	color: red;
+	font-weight: 900;
+	font-size: 12px;
+}
+.minv2_main_centerDiv_class{
+	width: 100%; 
+	margin-bottom:0px; 
+	border: 1px #7ebffc solid;
+}
+.minv2_main_navDivClass{
+	width: 100%; 
+}
+/*main.jsp[主页]  样式                                                                                           结束*/
+
+/*users/iframePage/navigationDrawer.jsp[用户管理页面-左部区域-抽屉导航菜单标题] 样式                           开始*/
+/*设置抽屉导航菜单宽度和字体*/
+.minv2_navigationDrawer_mainDiv_class{
+	width:200px; 
+	font-size: 12px;
+}
+/*设置抽屉导航菜单标题样式*/
+.minv2_navigationDrawer_titleDiv_class{
+	font-size: 16px;
+	font-weight:900px; 
+	color: #1d83e1;
+}
+/*users/common/navigationDrawer.jsp[用户管理页面-左部区域-抽屉导航菜单标题] 样式                           结束*/
+
+/*users/iframePage/proteam/proteamManageIframe.jsp[班组管理子页面-框架]样式                             开始*/
+.minv2_proteamManageIfraame_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+.minv2_proteamManageIfraame_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float: left;
+	/*background-color:#00FF00;
+	border:1px #FF0000 solid;*/
+}
+.minv2_proteamManageIfraame_rightDiv_class{
+	height:100%;
+	margin-left: 252px;
+}
+.minv2_proteamManageIfraame_rightIframe_class{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+.minv2_proteamManageIfraame_tree_class{
+	width: 220px; 
+	height: 500px; 
+	overflow: auto;
+}
+/*users/iframePage/proteam/proteamManageIframe.jsp[班组管理子页面-框架]样式                             结束*/
+
+/*users/iframePage/proteam/usersManageChildIframe.jsp[班组管理-用户管理子页面]样式                     开始*/
+.minv2_usersManageChildIframe_line_class{
+	border-bottom: 1px #7ebffc solid;
+}
+
+/*users/iframePage/proteam/usersManageChildIframe.jsp[班组管理-用户管理子页面]样式                     结束*/
+
+
+/*users/iframePage/depart/departManageIframe.jsp[部门管理子页面-框架]样式                               开始*/
+.minv2_departManageIfraame_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+.minv2_departManageIfraame_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float: left;
+	/*background-color:#00FF00;
+	border:1px #FF0000 solid;*/
+}
+.minv2_departManageIfraame_rightDiv_class{
+	height:100%;
+	margin-left: 252px;
+}
+.minv2_departManageIfraame_rightIframe_class{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+.minv2_departManageIfraame_tree_class{
+	width: 220px; 
+	height: 500px; 
+	overflow: auto;
+}
+/*users/iframePage/depart/departManageIframe.jsp[部门管理子页面-框架]样式                               结束*/
+
+
+
+/*users/iframePage/roles/rolesManageIframe.jsp[角色管理子页面-框架]样式                               开始*/
+.minv2_rolesManageIfraame_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+/*users/iframePage/roles/rolesManageIframe.jsp[角色管理子页面-框架]样式                               结束*/
+
+
+/*pj/iframePage/storeDynamicInfo/newPiecesManageIframe.jsp[配件管理-新件入库] 样式                           开始*/
+.minv2_newPiecesManageIframe_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+.minv2_newPiecesManageIframe_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float: left;
+	
+}
+.minv2_newPiecesManageIframe_rightDiv_class{
+	height:100%;
+	margin-left: 230px;
+}
+.minv2_newPiecesManageIframe_rightIframe_class{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+/*pj/iframePage/storeDynamicInfo/newPiecesManageChildIframe.jsp[配件管理-新件入库] 样式                           结束*/
+
+
+
+/*pj/iframePage/storeDynamicInfo/unitManageIframe.jsp[配件管理-配件动态信息管理-专业分类] 样式                           开始*/
+.minv2_unitManageIframe_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+.minv2_unitManageIframe_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float: left;
+}
+.minv2_unitManageIframe_rightDiv_class{
+	height:100%;
+	margin-left: 230px;
+}
+.minv2_unitManageIframe_rightIframe_class{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+/*pj/iframePage/storeDynamicInfo/unitManageIframe.jsp[配件管理-新件入库] 样式                           结束*/
+
+
+
+/*pj/iframePage/storeDynamicInfo/jctypeManageIframe.jsp[配件管理-配件动态信息管理-车型分类] 样式                           开始*/
+.minv2_jctypeManageIframe_mainDiv_class{
+	height:100%;
+	background-color:white;
+}
+.minv2_jctypeManageIframe_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float: left;
+}
+.minv2_jctypeManageIframe_rightDiv_class{
+	height:100%;
+	margin-left: 230px;
+}
+.minv2_jctypeManageIframe_rightIframe_class{
+	height:100%;
+	width:100%;
+	overflow:auto;
+}
+/*pj/iframePage/storeDynamicInfo/jctypeManageIframe.jsp[配件管理-新件入库] 样式                           结束*/                        
+	
+
+/*pj/iframePage/storeStaticInfo/storeStaticInfoManagerIframe.jsp[配件信息管理] 样式 				开始*/
+#minv2_storeStaticInfoManagerIframe_button{
+    float:right
+}
+#minv2_storeStaticInfoManagerIframe_td_left{
+   text-align:left
+}	
+#minv2_storeStaticInfoManagerIframe_div{
+	display:none
+}	
+#minv2_storeStaticInfoManagerIframe_input{
+	width:220px
+}
+#minv2_storeStaticInfoManagerIframe_td_none{
+	display:none
+}
+#minv2_storeStaticInfoManagerIframe_td_right{
+	text-align:right
+}
+	
+#minv2__storePositionManagerIframe_line_class{
+	border-bottom: 1px #7ebffc solid;
+}	
+/*pj/iframePage/firstUnit/firstUnitManageIframee.jsp[配件信息管理] 样式 				结束*/	
+	
+
+
+
+.minv2_firstUnitManageIframe_mainDiv_class{
+	height:100%;
+	background-color:white;
+	float: left;
+}
+.minv2_firstUnitManageIframe_leftDiv_class{
+	width:230px;
+	height: 100%;
+	float:left;
+}
+.minv2_firstUnitManageIframe_rightDiv_class{
+	height:530px;
+	margin-left: 0px;
+	float:right;
+}
+.minv2_firstUnitManageIframe_rightIframe_class{
+	height:100%;
+	width:800px;
+	overflow:auto;
+}
+/*pj/iframePage/storeDynamicInfo/jctypeManageIframe.jsp[配件管理-新件入库] 样式                           结束*/
+
+/**  unitManageChildIframe页面查询按钮样式 */
+.minv2_unitManageChildIframe_findBtn_class{
+	float:center;
+}
+
+/*pjFix/iframePage/pjSDIRecordFixCheck/pjSDIRecordFixCheck.jsp[配件管理-查询配件检修记录]样式   	开始*/
+.minv2_pjSDIRecordFixCheck_float_left{
+	float:left;
+}
+
+.minv2_pjSDIRecordFixCheck_float_{
+	positin:absolute;
+	float:left;
+	top:80px
+}
+
+
+/*pjFix/iframePage/accessoriesCategories/alertDialog/addUnattendedAccessoriesDialogl.jsp[配件管理-查询配件检修记录]样式   	开始*/
+
+
+.minv2_pjSDInfoRepairCheck_span{
+	font-size:14px;
+}
+
+/*pjFix/iframePage/checkFixPj/qc/maintenancePjManagerIframe.jsp[质检员签认静态信息]			开始*/
+.minv2_maintenancePjManagerIframe_span_class{
+	color:red;
+}
+/*pjFix/iframePage/checkFixPj/qc/maintenancePjManagerIframe.jsp[质检员签认静态信息]			结束*/
+
+
+
+/*comom/top.jsp 用户主页面 头部DIV导航栏联动下拉框样式              					       开始 */	
+#minv2_top_topDiV{
+    position:absolute;
+    top:81px;
+    right:350px
+}
+
+#minv2_top1_topDiV{
+    position:absolute;
+    top:81px;
+    right:470px
+}
+#minv2_top2_topDiV{
+    position:absolute;
+    top:81px;
+    right:590px
+}
+#minv2_top3_topDiV{
+    position:absolute;
+    top:81px;
+    right:710px
+}
+#minv2_top4_topDiV{
+    position:absolute;
+    top:81px;
+    right:830px
+}
+#minv2_top5_topDiV{
+    position:absolute;
+    top:81px;
+    left:296px
+}
+#minv2_top6_topDiV{
+    position:absolute;
+    top:81px;
+    left:177px
+}
+#minv2_top7_topDiV{
+    position:absolute;
+    top:81px;
+    left:58px
+}
+/*comom/top.jsp 用户主页面 头部DIV导航栏联动下拉框样式              					       结束 */
+

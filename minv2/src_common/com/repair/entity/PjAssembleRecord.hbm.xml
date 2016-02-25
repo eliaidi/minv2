@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="PjAssembleRecord" table="PJ_ASSEMBLE_RECORD">
+		<id name="id" column="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_PJ_ASSEMBLE_RECORD</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="planDate">
+			<column name="PLAN_DATE_ID">
+				<comment>日计划表ID（中有机车编号）</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="pjDynamicInfo">
+			<column name="PJ_DYNAMIC_ID">
+				<comment>配件动态信息ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="pjdCode" >
+			<column name="PJD_CODE">
+				<comment>配件编码</comment>
+			</column>
+		</property>
+		
+		<property name="remark" >
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

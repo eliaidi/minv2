@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="dictPjFirstUnit" location="0,0" size="0,0">
+    <action name="addDictPjFirstUnit" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictPjFirstUnitIndex.jsp" />
+      </result>
+    </action>
+    <action name="findDictPjFirstUnitByUnitName" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictPjFirstUnitIndex.jsp" />
+      </result>
+    </action>
+    <action name="findAllDictPjFirstUnit" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictPjFirstUnitIndex.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="dictPjFirstUnitIndex.jsp" path="/test/pj/dictPjFirstUnitIndex.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

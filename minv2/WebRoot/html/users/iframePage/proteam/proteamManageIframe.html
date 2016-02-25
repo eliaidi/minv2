@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>机务检修信息管理系统-用户管理-班组管理子页</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!-- uurframe页面框架 -------------------------- 开始-->
+	<!--uurframe框架必需  开始-->
+	<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/bsFormat.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+	<!-- 所有的css都从mainframe目录开始找 -->
+	<link  rel="stylesheet" id="skin" prePath="../../../../mainframe/"/>
+	<!--uurframe框架必需  结束-->
+	<!--uurframe浮动窗体、弹出窗体、消息组件  开始-->
+	<script type="text/javascript" src="../../../../mainframe/js/attention/floatPanel.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/attention/messager.js"></script>
+	 <!-- 
+	<script type="text/javascript" src="../../../../mainframe/js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/attention/zDialog/zDialog.js"></script>
+	-->
+	<script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+	<!--uurframe浮动窗体、弹出窗体、消息组件  结束-->
+	<!-- uurframe页面框架 -------------------------- 结束-->
+	
+	<!-- 下拉菜单组件   开始   使用在IE6中会报找不到元素错误。
+	<link href="../../../../js/pro_dropdown_2/pro_dropdown_2.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../../../../js/pro_dropdown_2/stuHover.js"></script> 
+	<!-- 下拉菜单组件   结束-->
+	
+	
+	<!-- wdTree树形菜单------------------------------开始-->
+	<link href="../../../../js/wdTree/css/tree.css" rel="stylesheet" type="text/css" />
+	<!-- 导入wdTree所必需的JS -->
+	<script src="../../../../js/wdTree/js/jquery.tree.js" type="text/javascript"></script>
+	<!--  执行JS，将节点数据存入全局变量treedata中 -->
+	<script src="../../../../js/wdTree/data/proteamManageIframe_left_loadData.js" type="text/javascript"></script>
+	<!-- wdTree树形菜单------------------------------结束-->
+     
+	<!--修正IE6支持透明png图片start-->
+	<script type="text/javascript" src="../../../../mainframe/js/method/pngFix/supersleight.js"></script>
+	<!--修正IE6支持透明png图片end-->
+	
+	
+	<link rel="stylesheet" type="text/css" href="../../../../js/style.css" />
+	
+
+  </head>
+  
+  <body>
+  	<!-- proteamManageIfraame_mainDiv 主div                                           开始 -->
+    <div id="minv2_proteamManageIfraame_mainDiv" class="minv2_proteamManageIfraame_mainDiv_class">
+    	 <!--左边菜单DIV                                                                     开始-->
+            <div id="minv2_proteamManageIfraame_leftDiv" class="minv2_proteamManageIfraame_leftDiv_class">
+            	<!-- 盒子模型上方                                                            开始 -->
+				<div class="box2" panelWidth="230" panelHeight="1000" panelTitle="班组目录" overflow="auto" >
+					<!--班组(proteam)目录进行编辑数据部分 				开始-->
+					<div class="minv2_proteamManageIfraame_proteamDictBtnDiv_class">
+							<button onclick='top.Dialog.open({URL:"alertDialog/addProteamDialog.html",Title:"新增班组"});'/><span class="icon_add">新增</span></button>
+							<button onclick='top.Dialog.open({URL:"alertDialog/updateProteamDialog.html",Title:"修改班组"});'><span class="icon_edit">修改</span></button>
+							<button><span class="icon_delete">删除</span></button>
+					</div>
+				   <!--班组(proteam)目录进行编辑数据部分 				结束-->
+			  	    <!-- 班组(proteam)目录数据的显示 DIV						开始-->
+					<div id="scrollContent">
+						<div id="tree">
+							
+						</div>
+				    </div>
+				    <!-- 班组(proteam)目录数据的显示 DIV						结束-->
+			    </div>
+			    <!-- 盒子模型上方                                                            结束 -->			
+            </div>
+            <!--左边菜单DIV                                                                  结束-->
+            
+            <!--右边内容DIV                                                                  开始-->
+            <div id="minv2_proteamManageIfraame_rightDiv" class="minv2_proteamManageIfraame_rightDiv_class">
+            	<iframe id="minv2_proteamManageIfraame_contentIframe" name="minv2_proteamManageIfraame_rightIframe" class="minv2_proteamManageIfraame_rightIframe_class" scrolling="auto" frameborder="no" src="usersManageChildIframe.html" width="100%" height="100%"></iframe>
+            </div> 
+            <!--右边内容DIV                                                                  结束-->
+    </div>
+    <!-- proteamManageIfraame_mainDiv 主div                                           结束 -->
+  </body>
+</html>
+
+

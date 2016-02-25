@@ -1,0 +1,2 @@
+1、storePositionManagerIframe.html：仓库管理主页
+2、alertDialog：仓库管理主页中所需要用的的弹出页面

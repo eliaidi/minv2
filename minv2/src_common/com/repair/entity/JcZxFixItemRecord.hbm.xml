@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcZxFixItemRecord" table="JC_ZX_FIX_ITEM_RECORD">
+		<id name="id" column="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_ZX_FIX_ITEM_RECORD</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="planDate" cascade="save-update">
+			<column name="PLAN_DATE_ID">
+				<comment>机车检修日计划表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="fixItem" cascade="save-update">
+			<column name="FIX_ITEM_ID">
+				<comment>机车中修检修项目表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="fixCondition" >
+			<column name="FIX_CONDITION">
+				<comment>检修情况（如71,90；完成；1；13-05-42D，等数据，是工人签的内容  ）</comment>
+			</column>
+		</property>
+		
+		<property name="unitMeasure" >
+			<column name="UNIT_MEASURE">
+				<comment>计量单位</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="fixFlow" cascade="save-update">
+			<column name="FIX_FLOW_ID">
+				<comment>项目节点，机车检修节点ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="fixUsers">
+			<column name="FIX_USERS">
+				<comment>检修人姓名(name_工号)，存值如：（张飞_0726,关羽_1189….）</comment>
+			</column>
+		</property>
+		
+		<property name="fixUsersCheckTime" >
+			<column name="FIX_USERS_CHECK_TIME">
+				<comment>检修人签认时间</comment>
+			</column>
+		</property>
+
+		<many-to-one name="leadUsers" cascade="save-update">
+			<column name="LEAD_USERS_ID">
+				<comment>工长ID</comment>
+			</column>
+		</many-to-one>
+
+		<property name="leadCheck" >
+			<column name="LEAD_CHECK">
+				<comment>工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+
+		<property name="leadUsersCheckTime" >
+			<column name="LEAD_USERS_CHECK_TIME">
+				<comment>工长签认时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="commitLeadUsers" cascade="save-update">
+			<column name="COMMIT_LEAD_USERS_ID">
+				<comment>交车工长ID</comment>
+			</column>
+		</many-to-one>
+	
+		
+		<property name="commitLeadCheck" >
+			<column name="COMMIT_LEAD_CHECK">
+				<comment>工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="commitLeadCheckTime" >
+			<column name="COMMIT_LEAD_CHECK_TIME">
+				<comment>交车工长验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="qcUsers" cascade="save-update">
+			<column name="QC_USERS_ID">
+				<comment>质检员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="qcCheck" >
+			<column name="QC_CHECK">
+				<comment>质检员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="qcCheckTime" >
+			<column name="QC_CHECK_TIME">
+				<comment>质检员验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="acceptanceUsers" cascade="save-update">
+			<column name="ACCEPTANCE_USERS_ID">
+				<comment>验收员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="acceptanceCheck" >
+			<column name="ACCEPTANCE_CHECK">
+				<comment>验收员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="acceptanceCheckTime">
+			<column name="ACCEPTANCE_CHECK_TIME">
+				<comment>验收员验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="technicianUsers" cascade="save-update">
+			<column name="TECHNICIAN_USERS_ID">
+				<comment>技术员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="technicianCheck" >
+			<column name="TECHNICIAN_CHECK">
+				<comment>技术员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="technicianCheckTime" >
+			<column name="TECHNICIAN_CHECK_TIME">
+				<comment>技术员验收时间</comment>
+			</column>
+		</property>
+	
+	
+		<many-to-one name="twoInspectionUsers" cascade="save-update">
+			<column name="TWO_INSPECTION_USERS_ID">
+				<comment>复探人员ID</comment>
+			</column>
+		</many-to-one>
+	
+	
+		<property name="twoInspectionCheck">
+			<column name="TWO_INSPECTION_CHECK">
+				<comment>复探是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="twoInspectionCheckTime">
+			<column name="TWO_INSPECTION_CHECK_TIME">
+				<comment>复探验收时间</comment>
+			</column>
+		</property>
+		
+		<property name="inspectionCondition" >
+			<column name="INSPECTION_CONDITION">
+				<comment>探伤处理情况</comment>
+			</column>
+		</property>
+		
+		<property name="recordStatus" >
+			<column name="RECORD_STATUS">
+				<comment>记录状态 0、检修人待签字；1、工长待签字；2、技术员待签字；3、质检员待签字； 3、交车工长待签字； 4、验收员待签字； 5、完成； </comment>
+			</column>
+		</property>
+		
+		<property name="remark" >
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

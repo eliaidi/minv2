@@ -1,0 +1,2 @@
+1、ToChoiceJcMPRecorderAction	跳至选择计划页面（跳至，选择机车主计划记录页面）
+2、ToChoiceBZJcMPRecorderAction：跳至选择班组，机车主计划记录页面

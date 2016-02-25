@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+  	<title>机务检修信息管理系统-配件管理-->仓库管理</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+    
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+   
+    <!-- 弹出窗口的JS	开始 -->
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+    <!-- 弹出窗口的JS  结束 -->
+    
+    <!-- 自定义样式 				开始 -->
+    <link rel="stylesheet" href="../../../../js/style.css"/>
+    <!-- 自定义样式 				开始 -->
+    
+ </head>
+  
+  <body>
+    <!-- 用户管理 功能操作和数据显示区域    start ************ -->
+  	<div class="box2" panelTitle="仓库管理" roller="false" overflow="true">
+		<table width="100%">
+			<!-- *********	操作功能区  start  ********** -->
+
+			<tr>
+				<td>
+					<div  >	
+						<table width="90%" border="0px">
+							<tr>
+								<td >仓库名 <input type="text"  style="width:80%"/></td>
+							
+								<td >机务段 
+									<select autoWidth="true" style="width:90%;">
+										<option>长沙</option>
+									</select>
+								</td>
+							
+								<td >类型
+									<select autoWidth="true" style="width:90%;">
+										<option>0、平库</option>
+									</select>
+								</td>
+							</tr>
+							
+							<Tr>
+								<Td colspan="3" style="text-align:right">
+									<button onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/addRolesDialog.html",Title:"新增仓库",ShowCloseButton:true});'><span class="icon_add">新增</span></button>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+								</Td>
+							</Tr>
+						</table>
+						
+					</div>
+				</td>
+			</tr>
+			<!-- *********	操作功能区  end  ********** -->
+			
+			<!-- ************************************************************************************************* -->
+			
+			<!-- *********	数据显示区  start  ********** -->
+			<tr>
+				<td colspan="11">
+					<div>
+						<table class="tableStyle"  sortMode="true" headFixMode="true" useMultColor="true" >
+							<tr>
+								<th width="5%">序号</th>
+								<th width="20%">位置/仓库名</th>
+								<th width="10%">配件数/件</th>
+								<th width="15%">地区/机务段ID</th>
+								<th width="10%">位置/仓库类型</th>
+								<th width="10%">操作</th>
+							</tr>
+						</table>
+					</div>
+					
+					<div id="scrollContent" class="border_gray" roller="false" overflow="auto">
+						<table class="tableStyle" sortMode="true" useMultColor="false">
+							<tr >
+								<td width="5%">5</td>
+								<td width="20%">长沙配件平库</td>
+								<td width="10%">38</td>
+								<td width="15%">长沙</td>
+								<td width="10%">平仓</td>
+								<td width="10%">
+									<button onclick='top.Dialog.open({URL:"./iframePage/storePosition/alertDialog/editStorePositionDialog.html",Title:"仓库修改"});'><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td width="5%">4</td>
+								<td width="20%">长沙配件立库</td>
+								<td width="10%">87</td>
+								<td width="15%">长沙</td>
+								<td width="10%">立库</td>
+								<td width="10%">
+									<button onclick='top.Dialog.open({URL:"iframePage/warehouse/alertDialog/updateWarehouseDialog.html",Title:"仓库修改"});'><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td width="5%">3</td>
+								<td width="20%">长沙配件平库</td>
+								<td width="10%">38</td>
+								<td width="15%">长沙</td>
+								<td width="10%">平仓</td>
+								<td width="10%">
+									<button onclick='top.Dialog.open({URL:"iframePage/warehouse/alertDialog/updateWarehouseDialog.html",Title:"仓库修改"});'><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr >
+								<td width="5%">2</td>
+								<td width="20%">长沙配件电器班组仓</td>
+								<td width="10%">9</td>
+								<td width="15%">长沙</td>
+								<td width="10%">班组库</td>
+								<td width="10%">
+									<button onclick='top.Dialog.open({URL:"iframePage/warehouse/alertDialog/updateWarehouseDialog.html",Title:"仓库修改"});'><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr >
+								<td width="5%">1</td>
+								<td width="20%">株洲配件仓库外地库</td>
+								<td width="10%">3</td>
+								<td width="15%">株洲</td>
+								<td width="10%">外地</td>
+								<td width="10%">
+									<button onclick='top.Dialog.open({URL:"iframePage/warehouse/alertDialog/updateWarehouseDialog.html",Title:"仓库修改"});'><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	数据显示区  end  ********** -->
+		</table>
+	</div>
+	<!-- 用户管理 功能操作和数据显示区域    end  ************* -->
+	
+	
+
+	<!-- *********	分页信息显示区  start  ********** -->
+	<div style="height:35px;">
+		<div class="float_left padding5">
+			配件总数（除外地库）：<font color="red">-140</font>件
+		</div>
+		<div class="float_right padding5 paging">
+			<div class="float_left padding_top4">
+			<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+			<span class="paging_current"><a href="javascript:;">1</a></span>
+			<span><a href="javascript:;">2</a></span>
+			<span><a href="javascript:;">3</a></span>
+			<span><a href="javascript:;">4</a></span>
+			<span><a href="javascript:;">5</a></span>
+			<span>...</span>
+			<span><a href="javascript:;">20</a></span>
+			<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+			</div>
+			<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+			<div class="float_left padding_top4">条记录</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- *********	分页信息显示区  start  ********** -->
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>管理员界面-->用户角色-->用户管理-->部门目录-->修改部门页面</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   	
+   	<!--uurframe页面框架 ------------------------------开始 -->
+	<!--uurframe框架必需			开始-->
+	<script type="text/javascript" src="../../../../../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../../../../../mainframe/js/framework.js"></script>
+	<link href="../../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin" prePath="../../../../..//mainframe/"/>
+	<!--uurframe框架必需			结束-->
+	
+	<!-- uurframe多级树形表格组件				开始 -->
+	<script type="text/javascript" src="../../../../../js/dtree/dtree.js"></script>
+	<link href="../../../../js/dtree/dtree.css" rel="stylesheet" type="text/css"/>
+	<!-- uurframe多级树形表格组件				结束 -->
+	
+	<!--截取文字start-->
+	<script type="text/javascript" src="../../../../../js/flexigrid/text-overflow.js"></script>
+	<!--截取文字end-->
+	<!--uurframe页面框架 								结束 -->
+  </head>
+  <body>
+    <!--uurframe盒子模型   上方					开始-->
+     <div class="box8" panelWidth="536" panelHeight="300">
+	    <table class="tableStyle" transMode="true" border="2">
+			    <tr>
+					<td>部门名称: </td>
+					<td>
+						<input class="easyui-validatebox" type="text" name="dictpdepart.pdepartname" value="整备车间"></input>
+					</td>
+				</tr>
+				<tr>	
+					<td>部门拼音: </td>
+					<td>
+						<input class="easyui-validatebox" type="text" name="dictpdepart.py" value="JCZ"></input>
+					</td>
+				</tr>
+			  	<tr>	
+					<td>所属地区: </td>
+					<td>
+					<!-- 显示地区数据                                                                  开始-->
+						<div id="checkGroup" class="render">
+		                       <input type="radio"  name="jctypes" value="广州" checked="checked"/>广州
+		                      <input type="radio"  name="jctypes" value="怀化"/>怀化
+		                      <input type="radio"  name="jctypes" value="长沙"/>长沙
+		                      <input type="radio"  name="jctypes" value="株洲"/>株洲
+		                      <input type="radio"  name="jctypes" value="衡阳"/>衡阳  
+		                      <input type="radio"  name="jctypes" value="龙川" />龙川
+		                      <input type="radio"  name="jctypes" value="三水"/>三水           
+		                      <input type="radio"  name="jctypes" value="南宁"/>南宁
+		                  <div class="clear"></div>
+	                    </div>
+	                <!-- 显示地区数据                                                                  结束 -->
+	                </td>    
+				</tr>	
+	            <tr>
+					<td colspan="2">
+						<input type="button" id="enter"  value="修 改"/>&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="重 置 "/>
+					</td>
+				</tr>      
+			</table>
+        </div>
+        <!--uurframe盒子模型下方						结束-->
+  </body>
+</html>

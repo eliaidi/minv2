@@ -1,0 +1,27 @@
+#infotable,#bzFinishiInfo{
+	border-collapse: collapse;
+}
+
+#infotable th,#infotable td,#bzFinishiInfo th,#bzFinishiInfo td{
+	border:1px solid #82A8F9;
+	padding-left:2px;
+	padding-right:2px;
+	height:25px;
+	line-height:25px;
+}
+
+#jcinfo a{
+	font-size:12px;
+	border:1px solid #999;
+	display:block;
+	float:left;
+	width:60px;
+	text-decoration: none;
+	height:20px;
+	line-height: 20px;
+	text-align: center;
+	margin-right:5px;
+	font-weight: bold;
+	background-color:#900;
+	color:#fff;
+}

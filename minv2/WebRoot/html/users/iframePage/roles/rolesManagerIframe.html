@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+  	<title>机务检修信息管理系统-用户管理主页-->班组目录右边-->内容显示页面</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+   
+    <!-- 弹出窗口的JS	开始 -->
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+    <!-- 弹出窗口的JS  结束 -->
+    
+    <!-- 自定义样式 				开始 -->
+    <link rel="stylesheet" href="../../../../js/style.css"/>
+    <!-- 自定义样式 				开始 -->
+    
+    <!-- 自定义js 							开始 -->
+    <script type="text/javascript">
+    function deleteRole(){
+        top.Dialog.alert('该角色存在用户不能删除!');
+        //top.Dialog.alert('角色信息删除成功!');
+        }
+function toaddRole(){
+		top.Dialog.open({URL:"iframePage/role/alertDialog/addRolesDialog.html",Width:360,Height:180,Title:"添加角色"});
+		}
+function toupdateRole(){
+		top.Dialog.open({URL:"iframePage/role/alertDialog/updateRolesDialog.html",Width:360,Height:180,Title:"修改角色"});
+		}
+function tograntRole(){
+		top.Dialog.open({URL:"iframePage/role/alertDialog/grantRolesDialog.html",Width:480,Height:640,Title:"给角色授权"});
+		}
+    </script>
+    <!-- 自定义js 							结束 -->
+    
+ </head>
+  
+  <body>
+    <!-- 用户管理 功能操作和数据显示区域    start ************ -->
+  	<div class="box2" panelTitle="角色管理" roller="false" overflow="auto">
+		<table width="100%">
+			<!-- *********	操作功能区  start  ********** -->
+
+			<tr>
+				<td>
+					<div class="box1" align="right">	
+						<button onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/addRolesDialog.html",Title:"角色增加",ShowCloseButton:true});'><span class="icon_add">新增</span></button>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	操作功能区  end  ********** -->
+			
+			<!-- ************************************************************************************************* -->
+			
+			<!-- *********	数据显示区  start  ********** -->
+			<tr>
+				<td colspan="11">
+					<div id="scrollContent" class="border_gray">
+						<table class="tableStyle" id="tableCss">
+							<tr>
+								<th width="10%">角色标示</th>
+								<th width="5%">角色名称</th>
+								<th width="20%">角色拼音</th>
+								<th width="15%">角色说明</th>
+								<th width="10%">操作</th>
+							</tr>
+							<tr class="minv2_rolesManagerIframe_table_class">
+								<td>1</td>
+								<td>工人</td>
+								<td>GR</td>
+								<td>班组工长</td>
+								<td>
+									<span class="img_user hand" title="授权" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/grantRolesDialog.html",Title:"角色授权",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/updateRolesDialog.html",Title:"角色修改",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除" onclick='top.Dialog.confirm("确定删除吗？",function(){window.location="iframePage/roles/rolesManagerIframe.html"});'></span>
+								</td>
+							</tr>
+							<tr class="minv2_rolesManagerIframe_table_class">
+								<td>1</td>
+								<td>工人</td>
+								<td>GR</td>
+								<td>班组工长</td>
+								<td>
+									<span class="img_user hand" title="授权" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/grantRolesDialog.html",Title:"角色授权",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/updateRolesDialog.html",Title:"角色修改",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr class="minv2_rolesManagerIframe_table_class">
+								<td>1</td>
+								<td>工人</td>
+								<td>GR</td>
+								<td>班组工长</td>
+								<td>
+									<span class="img_user hand" title="授权" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/grantRolesDialog.html",Title:"角色授权",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/updateRolesDialog.html",Title:"角色修改",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr class="minv2_rolesManagerIframe_table_class">
+								<td>1</td>
+								<td>工人</td>
+								<td>GR</td>
+								<td>班组工长</td>
+								<td>
+									<span class="img_user hand" title="授权" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/grantRolesDialog.html",Title:"角色授权",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/roles/alertDialog/updateRolesDialog.html",Title:"角色修改",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	数据显示区  end  ********** -->
+		</table>
+	</div>
+	<!-- 用户管理 功能操作和数据显示区域    end  ************* -->
+	
+	
+
+	<!-- *********	分页信息显示区  start  ********** -->
+	<div style="height:35px;">
+		<div class="float_left padding5">
+			
+		</div>
+		<div class="float_right padding5 paging">
+			<div class="float_left padding_top4">
+			<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+			<span class="paging_current"><a href="javascript:;">1</a></span>
+			<span><a href="javascript:;">2</a></span>
+			<span><a href="javascript:;">3</a></span>
+			<span><a href="javascript:;">4</a></span>
+			<span><a href="javascript:;">5</a></span>
+			<span>...</span>
+			<span><a href="javascript:;">20</a></span>
+			<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+			</div>
+			<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+			<div class="float_left padding_top4">条记录</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- *********	分页信息显示区  start  ********** -->
+  </body>
+</html>

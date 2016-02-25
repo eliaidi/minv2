@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.repair.entity.PjFixItem" table="PJ_FIX_ITEM" >
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="22" scale="0">
+				<comment>主键ID</comment>
+			</column>
+			<generator class="sequence">
+		   		 <param name="sequence">SEQ_PJ_FIX_ITEM_ID</param>
+			</generator>
+		</id>
+		<many-to-one name="parentPjFixItem" class="com.repair.entity.PjFixItem" fetch="select">
+			<column name="PARENT_ID" precision="22" scale="0">
+				<comment>PJ_FIX_ITEM(配件检修项目表)</comment>
+			</column>
+		</many-to-one>
+		<property name="fixItemName" type="java.lang.String">
+			<column name="FIX_ITEM_NAME">
+				<comment>配件检修项目名称</comment>
+			</column>
+		</property>
+		<property name="fixItemPart" type="java.lang.String">
+			<column name="FIX_ITEM_PART">
+				<comment>配件检修项目-部位名称</comment>
+			</column>
+		</property>
+		<many-to-one name="pjStoreStaticInfo" class="com.repair.entity.PjStoreStaticInfo" fetch="select">
+			<column name="PJ_STATIC_ID">
+				<comment>PJ_STORE_STATIC_INFO（配件仓库静态/基本信息表)</comment>
+			</column>
+		</many-to-one>	
+		<property name="fixItemNumber" type="java.lang.Integer">
+			<column name="FIX_ITEM_NUMBER">
+				<comment>配件检修项目顺序号</comment>
+			</column>
+		</property>		
+		<property name="defaultValue" type="java.lang.String">
+			<column name="DEFAULT_VALUE">
+				<comment>项目填报默认值</comment>
+			</column>
+		</property>
+		<property name="showStatus" type="java.lang.Integer">
+			<column name="SHOW_STATUS">
+				<comment>项目在查询报表显示状态：0、不显示；1显示</comment>
+			</column>
+		</property>
+		<many-to-one name="dictProteam" class="com.repair.entity.DictProteam">
+			<column name="PROTEAM_ID">
+				<comment>项目检修班组ID</comment>
+			</column>
+		</many-to-one>
+		<property name="leadCheck" type="java.lang.Integer">
+			<column name="LEAD_CHECK">
+				<comment>工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="commitLeadCheck" type="java.lang.Integer">
+			<column name="COMMIT_LEAD_CHECK">
+				<comment>交车工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="qcCheck" type="java.lang.Integer">
+			<column name="QC_CHECK">
+				<comment>质检员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="acceptanceCheck" type="java.lang.Integer">
+			<column name="ACCEPTANCE_CHECK">
+				<comment>验收员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="technicianCheck" type="java.lang.Integer">
+			<column name="TECHNICIAN_CHECK">
+				<comment>技术员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="twoInspectionCheck" type="java.lang.Integer">
+			<column name="TWO_Inspection_CHECK">
+				<comment>复探是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		<property name="minValue" type="java.lang.Double">
+			<column name="MIN_VALUE">
+				<comment>最小值（double,10）</comment>
+			</column>
+		</property>
+		<property name="maxValue" type="java.lang.Double">
+			<column name="MAX_VALUE">
+				<comment>最大值（double,10）</comment>
+			</column>
+		</property>
+		<property name="unitMeasure" type="java.lang.String">
+			<column name="UNIT_MEASURE">
+				<comment>计量单位</comment>
+			</column>
+		</property>
+		<set name="childPjFixItems" inverse="true" lazy="false">
+			<key>
+				<column name="PARENT_ID">
+					<comment>PjFixItem</comment>
+				</column>
+			</key>
+			<one-to-many class="com.repair.entity.PjFixItem"/>
+		</set>
+		<set name="pjFItemPreinstallTypes" inverse="true" lazy="false">
+			<key>
+				<column name="PJ_F_I_ID">
+					<comment>PjFItemPreinstallType</comment>
+				</column>
+			</key>
+			<one-to-many class="com.repair.entity.PjFItemPreinstallType"/>
+		</set>
+		<!-- 
+		<set name="pjSDInfoRecordFixes" inverse="true" lazy="false">
+			<key>
+				<column name="PJ_FIX_ITEM_ID">
+					<comment>PjSDInfoRecordFix</comment>
+				</column>
+			</key>
+			<one-to-many class="com.repair.entity.PjSDInfoRecordFix"/>
+		</set>
+		 -->
+	</class>
+</hibernate-mapping>

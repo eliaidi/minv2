@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+	<title>机车检修日计划操作</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<meta http-equiv="description" content="This is my page" />
+		
+		<!--uurframe框架必需  开始-->
+		<link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/bsFormat.js"></script>
+		<script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+		<!-- 所有的css都从mainframe目录开始找 -->
+		<link  rel="stylesheet" id="skin" prePath="../../../../mainframe/"/>
+		<!--uurframe框架必需  结束-->
+		
+		<script type="text/javascript" src="../../../../js/zx/js/dailyplanoperate_script.js"></script>
+		<!-- 时间日历控件						开始 -->
+		<script type="text/javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+		<!-- 时间日历控件						结束 -->
+		
+		
+</head>
+	<body>
+		<div class="box1" panelHeight="410" whiteBg="true">
+			<form action="" method="post" target="jcmain" id="subform">
+				<table width="100%">
+					<input type="hidden" id="mainPlanDetailid" name="mainPlanDetailid" value=""/>
+					<input type="hidden" id="workTeam" name="datePlan.workTeam" value=""/>
+					<tr>
+						<td width="40%">
+							<div style="text-align: right; margin-right: 20px;">车型：</div>
+						</td>
+						<td>
+							<input type="text" id="jcType" name="datePlan.jcType"/>&nbsp;<input id="jccurriculum" type="button" value="选择" onclick="findJcCurriculum()"/>&nbsp;<input id="jcweekplan" type="button" value="周计划" onclick="findWeekPlan()"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">车号：</div>
+						</td>
+						<td>
+							<input type="text" id="jcNum" name="datePlan.jcnum"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">修程：</div>
+						</td>
+						<td>
+							<input type="text" id="fixFreque" name="datePlan.fixFreque"/>
+							<input id="jcfixFreque" type="button" value="选择" onclick="findFixFreque()"/>&nbsp;&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">股道：</div>
+						</td>
+						<td>
+						<%-- param:用于拿到当前页面传过来的值 --%>
+							<input type="text" name="datePlan.gdh" value="${param.gdh }" readonly="readonly" title="此框禁止用户不能进行修改"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">台位：</div>
+						</td>
+						<td>
+							<input type="text" name="datePlan.twh" value="${param.twh }" readonly="readonly" title="此框禁止用户不能进行修改"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">计划扣车时间：</div>
+						</td>
+						<td>
+							<input type="text" class="Wdate" onfocus="WdatePicker()" id="kcsj" name="datePlan.kcsj" style="width:120px" value='<%=new SimpleDateFormat("yyyy-MM-dd 07:00").format(new Date())%>'/>
+							如,2012-12-14 04:51
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">计划起机时间：</div>
+						</td>
+						<td>
+							<input type="text" class="Wdate" onfocus="WdatePicker()" name="datePlan.jhqjsj" style="width:120px" value='<%=new SimpleDateFormat("yyyy-MM-dd 13:30").format(new Date())%>'/>
+							如,2012-12-14 04:51
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">计划交车时间：</div>
+						</td>
+						<td>
+							<input type="text" class="Wdate" onfocus="WdatePicker()" name="datePlan.jhjcsj" style="width:120px" value='<%=new SimpleDateFormat("yyyy-MM-dd 16:30").format(new Date())%>'/>
+							如,2012-12-14 04:51
+						</td>
+					</tr>
+					<tr>
+						<td><div style="text-align: right; margin-right: 20px;">备注: </div></td>
+						<td>
+						<textarea name="datePlan.comments" rows="4" cols="10"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div style="text-align: right; margin-right: 20px;">交车工长：</div>
+						</td>
+						<td>
+							<select name="id" class="default" style="width:80px" id="jcgz">
+								<option value="">请选择</option>
+								<c:forEach var="entry" items="${users}">
+									<option value="${entry.userid}">${entry.xm}</option>
+								</c:forEach>
+							</select>
+							<font color="red">*可以不指定</font>&nbsp;
+							<input type="checkbox" id="choiceProteam"/>指定包修班组
+						</td>
+					</tr>
+					<tr style="display: none;" id="showProteam">
+						<td>
+							<div style="text-align: right; margin-right: 20px;">负责包修班组：</div>
+						</td>
+						<td>
+							<select name="datePlan.proteamId" class="default" style="width:80px" id="proteamId" onchange="setWorkTeamVal();">
+								<option value="">请选择</option>
+								<c:forEach var="entry" items="${proteams}">
+									<option value="${entry.proteamid}">${entry.proteamname}</option>
+								</c:forEach>
+							</select><font color="red">*整台车由该班组包修</font>
+						</td>
+					</tr>
+					<tr style="display: none;" id="showProteam2">
+						<td>
+							<div style="text-align: right; margin-right: 20px;">不包修班组：</div>
+						</td>
+						<td>
+							<select multiple id="mulSelect" autoWidth="true" style="width:200px;" onchange="setWorkTeamVal();"> 
+								<c:forEach var="entry" items="${proteams}">
+								    <c:choose>
+								       <c:when test="${entry.proteamname=='制动组'||entry.proteamname=='探伤组'}">
+								          <option value="${entry.proteamid}" selected="selected">${entry.proteamname}</option>
+								       </c:when>
+								       <c:otherwise>
+								          <option value="${entry.proteamid}">${entry.proteamname}</option>
+								       </c:otherwise>
+								    </c:choose>
+								</c:forEach>
+							</select><font color="red">*指定班组不进行包修</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="button" id="subtn" value=" 提 交 " onclick="checkProteam();"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+	</body>

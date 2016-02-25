@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>配件检修--检修记录</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+     <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../../mainframe/"/>
+   
+    <!--引入弹出窗组件 不使用mainframe/js/attention/zDialg整合组件（图标不能显示），使用js/zDialog_split独立组件（uur独立组件）， start-->
+	<script type="text/javascript" src="../../../../../mainframe/js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../../mainframe/js/zDialog_split/zDialog.js"></script>
+	<!--引入弹出窗组件end-->
+    <!-- 框架必需  	结束-->
+  </head>
+  
+  <body>
+     
+             
+      <div class="" panelTitle="添加待修配件" roller="true" overflow="true">
+        <div style="color:red">
+         <center>
+	         <table>
+	             <th> <font color="blue">交流辅助机电 </font>-- 检修记录</th>
+	         </table>
+      	</center>
+      	</div>
+      <div>
+     	 配件名称：<font color="red">交流辅助机电</font> &nbsp;&nbsp;&nbsp;
+     	配件编号：<font color="red">404-11-22</font> &nbsp;&nbsp;&nbsp;
+     	现存储位置：<font color="red">中心库-平库</font>&nbsp;&nbsp;&nbsp;
+     	配件状态：<font color="red">合格</font> &nbsp;&nbsp;&nbsp;
+     	 检修次数：<font color="red">2</font><br>
+     	</div>
+     	<!-- 数据显示层									开始 -->
+     	
+		<div id="scrollContent">
+			<table class="tableStyle"  >
+				<tr>
+					
+					<th>修次</th>
+					<th>检修时间</th>
+					<th>操作</th>
+				</tr>
+		     	  <tr>
+		     	      
+		     	      <td>第-<font color="blue">1</font>-次检修</td> 
+		     	      <td>2013-07-14 12:30</td>
+		     	      <td>
+						<a target="_blank" style="color:blue" href="../alertDialog/pjSDIRecordFixCheckDetailsDialog.html">检修记录</a>
+					  </td>
+		     	  </tr>
+		     	  <tr>
+		     	     
+		     	      <td>第-<font color="blue">2</font>-次检修</td> 
+		     	      <td>2013-07-14 12:30</td>
+		     	      <td>
+						<a target="_blank" style="color:blue" href="../alertDialog/pjSDIRecordFixCheckDetailsDialog.html" >检修记录</a>
+					  </td>
+		     	  </tr>
+			</table>
+		</div>
+     	<!-- 数据显示层									结束 -->
+     	
+     	<!-- 分页数据显示层									开始 -->
+     		<div style="height:35px;">
+			<div class="float_left padding5">
+
+			</div>
+			<div class="float_right padding5 paging">
+				<div class="float_left padding_top4">
+					<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+					<span class="paging_current"><a href="javascript:;">1</a></span>
+					<span><a href="javascript:;">2</a></span>
+					<span><a href="javascript:;">3</a></span>
+					<span><a href="javascript:;">4</a></span>
+					<span><a href="javascript:;">5</a></span>
+					<span>...</span>
+					<span><a href="javascript:;">20</a></span>
+					<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+				</div>
+				<div class="float_left">
+					<select autoWidth="true">
+						<option>50</option>
+						<option>100</option>
+						<option>150</option>
+					</select>
+				</div>
+				<div class="float_left padding_top4">条记录</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 分页数据显示层									结束 -->
+     </div>
+        <!--uurframe盒子模型下方						结束-->
+        
+	
+  </body>
+</html>

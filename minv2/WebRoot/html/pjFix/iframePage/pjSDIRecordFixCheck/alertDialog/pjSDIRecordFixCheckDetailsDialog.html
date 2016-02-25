@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>配件检修-检修记录详情</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+     <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../../mainframe/"/>
+   
+    <!--引入弹出窗组件 不使用mainframe/js/attention/zDialg整合组件（图标不能显示），使用js/zDialog_split独立组件（uur独立组件）， start-->
+	<script type="text/javascript" src="../../../../../mainframe/js/zDialog_split/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../../mainframe/js/zDialog_split/zDialog.js"></script>
+	<!--引入弹出窗组件end-->
+    <!-- 框架必需  	结束-->
+  </head>
+  
+  <body>
+      <div class="" panelTitle="添加待修配件" roller="true" overflow="true" >
+        <div>
+         <center>
+	         <table>
+	             <th> <font color="blue">交流辅助机电 </font>-- 检修记录详情</th>
+	         </table>
+      	</center>
+      	</div>
+      <div>
+                     配件名称：<font color="red">交流辅助电机2</font> &nbsp;&nbsp;&nbsp;&nbsp;
+     	配件编号：<font color="red">404-11-22</font> &nbsp;&nbsp;&nbsp;&nbsp; 
+     	现存储位置：<font color="red">中心库-平库</font>&nbsp;&nbsp; &nbsp;&nbsp;
+     	配件状态：<font color="red">合格</font> &nbsp;&nbsp; &nbsp;&nbsp;
+     	检修项目：<font color="red">3</font>项&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	<button>查询子配件</button>
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     	<button >打印</button>
+     	<br>
+     	</div>
+     	
+     	<!-- 数据显示层									开始 -->
+     	
+		<div id="scrollContent">
+			<table class="tableStyle">
+				<tr>
+					<th>项目名称</th>
+					<th>部位</th>
+					<th>检修/探伤情况</th>
+					<th>检修/探伤人</th>
+					<th>工长</th>
+					<th>交车工长</th>
+					<th>质检员</th>
+					<th>技术员</th>
+					<th>验收员</th>
+				</tr>
+	     	    <tr>
+		     	      <td>绕阻对地绝缘</td> 
+		     	      <td>一端</td> 
+		     	      <td>15</td>
+		     	      <td>张飞 2013-07-14 12:5</td> 
+		     	      <td>关羽 2013-07-14 13:9</td> 
+		     	      <td>刘备 2013-07-14 14:9</td> 
+		     	      <td>孙权 2013-07-14 15:9</td> 
+		     	      <td>孙尚香 2013-07-14 16:9</td> 
+		     	      <td>/</td> 
+	     	   </tr>
+	     	   <tr>
+		     	      <td>绕阻对地绝缘</td> 
+		     	      <td>一端</td> 
+		     	      <td>15</td>
+		     	      <td>张飞 2013-07-14 12:5</td> 
+		     	      <td>关羽 2013-07-14 13:9</td> 
+		     	      <td>刘备 2013-07-14 14:9</td> 
+		     	      <td>孙权 2013-07-14 15:9</td> 
+		     	      <td>/</td> 
+		     	      <td>貂蝉 2013-07-14 17:9</td> 
+	     	   </tr>
+	     	   <tr>
+		     	      <td>轴承状态后端</td> 
+		     	      <td>一端</td> 
+		     	      <td>15</td>
+		     	      <td>张飞 2013-07-14 12:5</td> 
+		     	      <td>关羽 2013-07-14 13:9</td> 
+		     	      <td>刘备 2013-07-14 14:9</td> 
+		     	      <td>孙权 2013-07-14 15:9</td> 
+		     	      <td>孙尚香 2013-07-14 16:9</td> 
+		     	      <td>貂蝉 2013-07-14 17:9</td> 
+	     	   </tr>
+		     	 
+			</table>
+		</div>
+     	<!-- 数据显示层									结束 -->
+     	
+     	<!-- 分页数据显示层									开始 -->
+     		<div style="height:35px;">
+			<div class="float_left padding5">
+
+			</div>
+			<div class="float_right padding5 paging">
+				<div class="float_left padding_top4">
+					<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+					<span class="paging_current"><a href="javascript:;">1</a></span>
+					<span><a href="javascript:;">2</a></span>
+					<span><a href="javascript:;">3</a></span>
+					<span><a href="javascript:;">4</a></span>
+					<span><a href="javascript:;">5</a></span>
+					<span>...</span>
+					<span><a href="javascript:;">20</a></span>
+					<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+				</div>
+				<div class="float_left">
+					<select autoWidth="true">
+						<option>50</option>
+						<option>100</option>
+						<option>150</option>
+					</select>
+				</div>
+				<div class="float_left padding_top4">条记录</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!-- 分页数据显示层									结束 -->
+     </div>
+        <!--uurframe盒子模型下方						结束-->
+        
+	
+  </body>
+</html>

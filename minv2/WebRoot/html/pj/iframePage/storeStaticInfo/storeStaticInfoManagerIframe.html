@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+  	<title>机务检修信息管理系统-配件管理-->配件静态信息管理</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+    
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+    <!--多功能表格start-->
+	<link rel="stylesheet" type="text/css" href="../../../../mainframe/js/table/flexigrid/css/flexigrid/flexigrid.css">
+	<script type="text/javascript" src="../../../../mainframe/js/table/flexigrid/flexigrid.js"></script>
+	<!--多功能表格end-->
+	
+    <!-- 弹出窗口的JS	开始 -->
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+    <!-- 弹出窗口的JS  结束 -->
+    
+    <!-- 自定义样式 				开始 -->
+    <link rel="stylesheet" href="../../../../js/style.css"/>
+    <!-- 自定义样式 				开始 -->
+    
+    <script>
+   	$(function(){
+		//弹窗中将下面的width和height设为一个合适的数值让窗口不出现滚动条
+		$('.flexiStyle').flexigrid({
+			height:330,
+			width:1100,
+			resizable: false,
+			showToggleBtn: false
+		});	
+	})
+   </script>
+ </head>
+  
+  <body>
+    <!-- 用户管理 功能操作和数据显示区域    start ************ -->
+  	<div class="box2" panelTitle="仓库管理" roller="false" overflow="true">
+		<table width="100%">
+			<!-- *********	操作功能区  start  ********** -->
+
+			<tr>
+				<td>
+					<div  >	
+						<table width="100%" border="0px">
+							<tr >
+								<td colspan="3" style="text-align:left">
+									<input type="checkbox" id="staticName"/><label for="staticName">静态名称</label>
+									<input type="checkbox"id="pjProteam"/><label for="pjProteam">配件班组</label>
+									<input type="checkbox" id="statu"/><label for="statu">组装状态</label>
+									<input type="checkbox" id="unitName"/><label for="unitName">专业名称</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" id="min" /><label for="min"><font color="blue">最小库存</font></label>
+									<input type="checkbox" id="isOpen" /><label for="isOpen"><font color="blue">是否启用</font></label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<button style="float:right"><span class="icon_find" >查询</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align:left">静态名称
+									<input type="text" style="width:220px" />
+								</td>
+								<td style="text-align:left">配件班组
+									<select autoWidth="true" >
+										<option>可输入，可选择，通过PY联系查询</option>
+									</select>
+								</td>
+								<td style="text-align:right">
+									
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align:left">组装状态
+									<select autoWidth="true" style="width:220px">
+										<option>0、车上组装</option>
+									</select>
+								</td>
+								<td style="text-align:left">大部件名
+									<select autoWidth="true" >
+										<option>可输入，可选择，通过PY联系查询</option>
+									</select>
+								</td>
+								<td style="text-align:right">
+									
+								</td>
+							</tr>
+							<tr>
+								<td  style="text-align:left">
+									<button><span class="icon_delete">批量删除</span></button>
+								</td>
+								<td colspan="2" style="text-align:right">
+									每页
+									<select autoWidth="true"><option>50</option><option>100</option><option>150</option></select>
+									条记录
+									&nbsp;&nbsp;
+									<button><span class="icon_add">批量导入</span></button>
+									&nbsp;&nbsp;
+									<button><span class="icon_add" onclick="top.Dialog.open({URL:'./iframePage/storeStaticInfo/alertDialog/editStoreStaticDialog.html',Title:'新增配件静态信息'});">新增</span></button>
+								</td>
+							</tr>
+						</table>
+						
+					</div>
+				</td>
+			</tr>
+			<!-- *********	操作功能区  end  ********** -->
+			
+			<!-- ************************************************************************************************* -->
+			
+			<!-- *********	数据显示区  start  ********** -->
+			<tr>
+				<td colspan="11">
+					<div id="scrollContent" class="border_gray" roller="false" overflow="auto">
+						<table class="flexiStyle"  striped="true">
+							<thead>
+								<tr>
+									<th width="60">选择</th>
+									<th width="160">配件名称</th>
+									<th width="160">所属大部件</th>
+									<th width="170">父级配件</th>
+									<th width="150">组装状态</th>
+									<th width="100">是否启用</th>
+									<th width="205">操作</th>
+								</tr>
+							</thead>
+							
+							<tr >
+								<td width="5%"><input type="checkbox"/></td>
+								<td width="15%">启动变速箱</td>
+								<td width="15%">辅助传动</td>
+								<td width="15%"></td>
+								<td width="10%">车上组装</td>
+								<td width="10%">启用</td>
+								<td width="20%">
+									<button><span class="icon_view"  onclick="top.Dialog.open({URL:'./iframePage/storeStaticInfo/alertDialog/viewStoreStaticDialog.html',Title:'查看配件静态信息'});">查看</span></button>
+									<button><span class="icon_edit"  onclick="top.Dialog.open({URL:'./iframePage/storeStaticInfo/alertDialog/editStoreStaticDialog.html',Title:'修改配件静态信息'});">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td width="5%"><input type="checkbox"/></td>
+								<td width="15%">柴油机</td>
+								<td width="15%">柴油机</td>
+								<td width="15%"></td>
+								<td width="10%">车上组装</td>
+								<td width="10%">启用</td>
+								<td width="20%">
+									<button><span class="icon_view" onclick="top.Dialog.open('')">查看</span></button>
+									<button><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td width="5%"><input type="checkbox"/></td>
+								<td width="15%">继电器</td>
+								<td width="15%">106</td>
+								<td width="15%"></td>
+								<td width="10%">配件组装</td>
+								<td width="10%">启用</td>
+								<td width="20%">
+									<button><span class="icon_view">查看</span></button>
+									<button><span class="icon_edit">修改</span></button>
+									<button><span class="icon_delete">删除</span></button>
+								</td>
+							</tr>
+							<tr>
+								<td width="5%"></td>
+								<td width="15%"></td>
+								<td width="15%"></td>
+								<td width="15%"></td>
+								<td width="10%"></td>
+								<td width="10%"></td>
+								<td width="20%">
+									
+								</td>
+							</tr>
+							<tr>
+								<td width="5%"></td>
+								<td width="15%"></td>
+								<td width="15%"></td>
+								<td width="15%"></td>
+								<td width="10%"></td>
+								<td width="10%"></td>
+								<td width="20%">
+									
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	数据显示区  end  ********** -->
+		</table>
+	</div>
+	<!-- 用户管理 功能操作和数据显示区域    end  ************* -->
+	
+	
+
+	<!-- *********	分页信息显示区  start  ********** -->
+	<div style="height:35px;">
+		<div class="float_left padding5">
+			配件总数（除外地库）：<font color="red"><b>-140</b></font>件
+		</div>
+		<div class="float_right padding5 paging">
+			<div class="float_left padding_top4">
+			<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+			<span class="paging_current"><a href="javascript:;">1</a></span>
+			<span><a href="javascript:;">2</a></span>
+			<span><a href="javascript:;">3</a></span>
+			<span><a href="javascript:;">4</a></span>
+			<span><a href="javascript:;">5</a></span>
+			<span>...</span>
+			<span><a href="javascript:;">20</a></span>
+			<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+			</div>
+			<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+			<div class="float_left padding_top4">条记录</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- *********	分页信息显示区  start  ********** -->
+  </body>
+</html>

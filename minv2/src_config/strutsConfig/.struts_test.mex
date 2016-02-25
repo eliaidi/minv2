@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="test" location="465,10" size="665,840">
+    <action name="addTest" location="450,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="testResult.jsp" />
+      </result>
+    </action>
+    <action name="testAction" location="450,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="testResult.jsp" />
+      </result>
+    </action>
+    <action name="findUserById" location="205,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findUserByDictAreaId" location="205,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="updateUserPassById" location="205,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delUserById" location="65,757" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="queryUserList" location="65,652" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="testPage.jsp" />
+      </result>
+    </action>
+    <action name="autocompleteEx" location="65,477" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="testAutocomplete.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="testResult.jsp" path="/test/testResult.jsp" location="924,905" size="150,55" />
+  <webResource name="test.jsp" path="/test/test.jsp" location="65,345" size="150,55" />
+  <webResource name="testPage.jsp" path="/test/testPage.jsp" location="297,625" size="150,55" />
+  <webResource name="testAutocomplete.jsp" path="/test/testAutocomplete.jsp" location="236,450" size="150,55" />
+</Struts2Diagram>
+

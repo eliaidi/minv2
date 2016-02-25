@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcPlanDateProteam" table="JC_PLAN_DATE_PROTEAM">
+		
+		<id name="id" column="ID" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_PLAN_DATE_PROTEAM</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="planDate" >
+			<column name="PLAN_DATE_ID">
+				<comment>关联JC_PLAN_DATE机车日计划表）-字段ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="proteam" >
+			<column name="PROTEAM_ID">
+				<comment>关联DICT_PROTEAM（班组表）-字段ID</comment>
+			</column>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>

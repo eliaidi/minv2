@@ -1,0 +1,5 @@
+body{margin:0; padding:0; font-size:12px;}
+		tr{text-algin:center;}
+		td{height:20px; text-align:center; line-height: 20px;}
+		input{width:50px;}
+		a:LINK,a:VISITED {color: blue;width: 100%; text-align: center;}

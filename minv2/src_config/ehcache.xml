@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<!-- 缓存数据存储在磁盘上的位置，如果没有这个文件夹，就创建一个 -->
+	<diskStore path="d:/ehcache" />
+	
+	<!--默认缓存配置：
+		maxElementsInMemory：内存最大缓存数据条数。
+		eternal：缓存数据对象是否永远不变。
+		timeToIdleSeconds：到达空闲时间的秒数（对象从被操作到再也不操作间隔时间是xx秒）。
+		timeToLiveSeconds：缓存中对象存活的时间xx秒。这是一个经验值，根据项目的实际运行设置。
+		overflowToDisk：如果缓存满了，是否存在磁盘上。
+	  -->
+	<defaultCache 
+		maxElementsInMemory="200"
+		eternal="false"
+		timeToIdleSeconds="50"
+		timeToLiveSeconds="60"
+		overflowToDisk="true"
+	/>
+	
+	<!-- 针对保存的具体的对象或实例配置：
+		 比如以下，针对DictionaryBase类的缓存保存配置。
+		 name：缓存类的类路径。
+		 下面配置和上面一样，可以根据实际情况进行添加删除，修改，上下属于继承覆盖关系。
+	 -->
+	 <cache 
+	 	name="com.repair.entity.DictionaryBase"
+	 	maxElementsInMemory="50"
+		eternal="false"
+		timeToIdleSeconds="50"
+		timeToLiveSeconds="60"
+		overflowToDisk="true"
+	 />
+</ehcache>

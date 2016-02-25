@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>table.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+     <script type="text/javascript" src="../../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="tableUtil.js"></script>
+	
+	<script>
+		$(function(){
+			$("#getCheckRow").click(function(){
+				var rowIndexArr=$.getCheckRowIndex("testTable");
+				
+				$.deleteTableRow("testTable",rowIndexArr);
+			})
+			
+			
+		})
+	</script>
+  </head>
+  
+  <body>
+  	<input type="button" id="getCheckRow" value="删除选中行"/>
+  
+    <table id="testTable">
+    	<tr>
+    		<td>选择</td>
+    		<td>序号</td>
+    		<td>姓名</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox"></td>
+    		<td>1</td>
+    		<td>姓名</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox"></td>
+    		<td>2</td>
+    		<td>姓名</td>
+    	</tr>
+    	<tr>
+    		<td></td>
+    		<td>3</td>
+    		<td>姓名</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox"></td>
+    		<td>4</td>
+    		<td>姓名</td>
+    	</tr>
+    </table>
+  </body>
+</html>

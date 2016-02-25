@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>机务检修信息管理系统-配件管理-专业-专业管理</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+   
+    <!-- 弹出窗口的JS	开始 -->
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+    <!-- 弹出窗口的JS  结束 -->
+    
+    <!-- ztree树形菜单的JS    开始 -->
+	<link rel="stylesheet" href="../../../../js/ztree/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="../../../../js/ztree/jquery.ztree.core-3.5.js"></script>
+	<script type="text/javascript" src="../../../../js/ztree/jquery.ztree.excheck-3.5.js"></script>
+	<!-- ztree树形菜单的JS    结束 -->
+
+	<!-- 自定义样式 				开始 -->
+    <link rel="stylesheet" href="../../../../js/style.css"/>
+    <!-- 自定义样式 				开始 -->
+    
+    <!-- 显示树形菜单		开始 -->
+    <script>
+    	var setting = {
+			check: {
+				enable: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			}
+		};
+		
+		var zNodes =[
+			{ id:1, pId:0, name:"专业全部", open:true},
+			{ id:11, pId:1, name:"电机"},
+			{ id:111, pId:1, name:"柴油机"},
+			{ id:112, pId:1, name:"仪表"}
+		];
+		
+		$(function(){
+			$.fn.zTree.init($("#tree"), setting, zNodes);
+		})
+    </script>
+    <!-- 显示树形菜单		结束 -->
+  </head>
+  
+  <body>
+  	<!-- minv2_firstUnitManageIframe_mainDiv 主div                                           开始 -->
+    <div id="minv2_firstUnitManageIframe_mainDiv" class="minv2_firstUnitManageIframe_mainDiv_class">
+    	 <!--左边菜单DIV                                                                     开始-->
+            <div id="minv2_firstUnitManageIframe_leftDiv" class="minv2_firstUnitManageIframe_leftDiv_class">
+            	<!-- 盒子模型上方                                                            开始 -->
+				<div class="box2" panelWidth="230" panelHeight="520" panelTitle="专业管理" overflow="auto" >
+					
+			  	    <!-- 大部件(专业)(unit)目录数据的显示 DIV						开始-->
+					<div id="scrollContent">
+						<button onclick='top.Dialog.open({URL:"${ctx}/users/iframePage/proteam/alertDialog/addProteamDialog.jsp",Title:"新增班组"});'/><span class="icon_add">新增</span></button>
+						<button id="updateProteamBtn"><span class="icon_edit">修改</span></button>
+						<button id="delProteamBtn"><span class="icon_delete" >删除</span></button>
+						<div id="tree" class="ztree">
+							
+						</div>
+				    </div>
+				    <!-- 大部件(专业)(unit)目录数据的显示 DIV						结束-->
+			    </div>
+			    <!-- 盒子模型上方                                                            结束 -->			
+            </div>
+            <!--左边菜单DIV                                                                  结束-->
+            
+            <!--右边内容DIV                                                                  开始-->
+            <div id="minv2_firstUnitManageIframe_rightDiv" class="minv2_firstUnitManageIframe_rightDiv_class">
+            	<iframe id="minv2_firstUnitManageIframe_contentIframe" name="minv2_firstUnitManageIframe_rightIframe" class="minv2_firstUnitManageIframe_rightIframe_class" scrolling="auto" frameborder="no" src="firstUnitManageChildIframe.html" width="100%" height="100%"></iframe>
+            </div> 
+            <!--右边内容DIV                                                                  结束-->
+    </div>
+    <!-- firstUnitManageIframe_mainDiv 主div                                           结束 -->
+  </body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+	<head>
+		<title>（质检员）报活签认</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+		<meta http-equiv="description" content="This is my page" />
+
+		<!--uurframe框架必需  开始-->
+		<link href="../../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="../../../../../mainframe/js/jquery-1.4.js"></script>
+		
+		<script type="text/javascript" src="../../../../../../mainframejs/jquery.floatDiv.js"></script>
+		<script type="text/javascript" src="../../../../../mainframe/js/bsFormat.js"></script>
+		<script type="text/javascript" src="../../../../../mainframe/js/framework.js"></script>
+		<!-- 所有的css都从mainframe目录开始找 -->
+		<link  rel="stylesheet" id="skin" prePath="../../../../../mainframe/"/>
+		<!--uurframe框架必需  结束--> 
+
+		<!-- 引用以封装的复选框js							开始 -->
+		<script type="text/javascript" src="../../../../../js/checkboxUtil/checkboxUtil.js"></script>
+		<!-- 引用以封装的复选框js								结束 -->
+		<!-- 引用工人js											开始 -->
+		<script type="text/javascript" src="../../../../../js/report/page/qc/qcReportSign_script.js"></script>
+		<!-- 引用工人js												结束 -->
+		<!-- 引用工人table表格js											开始 -->
+		<script type="text/javascript" src="../../../../../mainframe/js/table/treeTable.js"></script>
+		<!-- 引用工人table表格js												结束 -->
+	</head>
+
+	<body>
+		<input type="hidden" value="${urlctx}" id="basePath" />
+		<button id="sign" style="position: fixed; left:5px; top: 5px;"><span class="icon_ok">签认</span></button>
+		<button id="print1" style="position: fixed; left:75px; top: 5px;" onclick="javascript:screenPrint();"><span class="icon_print">打印</span></button>
+		<button id="newreport1" style="position: fixed; left:145px; top: 5px;"><span class="icon_print">报活</span></button>
+		<input type="hidden" value="${param.planDateId}" id="planDateId"/>
+		<table class="treeTable" style="margin-top: 30px;" >
+			<tr>
+				<th class="ver01">选择</th>
+				<th class="ver01">具体报活部位</th>
+				<th class="ver01">故障情况</th>
+				<th class="ver01">报活人</th>
+				<th class="ver01">报活时间</th>
+				<th class="ver01">类型</th>
+				<th class="ver01">处理情况</th>
+				<th class="ver01">检修人签字</th>
+				<th class="ver01">工长</th>
+				<th class="ver01">技术员</th>
+				<th class="ver01">质检员</th>
+				<th class="ver01">交车工长</th>
+				<th class="ver01">验收员</th>
+			</tr>
+				<tr id="node-${mStatus.index }" class="parent collapsed">
+					<td colspan="13"><input type="checkbox" id="parent${mStatus.index}" /><span class="folder">sdfsd</span></td>
+				</tr>
+					<tr id="node-${mStatus.index}-${nStatus.index}" class="child-of-node-${mStatus.index }">
+						<td>
+								<input type="checkbox" name="recId${mStatus.index}" value="" />
+						</td>
+						<td class="ver01"></td>
+						<td class="ver01">
+							<a href="javascript:void(0);" onclick="reportDatils()"></a>
+						</td>
+						<td class="ver01"></td>
+						<td class="ver01"></td>
+						<td class="ver01"></td>
+
+						<td class="ver01"></td>
+						<td class="ver01">
+						</td>
+						<td class="ver01">
+						</td>
+						<td class="ver01">
+						</td>
+						<td class="ver01">
+						</td>
+						<td class="ver01">
+						</td>
+						<td class="ver01">
+						</td>
+					</tr>
+
+		</table>
+
+	</body>
+
+</html>

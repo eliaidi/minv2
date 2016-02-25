@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+                     
+ 	
+ 	<!-- dao层 -->
+ 	
+ 	<!-- 配件组装上车						开始 -->
+ 	<bean id="jcPlanDateForPjDao" class="com.repair.pj.dao.impl.JcPlanDateDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>	
+ 		
+ 	<bean id="pjAssembleRecordForPjDao" class="com.repair.pj.dao.impl.PjAssembleRecordDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>	
+ 	<!-- 配件组装上车						结束 -->
+ 	
+ 	<!-- 报活模块dao层			   			开始 -->
+ 	<bean id="dictFaultForReportDao" class="com.repair.report.dao.impl.DictFaultDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+	
+	<bean id="jtReportForReportDao" class="com.repair.report.dao.impl.JtReportDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+	
+	<bean id="jcPlanDateForReportDao" class="com.repair.report.dao.impl.JcPlanDateDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+	
+	<bean id="dictProteamForReportDao" class="com.repair.report.dao.impl.DictProteamDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+ 	<!-- 报活模块dao层			   			结束 -->
+ 	
+ 	
+ 	<!-- 油水化验模块 油水化验主记录dao	 -->
+ 	<bean id="oilAssayMainItemRecnForOilDao" class="com.repair.oil.dao.impl.OilAssayMainItemRecDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+	
+	<bean id="oilAssayMainItemForOilDao" class="com.repair.oil.dao.impl.OilAssayMainItemDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+	
+	<bean id="oilAssayChildItemRecForOilDao" class="com.repair.oil.dao.impl.OilAssayChildItemRecDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>	
+	</bean>
+ 	
+ 	<!-- 油水化验模块 油水化验 在日计划选择在修机车机车 -->
+ 	<bean id="jcPlanDateForOilDao" class="com.repair.oil.dao.impl.JcPlanDateDaoImpl">
+ 		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+ 	</bean>
+ 	
+ 	<!-- 中修模块	机车履历dao	 -->
+ 	<bean id="jcInformationForZxDao" class="com.repair.zx.dao.impl.JcInformationDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	<!-- 中修模块	机车检修项目记录dao	 -->
+ 	<bean id="jcZxFixItemRecordForZxDao" class="com.repair.zx.dao.impl.JcZxFixItemRecordDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+ 	
+ 	<!-- 中修模块	机车检修流程记录dao	 -->
+ 	<bean id="jcFixFlowRecorderForZxDao" class="com.repair.zx.dao.impl.JcFixFlowRecorderDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	
+ 	<!-- 中修模块	机车检修流程dao	 -->
+ 	<bean id="jcFixFlowForZxDao" class="com.repair.zx.dao.impl.JcFixFlowDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	<!-- 中修模块	机车检修主计划详情dao	 -->
+ 	<bean id="jcMainPlanRecorderForZxDao" class="com.repair.zx.dao.impl.JcMainPlanRecorderDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	<!-- 中修模块  修次dao层 -->
+	<bean id="dictJcFixMileageForZxDao" class="com.repair.zx.dao.impl.DictJcFixMileageDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	<!-- 中修模块  机车检修项目dao层 -->
+	<bean id="jcZxFixItemForZxDao" class="com.repair.zx.dao.impl.JcZxFixItemDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+ 	
+ 	<!-- 中修模块  机车检修日计划dao层 -->
+	<bean id="jcPlanDateForZxDao" class="com.repair.zx.dao.impl.JcPlanDateDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+ 	
+ 	
+ 	
+ 	<!-- 计划管理模块  机车检修主计划dao层 -->
+	<bean id="jcMainPlanForPlanDao" class="com.repair.plan.dao.impl.JcMainPlanDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 计划管理模块  机车检修主计划详情dao层 -->
+	<bean id="jcMainPlanRecorderForPlanDao" class="com.repair.plan.dao.impl.JcMainPlanRecorderDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+ 	
+ 	
+ 	<!-- 计划管理模块  修次dao层 -->
+	<bean id="dictJCFixMileageForPlanDao" class="com.repair.plan.dao.impl.DictJcFixMileageDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- 分页组件 -->
+ 	<bean id="splitPageDao" class="com.repair.util.splitPage.SplitPageDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+ 	
+ 	
+ 	<!-- 故障字典缓存 -->
+	<bean id="dictProteamForDictDao" class="com.repair.dict.dao.impl.DictProteamDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+ 	
+ 	<!-- 故障字典缓存 -->
+	<bean id="dictFaultForDictDao" class="com.repair.dict.dao.impl.DictFaultDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+ 	
+ 	<!-- 字典缓存 -->
+	<bean id="dictionaryBaseForDictDao" class="com.repair.dict.dao.impl.DictionaryBaseDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+ 	
+ 	
+	<!-- 地区表(DICTArea) -->
+	<bean id="dictAreaDao" class="com.repair.users.dao.impl.DictAreaDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	<!-- 用户dao -->
+	<bean id="usersPrivsDao" class="com.repair.users.dao.impl.UsersPrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+
+
+	<!-- 功能（资源）dao（FunctionPrivs类） -->
+	<bean id="functionPrivsDao" class="com.repair.users.dao.impl.FunctionPrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!--  -->
+	<bean id="roleFunctionPrivsDao" class="com.repair.users.dao.impl.RoleFunctionPrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 部门数据 -->
+	<bean id="dictDepartDao" class="com.repair.users.dao.impl.DictDepartDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 班组数据 -->
+	<bean id="dictProteamDao" class="com.repair.users.dao.impl.DictProteamDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+ 
+ 	<!-- 角色表(ROLEPRIVS) -->
+	<bean id="rolePrivsDao" class="com.repair.users.dao.impl.RolePrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 分页测试 -->
+ 	<bean id="testPageDao" class="com.repair.dao.impl.TestPageDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 角色分页-->
+	<bean id="pageDao" class="com.repair.util.page.PageDao" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 用户角色表 -->
+	<bean id="usersRolePrivsDao" class="com.repair.users.dao.impl.UsersRolePrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property> 
+	</bean>
+	
+	<!-- 大部件(专业)DAO层 -->
+	<bean id="dictPjFirstUnitDao" class="com.repair.pj.dao.impl.DictPjFirstUnitDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	<!--配件所在位置/仓库dao层  -->
+	<bean id="dictStorePositionDao" class="com.repair.pj.dao.impl.DictStorePositionDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+		<property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 配件仓库静态/基本信息 -->
+	<bean id="pjStoreStaticInfoDao" class="com.repair.pj.dao.impl.PjStoreStaticInfoDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 机车型号   -->
+	<bean id="dictJcTypeDao" class="com.repair.pj.dao.impl.DictJcTypeDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 配件仓库动态/库存信息 --> 
+	<bean id="pjStoreDynamicInfoDao" class="com.repair.pj.dao.impl.PjStoreDynamicInfoDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 配件动态记录 -->
+	<bean id="pjSDInfoRecordDao" class="com.repair.pj.dao.impl.PjSDInfoRecordDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 配件动态记录《关于主仓库和单位》 -->
+	<bean id="pjSDInfoRecordSuDao" class="com.repair.pj.dao.impl.PjSDInfoRecordSuDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 配件仓库动态/库存信息 -->
+	<bean id="jcTypePjFirstUnitDao" class="com.repair.pj.dao.impl.JcTypePjFirstUnitDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 班组与配件静态表 -->
+	<bean id="proteamPjStaticDao" class="com.repair.pj.dao.impl.ProteamPjStaticDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 配件静态_机车型号_大部件(专业)中中间表 -->
+	<bean id="pjStaticJcTypePjFUDao" class="com.repair.pj.dao.impl.PjStaticJcTypePjFUDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- ********************************************************************************************* -->
+	
+	<!--配件检修-配件大类信息 -->
+	<bean id="pjStoreStaticInfoForPjFixDao" class="com.repair.pjFix.dao.impl.PjStoreStaticInfoDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 配件检修，大部件(专业)层   -->
+	<bean id="dictPjFirstUnitForPjFixDao" class="com.repair.pjFix.dao.impl.DictPjFirstUnitDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 配件检修，配件所在位置/仓库层  -->
+	<bean id="dictStorePositionForPjFixDao" class="com.repair.pjFix.dao.impl.DictStorePositionDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!--查询配件检修记录 -->
+	<bean id="pjSDInfoRecordForPjFixDao" class="com.repair.pjFix.dao.impl.PjSDInfoRecordDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 动态配件dao层 -->
+	<bean id="pjSDInfoForPjFixDao" class="com.repair.pjFix.dao.impl.PjStoreDynamicInfoDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	    <property name="splitPageDao" ref="splitPageDao"></property>
+	</bean>
+	
+	<!-- 机车信息（履历）dao -->
+	<bean id="jcInformationForPjFixDao" class="com.repair.pjFix.dao.impl.JcInformationDaoImpl" scope="prototype">
+		 <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- pjFix机车类型表 -->
+	<bean id="dictJcTypeForPjFixDao" class="com.repair.pjFix.dao.impl.DictJcTypeDaoImpl" scope="prototype">
+	    <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 配件检修记录dao -->
+	<bean id="pjSDInfoRecordFixForPjFixDao" class="com.repair.pjFix.dao.impl.PjSDInfoRecordFixDaoImpl" scope="prototype">
+		 <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 用户dao -->
+	<bean id="usersPrivsForPjFixDao" class="com.repair.pjFix.dao.impl.UsersPrivsDaoImpl" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>	
+	</bean>
+	
+	
+	
+</beans>

@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+  	<title>机务检修信息管理系统-用户管理主页-->班组目录右边-->内容显示页面</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+   
+    <!-- 独立的-->
+     <script type="text/javascript" src="../../../../js/flexigrid/text-overflow.js"></script>
+
+    <!-- 弹出窗口的JS	开始 -->
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDialog.js"></script>
+    <script type="text/javascript" src="../../../../js/zDialog_split/zDrag.js"></script>
+    <!-- 弹出窗口的JS  结束 -->
+    
+   	<style type="text/css">
+   		#tableCss tr td{
+   			text-align:center;
+   		}
+   	</style> 
+   
+ </head>
+  
+  <body>
+    <!-- 用户管理 功能操作和数据显示区域    start ************ -->
+  	<div class="box2" panelTitle="用户管理" >
+		<table width="100%">
+			<!-- *********	操作功能区  start  ********** -->
+			<tr>
+				<td width="100%" >
+					<div panelTitle="用户管理" roller="true" overflow="auto">
+						<div align="left">
+							角色:
+								<select id="dd" autoWidth="true">
+									<option value="0">请选择</option>
+									<option value="1">院系1</option>
+									<option value="2">院系2</option>
+									<option value="3">院系3</option>
+								</select>
+								<!-- 此处必须写行内样式，否则显示不正常 -->
+							姓名：<input type="text" watermark="输入姓名" style="width:50px;"/>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							工号：<input type="text" watermark="输入工号" style="width:50px;"/>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<button><span class="icon_find">查询</span></button>
+						</div>
+						<div align="right">
+						     每页：
+						        <select autoWidth="true">
+						    		<option>10</option>
+						    		<option>20</option>
+						    		<option>50</option>
+						    		<option>100</option>
+						    	</select>
+						     条数据
+						    
+							<button onclick='top.Dialog.open({URL:"${ctx}/users/iframePage/proteam/alertDialog/addUsersDialog.jsp",Title:"新增用户",ShowCloseButton:true});'><span class="icon_add">新建</span></button>
+							<button onclick=''><span class="icon_delete">删除</span></button>
+							<button onclick=''><span class="icon_mark">转移</span></button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	操作功能区  end  ********** -->
+			
+			<!-- ************************************************************************************************* -->
+			
+			<!-- *********	数据显示区  start  ********** -->
+			<tr>
+				<td>
+					<div id="scrollContent" class="border_gray" roller="true" overflow="auto">
+						<table class="tableStyle">
+							<tr>
+								<th align="center" width="3%"><span class="img_checkAllOff"></span></th>
+								<th width="5%">用户ID</th>
+								<th width="5%">用户工号</th>
+								<th width="10%">用户名称</th>
+								<th width="10%">登录账号</th>
+								<th width="10%">操作</th>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="userCkb"/></td>
+								<td>男</td>
+								<td>25</td>
+								<td>
+									软件设计师
+								</td>
+								<td>15012546548</td>
+								
+								<td>
+									<span class="img_view hand" title="查看" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/findUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_edit hand" title="修改" onclick='top.Dialog.open({URL:"iframePage/proteam/alertDialog/updateUsersDialog.html",Title:"查看用户详情",ShowCloseButton:true});'></span>
+									<span class="img_delete hand" title="删除"></span>
+								</td>
+							</tr>
+							
+						</table>
+					</div>
+				</td>
+			</tr>
+			<!-- *********	数据显示区  end  ********** -->
+		</table>
+	</div>
+	<!-- 用户管理 功能操作和数据显示区域    end  ************* -->
+	
+	
+
+	<!-- *********	分页信息显示区  start  ********** -->
+	<div style="height:35px; width: 100%;">
+		<div class="float_left padding5">
+			
+		</div>
+		<div class="float_right padding5 paging">
+			<div class="float_left padding_top4">
+				<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+				<span class="paging_current"><a href="javascript:;">1</a></span>
+				<span><a href="javascript:;">2</a></span>
+				<span><a href="javascript:;">3</a></span>
+				<span>...</span>
+				<span><a href="javascript:;">20</a></span>
+				<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+			</div>
+			<div class="float_left">
+			    <select autoWidth="true">
+					<option>10</option>
+				    <option>20</option>
+				    <option>50</option>
+				    <option>100</option>
+			    </select></div>
+			<div class="float_left padding_top4">条记录</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!-- *********	分页信息显示区  start  ********** -->
+  </body>
+</html>

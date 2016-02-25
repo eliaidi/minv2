@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="oil" extends="json-default" namespace="/oil">
+		<!-- 通过Id查询油水化验主记录 -->
+		<action name="loadOilAssayMainItemRec" class="loadOilAssayMainItemRecForOil">
+			<result>/oil/iframePage/alertDialog/updateOilDialog.jsp</result>
+		</action>
+		<!-- 查出所有油水化验主记录  -->
+		<action name="listOilAssayMainItemRec"  class="listOilAssayMainItemRecForOil">
+			<result name="success">/oil/iframePage/page/oilSampleRecord.jsp</result>
+		</action>
+		
+		<!-- 油样化验超链接功能的实现：通过机车型号查询对应的油水化验主项目  -->
+		<action name="listOilAMIByJcType"  class="listOilAMIByJcTypeForOil">
+			<result name="success">/oil/iframePage/page/oilAssayItem.jsp</result>
+		</action>
+		
+		<!-- 油水化验主项目显示对应的主记录的子记录  -->
+		<action name="listOilAssayChildItemRec"  class="listOilAssayChildItemRecForOil">
+			<result name="success">/oil/iframePage/page/oilAssaySubItem.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 添加油水化验机车，返回json数据 -->
+		<action name="ajaxAddOilAMItemRec" class="ajaxAddOilAMItemRecForOil"></action>
+		
+		<!-- 通过油化实验记录主表Id,查询对应的油化实验记录数据 -->
+		<action name="listOilAssayChildItemRecById" class="listOilAssayChildItemRecByIdForOil">
+			<result>/oil/iframePage/page/searchOilRecorder.jsp</result>
+		</action>
+		
+		
+		<!-- ajax修改油水化验子记录真实检测值 -->
+		<action name="ajaxUpdateActualCheckData" class="ajaxUpdateActualCheckDataForOil"></action>
+		
+		<!-- 修改油水化验主记录 -->
+		<action name="updateOilAMIRec" class="updateOilAMIRecForOil">
+			<result type="redirect">/oil/listOilAssayMainItemRec.action</result>
+		</action>
+		
+		<!-- 修改油水化验主记录 -->
+		<action name="toUpdateOilAMIRec" class="toUpdateOilAMIRecForOil">
+			<result>/oil/iframePage/alertDialog/updateOilDialog.jsp</result>
+		</action>
+	</package>
+</struts>

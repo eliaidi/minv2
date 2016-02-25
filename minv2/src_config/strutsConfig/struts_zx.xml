@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="zx" extends="json-default" namespace="/zx">
+		
+		
+		<!-- 整车记录查询 -->
+		<action name="viewJcFixHistory" class="viewJcFixHistoryForZx">
+			<result>/zx/iframePage/page/jcFixHirstoryRec.jsp</result>
+		</action>
+		
+		<!-- 整车记录查询 -->
+		<action name="viewZxRecord" class="viewZxRecordForZx">
+			<result>/zx/iframePage/page/jcZxRecord.jsp</result>
+		</action>
+	
+		<!-- 跳至显示本周待修机车页面 -->
+		<action name="toChoiceBZJcMPRecorder" class="toChoiceBZJcMPRecorderForZx">
+			<result>/gdt/iframePage/alertDialog/jcWeekPlan.jsp</result>
+		</action>
+		
+		<!-- 跳至选择机车的页面-->
+		<action name="toChoiceJcInfo" class="toChoiceJcInfoForZx">
+			<result>/gdt/iframePage/alertDialog/choicePlanDate.jsp</result>
+		</action>
+	
+	
+		<!-- 跳到显示股道图页面 -->
+		<action name="ajaxListUnOutJcPlanDate"  class="ajaxListUnOutJcPlanDateForZx">		</action>
+	
+	
+		<!-- 跳至选择机车检修主计划详情页面 -->
+		<action name="toChoiceJcMPRecorder"  class="toChoiceJcMPRecorderForZx">
+			<result >/gdt/iframePage/alertDialog/choicePlanDate.jsp</result>
+		</action>
+		
+		<!-- 跳至选择修次页面 -->
+		<action name="toChoiceFixMileage"  class="toChoiceFixMileageForZx">
+			<result >/gdt/iframePage/alertDialog/fixMileage.jsp</result>
+		</action>
+	
+     	<!-- 列出所有未交车的机车日计划 -->
+		<action name="listUnOutJcPlanDate"  class="listUnOutJcPlanDateForZx">
+			<result name="JCGZ">/zx/iframePage/maps.jsp</result>
+			<result name="success">/zx/iframePage/maps.jsp</result>
+		</action>
+		<!-- 保存日计划 -->
+		<action name="saveJcPlanDate"  class="saveJcPlanDateForZx">
+			<result  type="redirect">/zx/listUnOutJcPlanDate.action?type=JCGZ</result>
+			<result type="redirect" name="login">/login.jsp</result>
+		</action>
+		
+		<!-- 删除日计划信息 -->
+		<action name="deleteJcPlanDate"  class="deleteJcPlanDateForZx">
+			<result type="redirect">listUnOutJcPlanDate.action</result>
+		</action>
+		
+		<!-- 接车 -->
+		<action name="ajaxPickCarJcPlanDate"  class="ajaxPickCarJcPlanDateForZx"></action>
+		
+		<!-- 通过日计划Id 查询对应的日计划扣车信息  -->
+		<action name="findJcPlanDateById"  class="findJcPlanDateByIdForZx">
+			<result>/gdt/iframePage/alertDialog/planDate.jsp</result>
+		</action>
+		
+		<!-- 通过日计划id，查询对应的机车信息和班组信息(机车信息)  -->
+		<action name="listByPlanDateId"  class="listByPlanDateIdForZx">
+			<result name="success">/zx/iframePage/page/jcInfo.jsp</result>
+		</action>
+		
+		<!-- 机车股道转移  -->
+		<action name="stationRacksTransfer"  class="stationRacksTransferForZx">
+			<result type="redirect">listUnOutJcPlanDate.action</result>
+		</action>
+		
+		<!-- 机车部件信息  -->
+		<action name="viewFirstUnitRecord"  class="viewFirstUnitRecordForZx">
+			<result>/zx/iframePage/page/firstUnitRecord.jsp</result>
+		</action>
+		
+		<!-- 检修班组信息  -->
+		<action name="viewZxProteamRecord"  class="viewZxProteamRecordForZx">
+			<result>/zx/iframePage/page/zxProteamRecord.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 交车工长																		开始 -->
+	<package name="zxItemSignCommitLead" extends="json-default" namespace="/zx/commitLead">
+		 <!-- 机车中修项目交车工长查看检修项目ajax 签认-->    
+   		<action name="ajaxSignAllZxFixItem" class="ajaxSignAllZxFixItemByCommitLeadForZx"></action>
+
+		<!-- 机车中修项目交车工长查看检修项目 -->    
+    	<action name="viewZxFixItemRecord" class="viewZxFixItemRecordByCommitLeadForZx">
+			<result>/zx/iframePage/itemSignPage/commitLead/commitLeadSignManagerIframe.jsp</result>
+		</action>
+	</package>
+	<!-- 交车工长																		结束 -->
+	
+	<!-- 工长																			开始 -->
+	<package name="zxItemSignLead" extends="json-default" namespace="/zx/lead">
+		<!-- 机车中修项目工长查看检修项目ajax 签认-->    
+		<action name="ajaxSignAllZxFixItem" class="ajaxSignAllZxFixItemByLeadForZx"></action>
+		
+		<!-- 机车中修项目工长查看检修项目 -->    
+		<action name="viewZxFixItemRecord" class="viewZxFixItemRecordByLeadForZx">
+			<result>/zx/iframePage/itemSignPage/lead/leadSignManagerIframe.jsp</result>
+		</action>
+	</package>
+	<!-- 工长																			结束 -->
+	
+	<!-- 工人																			开始 -->
+	<package name="zxItemSignFixUser" extends="json-default" namespace="/zx/fixUsers">
+		<!-- 机车中修项查询工人检查项目中对数据进行一键禁用 或禁用-->
+		<action name="ajaxDisabledZxFixItemRecord" class="ajaxDisabledZxFixItemRecordByFixUsersForZx"></action>
+		
+		<!-- 机车中修项查询工人检测项目中对数据进行一键启用 或启用-->
+		<action name="ajaxEnableZxFixItemRecord" class="ajaxEnableZxFixItemRecordByFixUsersForZx"></action>
+	
+		<!-- 机车中修项查询工人检测项目 -->
+		<action name="viewFixUsersDetectionItem" class="viewFixUsersDetectionItemByFixUsersForZx">
+			<result>/zx/iframePage/itemSignPage/fixUsers/fixUsersDetectionItem.jsp</result>
+		</action>
+		
+		<!-- 机车中修项查询工人检查项目 -->
+		<action name="viewFixUsersCheckItem" class="viewFixUsersCheckItemByFixUsersForZx">
+			<result>/zx/iframePage/itemSignPage/fixUsers/fixUsersCheckItem.jsp</result>
+		</action>
+		
+		<!-- 中修工人项目签认 -->
+		<action name="ajaxSignZxFixItem" class="ajaxSignZxFixItemByFixUsersForZx"></action>
+		
+		<!-- 中修工人项目取消签认 -->
+		<action name="ajaxCancelSignZxFixItem" class="ajaxCancelSignZxFixItemByFixUsersForZx"></action>
+	</package>
+	<!-- 工人																			结束 -->
+	
+	<!-- 质检员																			开始 -->
+	<package name="zxItemSignQc" extends="json-default" namespace="/zx/qc">
+		
+		<!-- 机车中修质检员查看检修项目 -->    
+		<action name="viewZxFixItemRecord" class="viewZxFixItemRecordByQcForZx">
+			<result>/zx/iframePage/itemSignPage/qc/qcCheckSignItem.jsp</result>
+		</action>
+		
+		<!-- 机车中修质检员查看检修项目ajax 签认-->  
+		<action name="ajaxSignZxFixItemRecord" class="ajaxSignZxFixItemRecordByQcForZx"> </action>
+	</package>
+	<!-- 质检员																	        结束 -->
+	
+	
+	<!-- 技术员																		开始 -->
+	<package name="zxItemSignTechnician" extends="json-default" namespace="/zx/technician">
+		<!-- 机车中修技术员查看检修项目 -->    
+		<action name="ViewZxFixItemRecord" class="ViewZxFixItemRecordByTechnicianForZx">
+			<result>/zx/iframePage/itemSignPage/technician/technicianCheckSignItem.jsp</result>
+		</action>
+		
+		<!-- 机车中修技术员查看检修项目ajax 签认-->  
+		<action name="ajaxSignZxFixItemRecord" class="ajaxSignZxFixItemRecordByTechnicianForZx"> </action>
+	</package>
+	<!-- 技术员																			结束 -->
+	
+	<!-- 验收员																开始 -->
+		<package name="viewZxFixAcceptance" extends="json-default" namespace="/zx/acceptance">
+			<!-- 中修验收员查看检修项目 -->
+			<action name="viewZxFixItemRecord" class="viewZxFixItemRecordByAcceptanceForZx">
+				<result>/zx/iframePage/itemSignPage/acceptance/acceptanceSignManagerIframe.jsp</result>
+			</action>
+			<!-- 中修 验收员签认项目-->
+			<action name="ajaxSignZxFixItemRecord" class="AjaxSignZxFixItemRecordForZx"></action>
+		</package>
+	<!-- 验收员																			结束-->
+	
+	</struts>

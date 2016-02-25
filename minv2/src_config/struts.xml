@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 将struts2交给spring管理-->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!--该属性指定需要struts2处理的请求后缀，如果用户需要指定多个请求后缀，则后缀之间用英文逗号（，）隔开-->
+	<constant name="struts.action.extension" value="action,do" />
+	<!--动态方法调用，为true时，就可以在struts.xml配置“*”的通配符，来调用action里的方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 产品部署两种模式： 开发模式（devMode）；此时 DevMode=ture；产品模式(proMode)；此时  DevMode=false；-->
+    <constant name="struts.devMode" value="true" />
+    <!-- struts上传的最大值限制 -->
+	<constant name="struts.multipart.maxSize" value="100971520"></constant>
+	<!-- 国际化属性配置 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 指定Spring框架的自动装配模式，该属性的默认值是name，即默认根据Bean的name属性自动装配 -->
+	<constant name="struts.objectFactory.spring.autoWire" value="name"></constant>
+	<!-- 指定Struts 2默认的ObjectFactory Bean，该属性默认值是spring -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<!--该属性指定Struts 2应用所需要的国际化资源文件，如果有多份国际化资源文件，则多个资源文件的文件名以英文逗号（,）隔开 -->
+	<constant name="struts.custom.i18n.resources" value="messages"></constant>
+	<!-- 该属性指定OGNL是否可以调用静态方法 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	
+	<!-- 包含其他的struts-x.xml文件 -->
+	
+	<!-- 测试 -->
+	<include file="strutsConfig/struts_test.xml"></include>
+	
+	<include file="strutsConfig/struts_users.xml"></include>
+	
+	<include file="strutsConfig/struts_pj.xml"></include>
+	
+	<include file="strutsConfig/struts_pjFix.xml"></include>
+	
+	<include file="strutsConfig/struts_plan.xml"></include>
+	
+	<include file="strutsConfig/struts_zx.xml"></include>
+	
+	<include file="strutsConfig/struts_oil.xml"></include>
+	
+	<include file="strutsConfig/struts_report.xml"></include>
+</struts>

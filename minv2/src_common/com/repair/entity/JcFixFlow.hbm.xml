@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcFixFlow" table="JC_FIX_FLOW">
+		<id name="id" column="id" type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_FIX_FLOW</param>
+			</generator>
+		</id>
+		
+		<property name="fixFlowName">
+			<column name="FIX_FLOW_NAME">
+				<comment>流程节点名称</comment>
+			</column>
+		</property>
+		
+		<property name="fixFlowOrder">
+			<column name="FIX_FLOW_ORDER">
+				<comment>流程节点序号</comment>
+			</column>
+		</property>
+		
+		<set name="fixFlowJcTypeSet">
+			<comment>
+				关联JC_FIX_FLOW（机车检修流程节点表）-字段ID
+			</comment>
+			<key column="FIX_FLOW_ID"></key>
+			<one-to-many class="JcFixFlowJcType" />
+		</set>
+		
+		<set name="fixFlowFixMileageSet">
+			<comment>关联DICT_JC_FIX_MILEAGE（机车修程修次表）-字段ID</comment>
+			<key column="FIX_FLOW_ID"></key>
+			<one-to-many class="DictJcFixMileage"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

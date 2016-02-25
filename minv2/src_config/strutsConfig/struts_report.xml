@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="report" extends="json-default" namespace="/report">
+		<!--  ajax进行验收员报活签认，返回json数据-->
+		<action name="ajaxSignReportByAcceptance" class="ajaxSignReportByAcceptanceForReport"></action>
+		
+		<!--  以验收员身份列出机车日计划所有报活记录-->
+		<action name="listReportByAcceptance" class="listReportByAcceptanceForReport">
+			<result>/report/iframePage/page/acceptance/acceptanceReportSign.jsp</result>
+		</action>
+		
+		<!--  ajax进行技术员报活签认，返回json数据-->
+		<action name="ajaxSignReportByTechnician" class="ajaxSignReportByTechnicianForReport"></action>
+		
+		<!--  以技术员身份列出机车日计划所有报活记录-->
+		<action name="listReportByTechnician" class="listReportByTechnicianForReport">
+			<result>/report/iframePage/page/technician/technicianReportSign.jsp</result>
+		</action>
+		
+		<!--  ajax进行质检员报活签认，返回json数据-->
+		<action name="ajaxSignReportByQc" class="ajaxSignReportByQcForReport"></action>
+		
+		<!--  以质检员身份列出机车日计划所有报活记录-->
+		<action name="listReportByQc" class="listReportByQcForReport">
+			<result>/report/iframePage/page/qc/qcReportSign.jsp</result>
+		</action>
+		
+		<!--  ajax进行交车工长报活签认，返回json数据-->
+		<action name="ajaxSignReportByCommitLead" class="ajaxSignReportByCommitLeadForReport"></action>
+		
+		<!--  以交车工长身份列出机车日计划所有报活记录-->
+		<action name="listReportByCommitLead" class="listReportByCommitLeadForReport">
+			<result>/report/iframePage/page/commitLead/commitLeadReportSign.jsp</result>
+		</action>
+		
+		
+		<!--  ajax进行工长报活签认，返回json数据-->
+		<action name="ajaxSignReportByLead" class="ajaxSignReportByLeadForReport"></action>
+		
+		<!-- 以工长身份列出此班组所有报活记录-->
+		<action name="listReportByLead" class="listReportByLeadForReport">
+			<result>/report/iframePage/page/lead/leadReportSign.jsp</result>
+		</action>
+		
+		<!--  ajax进行工人报活签认，返回json数据-->
+		<action name="ajaxSignReportByFixUsers" class="ajaxSignReportByFixUsersForReport"></action>
+		
+		<!--查询故障词典，返回json数据，可根据部件类型和父级ID进行查询 -->
+		<action name="ajaxListDictFault" class="ajaxListDictFaultForReport"></action>
+		
+		<action name="ajaxListDictProteam" class="ajaxListDictProteamForReport"></action>
+		
+		<action name="saveJtReport" class="saveJtReportForReport">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="fileUpload"></interceptor-ref>
+		</action>
+		<!-- 查询出所有 未交车的 机车检修日计划的信息，返回json数据 -->
+		<action name="ajaxListUnDealJcPlanDate" class="ajaxListUnDealJcPlanDateForReport">
+		</action>
+	
+		<!-- 点击我的报活页面的"详情"按钮  跳转到报活详情页面 -->
+		<action name="toShowJtReport" class="toShowJtReportForReport">
+			<result>/report/iframePage/alertDialog/reportDetailDialog.jsp</result>
+		</action>
+		<!-- 点击我的报活页面的"删除"按钮 -->
+		<action name="deleteJtReport" class="deleteJtReportForReport">
+			<result type="redirect">/report/ajaxListUnDealJcPlanDate.action</result>
+		</action>
+		
+		<!-- 查询 指定机车日计划、指定用户ID 的报活记录 -->
+		<action name="listMyReport" class="listMyReportForReport">
+			<result>/report/iframePage/page/general/myReport.jsp</result>
+		</action>
+		
+		<!-- 通过报活Id查询修改之前的数据 -->
+		<action name="findJcReportById" class="findJcReportByIdForReport">
+			<result>/report/iframePage/alertDialog/reportOperateDialog.jsp</result>
+		</action>
+		
+		<!-- 查询 指定机车日计划、指定班组ID 的报活记录 -->
+		<action name="listReportByFixUsers" class="listReportByFixUsersForReport">
+			<result>/report/iframePage/page/fixUsers/fixUsersReportSign.jsp</result>
+		</action>
+	</package>
+</struts>

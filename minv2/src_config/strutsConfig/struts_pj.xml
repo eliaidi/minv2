@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+      <!-- 大部件(专业)action 配置信息                    								开始-->
+	  <package name="dictPjFirstUnit" extends="json-default">
+	      <!-- 添加数据 -->
+	      <action name="addDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.AddDictPjFirstUnitAction">
+	          <result name="success" type="redirect">toFirstUnitManageIframe.action</result>
+	          <result name="invalid.token">toFirstUnitManageIframe.action</result>
+	          <interceptor-ref name="token"></interceptor-ref>
+              <interceptor-ref name="defaultStack"></interceptor-ref>
+	      </action>
+	      
+	       <!-- 查询数据.添加数据 -->
+	      <action name="toAddDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.ToAddDictPjFirstUnitAction">
+	          <result>/pj/iframePage/firstUnit/alertDialog/editFirstUnitDialog.jsp</result>
+	      </action>
+	      
+	      <!-- 删除数据 -->
+	      <action name="deleteDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.DeleteDictPjFirstUnitAction">
+	          <result name="success" type="redirectAction">toFirstUnitManageIframe.action</result>
+	      </action>
+	      
+	      <!-- 通过大部件(专业)表UnitName查询数据 -->
+	       <action name="findDictPjFirstUnitByUnitName" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitByUnitNameAction">
+	          <result>/test/pj/dictPjFirstUnitIndex.jsp</result>
+	      </action>
+	      
+	      <!-- 修改数据 -->
+	      <action name="updateDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.UpdateDictPjFirstUnitAction">
+	          <result name="success" type="redirectAction">toFirstUnitManageIframe.action</result>
+	      </action>
+	      
+	      <!-- 通过大部件(专业)表id查询数据,修改数据 -->
+	       <action name="toUpdateDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.ToUpdateDictPjFirstUnitAction">
+	          <result>/pj/iframePage/firstUnit/alertDialog/updateFirstUnitDialog.jsp</result>
+	      </action>
+	      
+	      <!-- 查询大部件(专业)表所有数据 -->
+	       <action name="findAllDictPjFirstUnit" class="com.repair.pj.action.dictPjFirstUnit.FindAllDictPjFirstUnitAction">
+	          <result>/pj/iframePage/storeDynamicInfo/newPjDynamicSuManageIframe.jsp</result>
+	      </action>
+	      
+	       <!-- 跳至配件动态信息管理->专业分类（pj/iframePage/storeDynamicInfo/unitManageIframe.jsp）
+* 				页面，为树形菜单提供数据 -->
+	       <action name="toUnitManageIframe" class="com.repair.pj.action.dictPjFirstUnit.ToUnitManageIframeAction">
+	          <result>/pj/iframePage/storeDynamicInfo/unitManageIframe.jsp</result>
+	      </action>
+	      
+	       <!-- 专业管理（查询所有大部件） -->
+	      <action name="toFirstUnitManageIframe" class="com.repair.pj.action.dictPjFirstUnit.ToFirstUnitManageIframeAction">
+	          <result name="success">/pj/iframePage/firstUnit/firstUnitManageIframe.jsp</result>
+	      </action>
+	      
+	      <!-- 根据Id查询数据，选择专业 -->
+	      <action name="findDictPjFirstUnitById" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitByIdAction">
+	          <result name="success">/pj/iframePage/firstUnit/firstUnitManageChildIframe.jsp</result>
+	      </action>
+	      
+	     <!-- 通过专业名或拼音模糊查询大部件（不区分大小写） -->
+     	 <action name="findDictPjFirstUnitListByNameOrPy" class="com.repair.pj.action.dictPjFirstUnit.FindDictPjFirstUnitListByNameOrPyAction">
+	     
+	     </action>
+	      
+	  </package>
+	   <!-- 大部件(专业)action 配置信息                    								结束-->
+	   
+	    <!--  配件仓库静态/基本信息 action 配置信息                   							开始 -->
+	  <package name="pjStoreStaticInfo" extends="json-default" namespace="/">
+	      <!-- 添加数据 -->
+	      <action name="addPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.AddPjStoreStaticInfoAction">
+	          <result name="success" type="redirectAction">findPagePjStoreStaticInfo.action</result>
+	          <result name="invalid.token">findPagePjStoreStaticInfo.action</result>
+	          <interceptor-ref name="token"></interceptor-ref>
+              <interceptor-ref name="defaultStack"></interceptor-ref>
+	      </action>
+	      
+	       <!-- 添加数据之前查询数据 -->
+	      <action name="toAddPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.ToAddPjStoreStaticInfoAction">
+	          <result name="success">/pj/iframePage/storeStaticInfo/alertDialog/editStoreStaticDialog.jsp</result>
+	      </action>
+	      
+	      
+	      <!-- 通过大部件(专业)表id查询数据 -->
+	       <action name="findPjStoreStaticInfoById" class="com.repair.pj.action.pjStoreStaticInfo.FindPjStoreStaticInfoByIdAction">
+	          <result>/pj/iframePage/storeStaticInfo/alertDialog/viewStoreStaticDialog.jsp</result>
+	      </action>
+	      
+	      <!-- 使用ajax判断数据库中静态配件名是否存在 -->
+	       <action name="findPjStoreStaticInfoByPjName" class="com.repair.pj.action.pjStoreStaticInfo.FindPjStoreStaticInfoByPjNameAction">
+	          <result>/pj/iframePage/storeStaticInfo/alertDialog/viewStoreStaticDialog.jsp</result>
+	      </action>
+	      
+	      <!-- 修改数据-->
+	       <action name="updatePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.UpdatePjStoreStaticInfoAction">
+	          <result name="success" type="redirectAction">findPagePjStoreStaticInfo.action</result>
+	      </action>
+	      
+	      <!--通过id查询数据， 修改数据-->
+	       <action name="toUpdatePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.ToUpdatePjStoreStaticInfoAction">
+	          <result name="success">/pj/iframePage/storeStaticInfo/alertDialog/updateStoreStaticDialog.jsp</result>
+	      </action>
+	      
+	      
+	      <!-- 删除数据-->
+	       <action name="deletePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.DeletePjStoreStaticInfoAction">
+	          <result name="success" type="redirectAction">findPagePjStoreStaticInfo.action</result>
+	      </action>
+	      
+	      <!-- 分页数据-->
+	       <action name="findPagePjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.FindPagePjStoreStaticInfoAction">
+	          <result name="success">/pj/iframePage/storeStaticInfo/storeStaticInfoManagerIframe.jsp</result>
+	      </action>
+	      
+	    
+		   
+		    <!--查询所有静态配件信息 -->
+	       <action name="findAllPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.FindAllPjStoreStaticInfoAction">
+		  	 <result>/pj/iframePage/storeStaticInfo/alertDialog/storeStaticDialogInfo.jsp</result>
+		   </action>
+		   
+		    <!-- 配件动态信息管理-专业分类-查询 -->
+	       <action name="queryPjStoreStaticInfo" class="com.repair.pj.action.pjStoreStaticInfo.QueryPjStoreStaticInfoAction">
+		  	 <result>/pj/iframePage/storeDynamicInfo/unitManageChildIframe.jsp</result>
+		  	 <result name="unit">/pj/iframePage/storeDynamicInfo/unitManageChildIframe.jsp</result>
+		   	 <result name="jctype">/pj/iframePage/storeDynamicInfo/jctypeManageChildIframe.jsp</result>
+		   </action>
+		   
+		   <!-- 通过配件名称或者拼音查询数据，返回json格式数据 -->
+		   <action name="findPjSSInfoListByNameOrPy" class="com.repair.pj.action.pjStoreStaticInfo.FindPjSSInfoListByNameOrPyAction">
+			 
+		   </action>			
+	  </package>
+	   <!--  配件仓库静态/基本信息 action 配置信息                   							结束 -->
+	   
+	   
+	   <!-- 配件所在位置/仓库action层										开始 -->
+	  <package name="dictStorePosition" extends="json-default">
+	  	<!-- 通过地区ID查询 -->
+		<action name="findDictStorePositionByDictAreaId" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByDictAreaIdAction">
+ 	    	<result>/test/pj/dictStorePosition.jsp</result>
+ 	    </action>
+ 	    
+ 	    <!-- 通过Name查询 -->
+ 	    <action name="findDictStorePositionByName" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByNameAction">
+ 	    	<result>/test/pj/dictStorePosition.jsp</result>
+ 	    </action>
+ 	    
+ 	    <!-- 通过Type查询 -->
+ 	    <action name="findDictStorePositionByType" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByTypeAction">
+ 	    	<result>/test/pj/dictStorePosition.jsp</result>
+ 	    </action>
+ 	    
+ 	     <!-- 查询所有 -->
+ 	    <action name="findAllDictStorePosition" class="com.repair.pj.action.dictStorePosition.FindAllDictStorePositionAction">
+ 	    	<result>/pj/iframePage/storePosition/storePositionManagerIframe.jsp</result>
+ 	    </action>
+ 	   
+ 	    <!-- 通过模型驱动修改数据 -->
+ 	    <action name="updateDictStorePosition" class="com.repair.pj.action.dictStorePosition.UpdateDictStorePositionAction">
+ 	    	<result name="success" type="redirect">${returnUrl}</result>
+ 	    </action>
+ 	    
+ 	    <!-- 通过模型驱动删除数据 -->
+ 	    <action name="deleteDictStorePosition" class="com.repair.pj.action.dictStorePosition.DeleteDictStorePositionAction">
+ 	    	<result name="success" type="redirect">${returnUrl}</result>
+ 	    </action>
+ 	    <!-- 通过ID删除数据 -->
+ 	     <action name="delDictStorePositionById" class="com.repair.pj.action.dictStorePosition.DelDictStorePositionByIdAction">
+ 	    	<result name="success" type="redirect">queryDictStorePosition.action</result>
+ 	    </action>
+ 	    <!-- 通过模型驱动添加数据 -->
+ 	    <action name="addDictStorePosition" class="com.repair.pj.action.dictStorePosition.AddDictStorePositionAction">
+ 	    	<result name="success" type="redirect">/queryDictStorePosition.action</result>
+ 	    	<result name="invalid.token">/queryDictStorePosition.action</result>    
+ 	    	<interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="token"></interceptor-ref>
+ 	    </action>
+ 	   
+ 	   <!-- 分页排序 -->
+ 	   <action name="queryDictStorePosition" class="com.repair.pj.action.dictStorePosition.QueryDictStorePositionAction">
+ 	   		<result>/pj/iframePage/storePosition/storePositionManagerIframe.jsp</result>
+ 	   </action>
+ 	   
+ 	   <!-- 跳转到添加仓库页面 -->
+ 	   <action name="toAddStorePositionDialog" class="com.repair.pj.action.dictStorePosition.ToAddStorePositionDialogAction">
+ 	   		<result>/pj/iframePage/storePosition/alertDialog/addStorePositionDialog.jsp</result>
+ 	   </action>
+ 	   
+ 	   <!-- 跳转到修改仓库页面 -->
+ 	   <action name="toUpdateDictStorePosition" class="com.repair.pj.action.dictStorePosition.ToUpdateDictStorePositionAction">
+ 	   		<result>/pj/iframePage/storePosition/alertDialog/updateStorePositionDialog.jsp</result>
+ 	   </action>
+ 	   
+ 	    <!-- ajax判断仓库下是否存在配件 -->
+ 	   <action name="findDictStorePositionByIdToPj" class="com.repair.pj.action.dictStorePosition.FindDictStorePositionByIdToPjAction">
+ 	   		<result>/pj/iframePage/storePosition/alertDialog/updateStorePositionDialog.jsp</result>
+ 	   </action>
+	  </package>
+	  
+	 
+	  
+	  <!-- 配件所在位置/仓库action层										结束 -->
+	  
+	  <!-- 机车型号 action层											开始 -->
+	  <package name="dictJcType" extends="json-default">
+	    <!-- 查询所有的机车型号 -->
+	  	  <action name="findAllDictJcType" class="com.repair.pj.action.dictJcType.FindAllDictJcTypeAction">
+ 	    	<result>/test/pj/dictJcType.jsp</result>
+ 	    </action>
+ 	    
+ 	    <!-- 跳至配件动态信息管理->车型分类（pj/iframePage/storeDynamicInfo/unitManageIframe.jsp）
+ 						页面，为树形菜单提供数据 -->
+ 	    <action name="toJcTypeManageIframe" class="com.repair.pj.action.dictJcType.ToJcTypeManageIframeAction">
+ 	    	<result>/pj/iframePage/storeDynamicInfo/jctypeManageIframe.jsp</result>
+ 	    </action>
+	  </package>
+	  <!-- 机车型号 action层											结束 -->
+	  
+	    
+	  <!-- 配件仓库动态/库存信息  action 配置										开始 -->
+	  <package name="pjStoreDynamicInfo" extends="json-default">
+	     <!-- 添加配件仓库动态/库存信息 -->
+	     <action name="addPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.AddPjStoreDynamicInfoAction">
+ 	    	<result name="success" type="redirect">findAllPjStoreDynamicInfo.action</result>
+			<result name="invalid.token" type="redirect">findAllPjStoreDynamicInfo.action</result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="token"></interceptor-ref>
+ 	     </action>
+ 	     
+ 	     <!-- 删除配件仓库动态/库存信息 -->
+ 	     <action name="deletePjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.DeletePjStoreDynamicInfoAction">
+ 	    	<result name="success" type="redirect">findAllPjStoreDynamicInfo.action</result>
+ 	     </action>
+ 	     
+ 	     <!-- 删除按专业分类删除静态信息  -->
+ 	     <action name="deletePjStoreDynamicByFirstUnitInfo" class="com.repair.pj.action.pjStoreDynamicInfo.DeletePjStoreDynamicInfoAction">
+ 	    	<result name="success" type="redirect">${returnUrl}</result>
+ 	     </action>
+ 	     
+ 	     <!-- 查询配件仓库动态/库存信息 -->
+ 	     <action name="findAllPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.FindAllPjStoreDynamicInfoAction">
+ 	    	<result>/pj/iframePage/storeDynamicInfo/newPjDynamicSuManageChildIframe.jsp</result>
+ 	     </action>
+ 	        <!-- 查询弹出移库页面信息-->
+ 	     <action name="toMoveStorePositionDialog" class="com.repair.pj.action.pjStoreDynamicInfo.ToMoveStorePositionDialog">
+ 	    	<result>/pj/iframePage/storeDynamicInfo/alertDialog/moveStorePositionDialog.jsp</result>
+ 	     </action>
+ 	     
+ 	     <!-- 通过ajax查询pjdCode是否唯一 -->
+ 	     <action name="findPjStoreDynamicInfoByPjdCode" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjStoreDynamicInfoByPjdCodeAction">
+ 	    	<result>/pj/iframePage/storeDynamicInfo/alertDialog/moveStorePositionDialog.jsp</result>
+ 	     </action>
+ 	     
+ 	     	<!--跳到修改页面  -->
+ 		<action name="toUpdateDynamicInfoDialog" class="com.repair.pj.action.pjStoreDynamicInfo.ToUpdateDynamicInfoDialog">
+ 			<result>/pj/iframePage/storeDynamicInfo/alertDialog/updateDynamicInfoDialog.jsp</result>
+ 		</action>	     
+ 	      <!--通过大部件（专业）ID查询配件仓库动态/库存信息 -->
+ 	     <action name="findPagePjStoreDynamicInfoByDictFirstUnitId" class="com.repair.pj.action.pjStoreDynamicInfo.FindPagePjStoreDynamicInfoByDictFirstUnitIdAction">
+ 	    	<result>/pj/iframePage/storeDynamicInfo/newPjDynamicSuManageChildIframe.jsp</result>
+ 	     </action>
+ 	     
+ 	     <!-- 根据Id查询配件仓库动态/库存信息 -->
+ 	     <action name="findPjStoreDynamicInfoById" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjStoreDynamicInfoByIdAction">
+ 	    	<result>/test/pj/dictStorePosition.jsp</result>
+ 	     </action>
+ 	     
+ 	     <!-- 修改配件仓库动态/库存信息 -->
+ 	     <action name="updatePjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.UpdatePjStoreDynamicInfoAction">
+ 	    	<result name="success" type="redirect">${returnUrl}</result>
+ 	     </action>
+ 	     
+ 	      <!-- 查询动态配件 -->
+ 	      <action name="queryPjStoreDynamicInfo" class="com.repair.pj.action.pjStoreDynamicInfo.QueryPjStoreDynamicInfoAction">
+		  	 <result>/pj/iframePage/storeDynamicInfo/unitManageChildIframe.jsp</result>
+		  	 <result name="unit">/pj/iframePage/storeDynamicInfo/unitManageChildIframe.jsp</result>
+		   	 <result name="jctype">/pj/iframePage/storeDynamicInfo/jctypeManageChildIframe.jsp</result>
+		   </action>
+		   
+		   <!-- 通过静态配件ID获得配件仓库动态/库存信息集合 -->
+ 	       <action name="findPjSDInfoListByPssiId" class="com.repair.pj.action.pjStoreDynamicInfo.FindPjSDInfoListByPssiIdAction">
+ 	    	 <result>/pj/iframePage/storeDynamicInfo/alertDialog/storeDynamicInfoDialog.jsp</result>
+ 	       </action>
+	  </package>
+	  <!-- 配件仓库动态/库存信息  action 配置										结束 -->
+	  
+	    <!-- 动态配件出入库记录												开始 -->
+	  <package name="pjSDInfoRecord" extends="json-default">
+	    <!-- 查询动态配件出入库记录 -->
+	  	 <action name="queryPjSDInfoRecord" class="com.repair.pj.action.pjSDInfoRecord.QueryPjSDInfoRecordAction">
+ 	    	<result >/pj/iframePage/pjSDInfoRecord/pjSDInfoRecordManageIframe.jsp</result>
+ 	     </action>
+ 	     <!--添加关于《主仓库和班组的子记录》-->
+ 	      <action name="addPjSDInfoRecordSp" class="com.repair.pj.action.pjSDInfoRecord.AddStorePjSDInfoRecordSpAction">
+ 	    	<result name="success" type="redirect">${returnUrl}</result>
+ 	     </action>
+ 	      <!--添加关于《班组和班组的子记录》-->
+ 	     <action name="addStorePjSDInfoRecordPp" class="com.repair.pj.action.pjSDInfoRecord.AddStorePjSDInfoRecordPpAction">
+ 	     	<result name="success" type="redirect">${returnUrl}</result>
+ 	     </action>
+	  </package>
+	  <!-- 动态配件出入库记录													结束-->
+	  
+	  
+	  <!-- 用户相关 															开始 -->
+	  <package name="pjUsersPrivsPkg" extends="json-default">
+		  	<!--通过仓库ID获得班组所属班组，然后通过班组获得用户集合（json格式）  -->	
+			<action name="findUsersListByStorePositionId"  class="com.repair.pj.action.usersPrivs.FindUsersListByStorePositionIdAction">
+			
+			</action>
+	  </package>
+</struts>

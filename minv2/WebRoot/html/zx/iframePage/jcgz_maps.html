@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+    <title>机车信息和股道图</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+    <meta http-equiv="description" content="this is my page"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+    <!-- 框架必需  开始-->
+    <script type="text/javascript" src="../../../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="../../../../mainframe/js/framework.js"></script>
+   
+    <link href="../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+    <link  rel="stylesheet"  id="skin" prePath="../../../../mainframe/"/>
+   
+    <!-- 框架必需  	结束-->
+    
+    
+	<script type="text/javascript" src="../../../../mainframe/js/attention/zDialog/zDrag.js"></script>
+	<script type="text/javascript" src="../../../../mainframe/js/attention/zDialog/zDialog.js"></script>
+	
+	<script	 type="text/javascript" src="../../../../js/My97DatePicker/WdatePicker.js"></script>
+	    
+    </head>
+	
+  	<style>
+	TABLE.bluetable {
+		FONT: 100% Arial, Helvetica, sans-serif
+	}
+	TD {
+		FONT: 100% Arial, Helvetica, sans-serif
+	}
+	TABLE.bluetable {
+		MARGIN: 0.1em 0px; BORDER-COLLAPSE: collapse
+	}
+	TABLE.bluetable TH {
+		BORDER-BOTTOM: #2b3b58 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #2b3b58 1px solid; PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BORDER-TOP: #2b3b58 1px solid; BORDER-RIGHT: #2b3b58 1px solid; PADDING-TOP: 0.5em
+	}
+	TABLE.bluetable TD {
+		BORDER-BOTTOM: #2b3b58 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #2b3b58 1px solid; PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; BORDER-TOP: #2b3b58 1px solid; BORDER-RIGHT: #2b3b58 1px solid; PADDING-TOP: 0.5em
+	}
+	TABLE.bluetable TH {
+		BACKGROUND: url(images/tr_back.gif) #328aa4 repeat-x; COLOR: #fff
+	}
+	TABLE.bluetable TD {
+		BACKGROUND: #FFFFFF
+	}
+	TABLE.bluetable TR.even TD {
+		BACKGROUND: #e5f1f4
+	}
+	TABLE.bluetable TR.odd TD {
+		BACKGROUND: #f8fbfc
+	}
+	TABLE.bluetable TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TR.even TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TR.odd TH.over {
+		BACKGROUND: #4a98af
+	}
+	TABLE.bluetable TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TR.even TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TR.odd TH.down {
+		BACKGROUND: #bce774
+	}
+	TABLE.bluetable TH.selected {
+		
+	}
+	TABLE.bluetable TR.even TH.selected {
+		
+	}
+	TABLE.bluetable TR.odd TH.selected {
+		
+	}
+	TABLE.bluetable TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TR.even TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TR.odd TD.over {
+		BACKGROUND: #ecfbd4
+	}
+	TABLE.bluetable TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TR.even TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TR.odd TD.down {
+		BACKGROUND: #bce774; COLOR: #fff
+	}
+	TABLE.bluetable TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TR.even TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TR.odd TD.selected {
+		BACKGROUND: #bce774; COLOR: #555
+	}
+	TABLE.bluetable TD.empty {
+		BACKGROUND: #fff
+	}
+	TABLE.bluetable TR.odd TD.empty {
+		BACKGROUND: #fff
+	}
+	TABLE.bluetable TR.even TD.empty {
+		BACKGROUND: #fff
+	}
+</style>
+
+<body>
+	<table style="width: 100%;" cellspacing="0" class="bluetable">
+		<tr>
+			<!--左侧区域start-->
+			<td>
+			    <div style="overflow: auto;height: 600px;">
+			    	<table>
+			        	<tr>
+			            	<th width="5%">序号</th>
+			                <th width="10%">车号</th>
+			                <th width="10%">股道</th>
+			                <th width="20%">扣车时间</th>
+				         	<th width="20%">交车工长</th> 
+				            <th width="10%">状态</th>
+			            	<th width="15%">操作</th>
+		         	   	</tr>
+			           	
+				            <tr>
+				            	<td align="center"></td>
+				                <td align="center"> </td>
+				                <td align="center"></td>
+				                <td align="center"></td>
+				                <td align="center"></td>
+				                <td align="center"> </td>
+					            <td>
+					            	<div class="simpleMenu" style="width:92px;">
+										<div class="simpleMenu_link arrow border" style="z-index: -1;position: static;">
+											<a href="javascript:;" style="position: static;">全部操作</a>
+										</div>
+										<div class="simpleMenu_con" style="width:90px;z-index: 1;position: static;">
+											<a href="" target="jcgz_gdt" style="position: static;"><span class="icon_lightOn">油水化验</span></a>
+											<a href="" target="jcgz_gdt" onclick="" style="position: static;"><span class="icon_poll">报活</span></a>
+						                	<a href="" onclick="" style="position: static;"><span class="icon_edit">修改计划</span></a>
+						                	<a href="" onclick="" style="position: static;"><span class="icon_remove">删除</span></a>
+						                	<a href="" onclick="" style="position: static;"><span class="icon_mark">接车</span></a>
+										</div>
+									</div>
+					            </td>
+				            </tr>
+		      	  </table>
+		      	</div>
+			</td>
+			<!--左侧区域end-->
+			<!--右侧区域start-->
+			
+			<td width="65%">
+				<iframe id="jcgz_gdt" name="jcgz_gdt" scrolling="auto" overflow="auto" width="100%" height="600px" frameBorder=0 src=""  allowTransparency="true"></iframe>
+			</td>
+			
+			<!--右侧区域end-->
+		</tr>
+	</table>
+
+</body>
+</html>

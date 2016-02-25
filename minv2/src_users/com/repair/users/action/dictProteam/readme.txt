@@ -1,0 +1,11 @@
+名称：users模块，dicProteam[班组]，action层
+说明：
+	1、AddDictProteamAction.java：添加班组。
+	2、DelByProteamNameAction.java：通过班组名删除班组。
+	3、DelDictProteamByIdAction.java：通过id删除班组。
+	4、FindAllDictProteamAction.java：查询所有班组。
+	5、FindDictProteamByAttendanceFlagAction.java：通过考勤字段状态查询班组。
+	6、FindDictProteamByAttendanceFlagAction.java：通过id查询班组。
+	7、FindDictProteamByNameAction.java：通过班组名查询班组。
+	8、FindDictProteamByWorkFlagAction.java：根据班组，小辅修、中修判别字段，查询班组。
+	9、UpdateDictProteamByIdAction.java：通过id修改班组。

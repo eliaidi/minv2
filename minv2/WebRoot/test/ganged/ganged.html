@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>ganged.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <script type="text/javascript" src="../../mainframe/js/jquery-1.4.js"></script>
+    <script type="text/javascript" src="ganged.js"></script>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script>
+		$(function(){
+			$.ganged({
+				"firstSelName":"testId",
+				"secondSelName":"secondSelId",
+				"url":"gangedTest.action"
+			});
+			
+			$.ganged({
+				"firstSelId":"testId",
+				"secondSelId":"secondSelId",
+				"url":"gangedTest.action"
+			});
+		});
+	</script>
+  </head>
+  
+  <body>
+    	<select  name="testId">
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+    	</select>
+    	
+    	<select  name="secondSelId">
+    	
+    	</select>
+    	<hr/>
+    	<select  name="testId">
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+    	</select>
+    	
+    	<select  name="secondSelId">
+    	
+    	</select>
+    	
+    	<hr>
+    	<select id="testId" >
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+    	</select>
+    	
+    	<select id="secondSelId" >
+    	
+    	</select>
+  </body>
+</html>

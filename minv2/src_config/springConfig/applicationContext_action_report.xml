@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+    
+     <!--验收员   查询指定机车检修日计划   的报活记录 -->
+    <bean id="listReportByAcceptanceForReport" class="com.repair.report.action.jtReport.acceptance.ListReportByAcceptanceAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  ajax进行验收员报活签认，返回json数据-->
+	<bean id="ajaxSignReportByAcceptanceForReport" class="com.repair.report.action.jtReport.acceptance.AjaxSignReportByAcceptanceAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+    
+    
+     <!-- 技术员   查询指定机车检修日计划   的报活记录 -->
+    <bean id="listReportByTechnicianForReport" class="com.repair.report.action.jtReport.technician.ListReportByTechnicianAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  ajax进行技术员报活签认，返回json数据-->
+	<bean id="ajaxSignReportByTechnicianForReport" class="com.repair.report.action.jtReport.technician.AjaxSignReportByTechnicianAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+    
+    
+     <!-- 质检员   查询指定机车检修日计划   的报活记录 -->
+    <bean id="listReportByQcForReport" class="com.repair.report.action.jtReport.qc.ListReportByQcAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  ajax进行质检员报活签认，返回json数据-->
+	<bean id="ajaxSignReportByQcForReport" class="com.repair.report.action.jtReport.qc.AjaxSignReportByQcAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+    
+    
+     <!--  交车工长   查询指定机车检修日计划   的报活记录 -->
+    <bean id="listReportByCommitLeadForReport" class="com.repair.report.action.jtReport.commitLead.ListReportByCommitLeadAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  ajax进行交车工长报活签认，返回json数据-->
+	<bean id="ajaxSignReportByCommitLeadForReport" class="com.repair.report.action.jtReport.commitLead.AjaxSignReportByCommitLeadAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+    
+    <!--  ajax进行工长报活签认，返回json数据-->
+	<bean id="ajaxSignReportByLeadForReport" class="com.repair.report.action.jtReport.lead.AjaxSignReportByLeadAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+	
+	 <!--  查询 指定机车日计划、指定班组ID)(登录的用户id) 的报活记录 -->
+    <bean id="listReportByLeadForReport" class="com.repair.report.action.jtReport.lead.ListReportByLeadAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+	
+	
+    
+    <!--  ajax进行工人报活签认，返回json数据-->
+	<bean id="ajaxSignReportByFixUsersForReport" class="com.repair.report.action.jtReport.fixUsers.AjaxSignReportByFixUsersAction" scope="prototype">
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+    
+    
+    <!--  查询故障词典，返回json数据，可根据部件类型和父级ID进行查询 -->
+	<bean id="ajaxListDictFaultForReport" class="com.repair.report.action.dictFault.AjaxListDictFaultAction" scope="prototype">
+		<property name="dictFaultService" ref="dictFaultForReportService"></property>
+	</bean>
+	
+	  <!--  查询故障词典，返回json数据，可根据部件类型和父级ID进行查询 -->
+	<bean id="ajaxListDictProteamForReport" class="com.repair.report.action.dictProteam.AjaxListDictProteamAction" scope="prototype">
+		<property name="dictProteamService" ref="dictProteamForReportService"></property>
+	</bean>
+	
+	  <!--  查询故障词典，返回json数据，可根据部件类型和父级ID进行查询 -->
+	<bean id="saveJtReportForReport" class="com.repair.report.action.jtReport.SaveJtReportAction" scope="prototype">
+		<property name="jcPlanDateService" ref="jcPlanDateForReportService"></property>
+		<property name="dictProteamService" ref="dictProteamForReportService"></property>
+		<property name="jtReportService" ref="jtReportForReportService"></property>
+	</bean>
+	
+	   <!-- 查出所有的在修机车的记录 -->
+    <bean id="ajaxListUnDealJcPlanDateForReport" class="com.repair.report.action.jcPlanDate.AjaxListUnDealJcPlanDateAction" scope="prototype">
+    	<property name="jcPlanDateService" ref="jcPlanDateForReportService"/>
+    </bean>
+    
+     <!-- 点击我的报活页面的"详情"按钮  跳转到报活详情页面 -->
+    <bean id="toShowJtReportForReport" class="com.repair.report.action.jtReport.ToShowJtReportAction">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!-- 点击我的报活页面的"删除"按钮  -->
+    <bean id="deleteJtReportForReport" class="com.repair.report.action.jtReport.DeleteJtReportAction">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+     <!--  查询 指定机车日计划、指定用户ID 的报活记录 -->
+    <bean id="listMyReportForReport" class="com.repair.report.action.jtReport.ListMyReportAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  通过报活Id查询修改之前的数据 -->
+    <bean id="findJcReportByIdForReport" class="com.repair.report.action.jtReport.FindJcReportByIdAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    <!--  查询 指定机车日计划、指定班组ID)(登录的用户id) 的报活记录 -->
+    <bean id="listReportByFixUsersForReport" class="com.repair.report.action.jtReport.fixUsers.ListReportByFixUsersAction" scope="prototype">
+    	<property name="jtReportService" ref="jtReportForReportService"/>
+    </bean>
+    
+    
+    
+    
+</beans>

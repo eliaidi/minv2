@@ -1,0 +1,53 @@
+#backgroundHolder { width:750px; height:440px; padding-top:10px;  }
+
+.nav, .nav ul { list-style-type:none; margin:0; padding:0; }
+
+.nav a { text-decoration:none; }
+
+.nav { font-family: arial, sans-serif; font-size:12px; width:650px; margin:0 auto; }
+
+.nav a { background:url(../../js/maintenanceRecord/dhlPng/tab2.png); }
+
+.nav a b { font-weight:normal; display:block; padding:1px 5px 5px 5px; color:#fff; }
+
+.nav a:hover b { color:#000; cursor:pointer; }
+
+.nav .fly .main b { background:url(../../js/maintenanceRecord/dhlPng/arrow.gif) no-repeat 105px 9px; }
+
+.nav .down b { background:url(../../js/maintenanceRecord/dhlPng/arrow2.gif) no-repeat 103px 11px; }
+
+.nav_down_b { align:center}
+
+.nav .right ul b { text-align:right; }
+
+.nav .right ul .main b { background:url(../../js/maintenanceRecord/dhlPng/arrow3.gif) no-repeat 10px 9px; text-align:right; }
+
+.nav ul ul { top:-30px; } 
+ 
+.nav .drop, .nav a { width:120px; }
+
+.nav ul ul { left:120px; }
+
+.nav li.right ul ul { left:auto; right:120px; }
+
+.nav a { margin-right:-119px; }
+
+.nav li { float:left; }
+
+.nav ul { float:left; position:relative; z-index:20; }
+
+.nav ul li { clear:left; }
+
+.nav a { position:relative; display:block; }
+
+.nav a.main { float:left;  margin-top:10000px; }
+
+.nav .drop, .nav .fly { margin-top:-10000px; }
+
+.nav ul { margin-bottom:-5000px; }
+
+.nav a:hover, .nav a:focus, .nav a:active { margin-right:0; z-index:10; outline:0; }
+
+.nav a:hover b, .nav a:focus b, .nav a:active b { color:#000 }
+
+.nav ul:hover, .nav ul ul:hover { clear:left; } 

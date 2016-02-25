@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="FixItemPreinstallType" table="FIX_ITEM_PREINSTALL_TYPE">
+		<id name="id" column="id" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_FIX_ITEM_PREINSTALL_TYPE</param>
+			</generator>
+		</id>
+		
+		<property name="preinstallTypeName">
+			<column name="PREINSTALL_TYPE_NAME">
+				<comment>预设分类名称</comment>
+			</column>
+		</property>
+		
+		<property name="jcTypes">
+			<column name="JC_TYPES">
+				<comment>机车型号（如：DF1，HX1）</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="proteam">
+			<column name="PROTEAM_ID">
+				<comment>班组ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="fixFlow">
+			<column name="FIX_FLOW_ID">
+				<comment>机车检修流程节点表ID</comment>
+			</column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

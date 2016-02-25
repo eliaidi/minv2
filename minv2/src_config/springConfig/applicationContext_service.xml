@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:aop="http://www.springframework.org/schema/aop"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                     http://www.springframework.org/schema/aop
+                     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<!-- service层 -->
+	
+	
+	<!-- 配件组装上车						开始 -->
+ 	<bean id="jcPlanDateForPjService" class="com.repair.pj.service.impl.JcPlanDateServiceImpl" scope="prototype">
+		<property name="baseDao" ref="jcPlanDateForPjDao"></property>	
+		<property name="jcPlanDateDao" ref="jcPlanDateForPjDao"></property>	
+	</bean>	
+ 		
+ 	<bean id="pjAssembleRecordForPjService" class="com.repair.pj.service.impl.PjAssembleRecordServiceImpl" scope="prototype">
+		<property name="baseDao" ref="pjAssembleRecordForPjDao"></property>	
+		<property name="pjAssembleRecordDao" ref="pjAssembleRecordForPjDao"></property>	
+	</bean>	
+ 	<!-- 配件组装上车						结束 -->
+	
+	
+	
+	<!-- 报活模块service层					开始 -->
+	<bean id="dictFaultForReportService" class="com.repair.report.service.impl.DictFaultServiceImpl">
+		<property name="baseDao" ref="dictFaultForReportDao"></property>
+		<property name="dictFaultDao" ref="dictFaultForReportDao"></property>
+	</bean>
+	
+	<bean id="jcPlanDateForReportService" class="com.repair.report.service.impl.JcPlanDateServiceImpl">
+		<property name="baseDao" ref="jcPlanDateForReportDao"></property>
+		<property name="jcPlanDateDao" ref="jcPlanDateForReportDao"></property>
+	</bean>
+	
+	<bean id="jtReportForReportService" class="com.repair.report.service.impl.JtReportServiceImpl">
+		<property name="baseDao" ref="jtReportForReportDao"></property>
+		<property name="jtReportDao" ref="jtReportForReportDao"></property>
+	</bean>
+	
+	<bean id="dictProteamForReportService" class="com.repair.report.service.impl.DictProteamServiceImpl">
+		<property name="baseDao" ref="dictProteamForReportDao"></property>
+	</bean>
+	<!-- 报活模块service层					结束 -->
+	
+	<!-- 油水化验模块  油水化验主记录service层 -->
+	<bean id="oilAssayMainItemRecForOilService" class="com.repair.oil.service.impl.OilAssayMainItemRecServiceImpl">
+		<property name="baseDao" ref="oilAssayMainItemRecnForOilDao"></property>
+		<property name="oilAssayMainItemRecDao" ref="oilAssayMainItemRecnForOilDao"></property>
+		
+	</bean>
+	
+	<!-- 油水化验模块 油水化验 在日计划选择在修机车机车-->
+ 	<bean id="jcPlanDateForOilService" class="com.repair.oil.service.impl.JcPlanDateServiceImpl">
+ 		<property name="jcPlanDateDao" ref="jcPlanDateForOilDao"/>
+ 		<property name="baseDao" ref="jcPlanDateForOilDao"/>
+ 	</bean>
+	
+	<bean id="oilAssayMainItemForOilService" class="com.repair.oil.service.impl.OilAssayMainItemServiceImpl">
+		<property name="oilAssayMainItemDao" ref="oilAssayMainItemForOilDao"></property>
+	</bean>
+	
+	<bean id="oilAssayChildItemRecForOilService" class="com.repair.oil.service.impl.OilAssayChildItemRecServiceImpl">
+		<property name="baseDao" ref="oilAssayChildItemRecForOilDao"></property>
+		<property name="oilAssayChildItemRecDao" ref="oilAssayChildItemRecForOilDao"></property>
+	</bean>
+	
+	<!-- 中修模块   机车履历service层 -->
+	<bean id="jcInformationForZxService" class="com.repair.zx.service.impl.JcInformationServiceImpl">
+		<property name="jcInformationDao" ref="jcInformationForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块  机车检修流程记录service层 -->
+	<bean id="jcZxFixItemRecordForZxService" class="com.repair.zx.service.impl.JcZxFixItemRecordServiceImpl">
+		<property name="jcZxFixItemRecordDao" ref="jcZxFixItemRecordForZxDao"></property>
+		<property name="baseDao" ref="jcZxFixItemRecordForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块  机车检修流程记录service层 -->
+	<bean id="jcFixFlowRecorderForZxService" class="com.repair.zx.service.impl.JcFixFlowRecorderServiceImpl">
+		<property name="jcFixFlowRecorderDao" ref="jcFixFlowRecorderForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块	机车检修流程service	 -->
+	<bean id="jcFixFlowForZxService" class="com.repair.zx.service.impl.JcFixFlowServiceImpl">
+		<property name="jcFixFlowDao" ref="jcFixFlowForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块	机车检修主计划详情service	 -->
+	<bean id="jcMainPlanRecorderForZxService" class="com.repair.zx.service.impl.JcMainPlanRecorderServiceImpl">
+		<property name="jcMainPlanRecorderDao" ref="jcMainPlanRecorderForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块  修次service层 -->
+	<bean id="dictJcFixMileageForZxService" class="com.repair.zx.service.impl.DictJcFixMileageServiceImpl">
+		<property name="dictJcFixMileageDao" ref="dictJcFixMileageForZxDao"></property>
+	</bean>
+	
+	<!-- 中修模块  中修项目service层 -->
+	<bean id="jcZxFixItemForZxService" class="com.repair.zx.service.impl.JcZxFixItemServiceImpl">
+		<property name="jcZxFixItemDao" ref="jcZxFixItemForZxDao"></property>
+	</bean>	
+	
+	<!-- 中修模块  机车检修日计划service层 -->
+	<bean id="jcPlanDateForZxService" class="com.repair.zx.service.impl.JcPlanDateServiceImpl">
+		<property name="jcPlanDateDao" ref="jcPlanDateForZxDao"></property>
+	</bean>	
+	
+	
+	<!-- 计划模块  主计划service层 -->
+	<bean id="jcMainPlanForPlanService" class="com.repair.plan.service.impl.JcMainPlanServiceImpl">
+		<property name="jcMainPlanDao" ref="jcMainPlanForPlanDao"></property>
+	</bean>	
+	
+	<!-- 计划模块  主计划记录service层 -->
+	<bean id="jcMainPlanRecorderForPlanService" class="com.repair.plan.service.impl.JcMainPlanRecorderServiceImpl">
+		<property name="jcMainPlanRecorderDao" ref="jcMainPlanRecorderForPlanDao"></property>
+	</bean>
+	
+	<!-- 计划模块  修次service层 -->
+	<bean id="dictJCFixMileageForPlanService" class="com.repair.plan.service.impl.DictJcFixMileageServiceImpl">
+		<property name="dictJcFixMileageDao" ref="dictJCFixMileageForPlanDao"></property>
+	</bean>
+	
+	
+	<!-- 班组缓存 -->
+	<bean id="dictProteamForDictService" class="com.repair.dict.service.impl.DictProteamServiceImpl">
+		<property name="dictProteamDao" ref="dictProteamForDictDao"></property>
+	</bean>	
+	
+	<!-- 故障字典缓存 -->
+	<bean id="dictFaultForDictService" class="com.repair.dict.service.impl.DictFaultServiceImpl">
+		<property name="dictFaultDao" ref="dictFaultForDictDao"></property>
+	</bean>	
+	
+	<!-- 字典缓存 -->
+	<bean id="dictionaryBaseForDictService" class="com.repair.dict.service.impl.DictionaryBaseServiceImpl">
+		<property name="dictionaryBaseDao" ref="dictionaryBaseForDictDao"></property>
+	</bean>	
+	
+	
+	
+	<!-- 用户类service -->
+	<bean id="usersPrivsService" class="com.repair.users.service.impl.UsersPrivsServiceImpl">
+		<property name="usersPrivsDao" ref="usersPrivsDao"></property>
+	</bean>
+	
+	 <!-- 地区表(DICTAREA) -->
+	<bean id="dictAreaService" class="com.repair.users.service.impl.DictAreaServiceImpl">
+		<property name="dictAreaDao" ref="dictAreaDao"></property>
+		<property name="baseDao" ref="dictAreaDao"></property>
+	</bean>
+	
+	<!-- 部门Service层 -->
+	<bean id="dictDepartService" class="com.repair.users.service.impl.DictDepartServiceImpl">
+		<property name="dictDepartDao" ref="dictDepartDao"></property>
+		<property name="baseDao" ref="dictDepartDao"></property>
+	</bean>
+
+    <!-- 班组Service层-->
+	<bean id="dictProteamService" class="com.repair.users.service.impl.DictProteamServiceImpl">
+		<property name="dictProteamDao" ref="dictProteamDao"></property>
+		<property name="baseDao" ref="dictProteamDao"></property>
+	</bean>
+	
+	<!-- 功能service -->
+	<bean id="functionPrivsService" class="com.repair.users.service.impl.FunctionPrivsServiceImpl">
+		<property name="functionPrivsDao" ref="functionPrivsDao"></property>
+		<property name="baseDao" ref="functionPrivsDao"></property>
+	</bean>
+	
+	<!-- 角色功能service -->
+	<bean id="roleFunctionPrivsService" class="com.repair.users.service.impl.RoleFunctionPrivsServiceImpl">
+		<property name="roleFunctionPrivsDao" ref="roleFunctionPrivsDao"></property>
+		<property name="baseDao" ref="roleFunctionPrivsDao"></property>
+	</bean>
+	
+	<!-- 角色表(ROLEPRIVS) -->
+    <bean id="rolePrivsService" class="com.repair.users.service.impl.RolePrivsServiceImpl">
+		<property name="rolePrivsDao" ref="rolePrivsDao"></property>
+	</bean>
+	
+	<!-- 分页测试 -->
+	<bean id="testPageService" class="com.repair.service.impl.TestPageServiceImpl">
+		<property name="testPageDao" ref="testPageDao"></property>
+	</bean>
+	
+	<!-- 用户角色service层 -->
+	<bean id="usersRolePrivsService" class="com.repair.users.service.impl.UsersRolePrivsServiceImpl">
+		<property name="usersRolePrivsDao" ref="usersRolePrivsDao"></property>
+		<property name="baseDao" ref="usersRolePrivsDao"></property>
+	</bean>
+	
+	<!-- 大部件(专业)service层  -->
+	<bean id="dictPjFirstUnitService" class="com.repair.pj.service.impl.DictPjFirstUnitServiceImpl">
+	    <property name="dictPjFirstUnitDao" ref="dictPjFirstUnitDao"></property>
+	    <property name="baseDao" ref="dictPjFirstUnitDao"></property>
+	</bean>
+	
+	
+	<!-- 配件所在位置/仓库service层 -->
+	<bean id="dictStorePositionService" class="com.repair.pj.service.impl.DictStorePositionServiceImpl">
+		<property name="dictStorePositionDao" ref="dictStorePositionDao"></property>
+		<property name="baseDao" ref="dictStorePositionDao"></property>
+	</bean>
+	
+	<!-- 配件仓库静态/基本信息 -->
+	<bean id="pjStoreStaticInfoService" class="com.repair.pj.service.impl.PjStoreStaticInfoServiceImpl">
+	    <property name="pjStoreStaticInfoDao" ref="pjStoreStaticInfoDao"></property>
+	    <property name="baseDao" ref="pjStoreStaticInfoDao"></property>
+	</bean>
+	
+	<!-- 机车型号   -->
+	<bean id="dictJcTypeService" class="com.repair.pj.service.impl.DictJcTypeServiceImpl">
+	    <property name="dictJcTypeDao" ref="dictJcTypeDao"></property>
+	    <property name="baseDao" ref="dictJcTypeDao"></property>
+	</bean>
+	
+	<!-- 配件仓库动态/库存信息 -->
+	<bean id="pjStoreDynamicInfoService" class="com.repair.pj.service.impl.PjStoreDynamicInfoServiceImpl">
+	    <property name="pjStoreDynamicInfoDao" ref="pjStoreDynamicInfoDao"></property>
+	    <property name="baseDao" ref="pjStoreDynamicInfoDao"></property>
+	</bean>
+	
+	<!-- 配件动态记录 -->
+	<bean id="pjSDInfoRecordService" class="com.repair.pj.service.impl.PjSDInfoRecordServiceImpl">
+	    <property name="pjSDInfoRecordDao" ref="pjSDInfoRecordDao"></property>
+	    <property name="baseDao" ref="pjSDInfoRecordDao"></property>
+	</bean>
+	
+	<!-- 配件动态记录《关于主仓库和单位》 -->
+	<bean id="pjSDInfoRecordSuService" class="com.repair.pj.service.impl.PjSDInfoRecordSuServiceImpl">
+	    <property name="pjSDInfoRecordSuDao" ref="pjSDInfoRecordSuDao"></property>
+	    <property name="baseDao" ref="pjSDInfoRecordSuDao"></property>
+	</bean>
+	
+	<!-- 配件仓库静态/库存信息 -->
+	<bean id="jcTypePjFirstUnitService" class="com.repair.pj.service.impl.JcTypePjFirstUnitServiceImpl">
+	    <property name="jcTypePjFirstUnitDao" ref="jcTypePjFirstUnitDao"></property>
+	    <property name="baseDao" ref="jcTypePjFirstUnitDao"></property>
+	</bean>
+	
+	<!-- 班组与静态配件表 -->
+	<bean id="proteamPjStaticService" class="com.repair.pj.service.impl.ProteamPjStaticServiceImpl">
+	    <property name="proteamPjStaticDao" ref="proteamPjStaticDao"></property>
+	    <property name="baseDao" ref="proteamPjStaticDao"></property>
+	</bean>
+	
+	<!-- 配件静态_机车型号_大部件(专业)中中间表 -->
+	<bean id="pjStaticJcTypePjFUService" class="com.repair.pj.service.impl.PjStaticJcTypePjFUServiceImpl">
+	    <property name="pjStaticJcTypePjFUDao" ref="pjStaticJcTypePjFUDao"></property>
+	    <property name="baseDao" ref="pjStaticJcTypePjFUDao"></property>
+	</bean>
+	
+	<!-- 配件检修 - 配件类 -->
+	<bean id="pjSSInfoForPjFixService" class="com.repair.pjFix.service.impl.PjStoreStaticInfoServiceImpl">
+	    <property name="pjStoreStaticInfForPjFixDao" ref="pjStoreStaticInfoForPjFixDao"></property>
+	</bean>
+	
+	<!-- 配件检修，大部件(专业)层   -->
+	<bean id="dictPjFirstUnitForPjFixService" class="com.repair.pjFix.service.impl.DictPjFirstUnitServiceImpl">
+	    <property name="dictPjFirstUnitForPjFixDao" ref="dictPjFirstUnitForPjFixDao"></property>
+	</bean>
+	
+	<!-- 配件检修，配件所在位置/仓库层  -->
+	<bean id="dictStorePositionForPjFixService" class="com.repair.pjFix.service.impl.DictStorePositionServiceImpl">
+	    <property name="dictStorePositionForPjFixDao" ref="dictStorePositionForPjFixDao"></property>
+	</bean>
+	
+	<!-- 查询检修配件记录 -->
+	<bean id="pjSDInfoRecordForPjFixService" class="com.repair.pjFix.service.impl.PjSDInfoRecordServiceImpl">
+	    <property name="pjSDInfoRecordForPjFixDao" ref="pjSDInfoRecordForPjFixDao"></property>
+	</bean>
+	
+	<!-- 动态配件service层 -->
+	<bean id="pjSDInfoForPjFixService" class="com.repair.pjFix.service.impl.PjStoreDynamicInfoServiceImpl">
+	    <property name="pjSDInfoForPjFixDao" ref="pjSDInfoForPjFixDao"></property>
+	</bean>
+	
+	
+	<!-- 机车信息（履历）service-->
+	<bean id="jcInformationForPjFixService" class="com.repair.pjFix.service.impl.JcInformationServiceImpl">
+		<property name="jcInformationForPjFixDao" ref="jcInformationForPjFixDao"></property>
+	</bean>
+	
+	
+	<!-- pjFix机车类型表 -->
+	<bean id="dictJcTypeForPjFixService" class="com.repair.pjFix.service.impl.DictJcTypeServiceImpl">
+	    <property name="dictJcTypeForPjFixDao" ref="dictJcTypeForPjFixDao"></property>
+	</bean>
+	
+	<!-- 配件检修记录service-->
+	<bean id="pjSDInfoRecordFixForPjFixService" class="com.repair.pjFix.service.impl.PjSDInfoRecordFixServiceImpl">
+		<property name="pjSDInfoRecordFixForPjFixDao" ref="pjSDInfoRecordFixForPjFixDao"></property>
+	</bean>
+	
+	<!-- 用户service-->
+	<bean id="usersPrivsForPjFixService" class="com.repair.pjFix.service.impl.UsersPrivsServiceImpl">
+		<property name="usersPrivsForPjFixDao" ref="usersPrivsForPjFixDao"></property>
+	</bean>
+</beans>

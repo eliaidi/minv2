@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="planPgk" extends="json-default"  namespace="/plan">
+	
+		<!-- ajax查询指定日期区间内是否存在检修计划 -->
+		<action name="ajaxExistJcMainPlanRecorder" class="ajaxExistJcMainPlanRecorderForPlan"></action>
+	
+		 <!-- ajax 删除机车检修主计划详情，返回json    -->
+		<action name="ajaxDelJcMainPlanRecorder" class="ajaxDelJcMainPlanRecorderForPlan"></action>
+		
+		<!-- 通过主计划ID获取主计划详情   -->
+		<action name="findMPRecorderByMainPlanId" class="findMPRecorderByMainPlanIdForPlan">
+			<result>/plan/planSelect/detail_main_plan.jsp</result>
+		</action>
+		
+		<!-- 通过主计划ID获取主计划兑现详情   -->
+		<action name="findCashMPRecorderByMainPlanId" class="findCashMPRecorderByMainPlanIdForPlan">
+			<result>/plan/planCash/alertDialog/cash_plan_detail.jsp</result>
+		</action>
+		
+		 <!-- ajax 修改机车检修主计划未兑现原因，返回json    -->
+		<action name="ajaxUpdateNoCashReason" class="ajaxUpdateNoCashReasonForPlan"></action>
+		
+		<!-- ajax 修改机车检修主计划各个字段，返回json    -->
+		<action name="ajaxUpdateJcMainPlanRecorder" class="ajaxUpdateJcMainPlanRecorderForPlan"></action>
+		
+		
+		
+		 <!-- ajax 删除机车检修主计划，返回json    -->
+		<action name="ajaxDelJcMainPlan" class="ajaxDelJcMainPlanForPlan"></action>
+		
+		 <!-- ajax 发布机车检修主计划，返回json    -->
+		<action name="ajaxPublishJcMainPlan" class="ajaxPublishJcMainPlanForPlan"></action>
+		
+		 <!-- ajax通过时间段查询是否存在机车检修主计划，返回json    -->
+		<action name="ajaxSaveJcMainPlan" class="ajaxSaveJcMainPlanForPlan"></action>
+		
+		 <!-- 通过excel的方式导入机车检修计划     -->
+		<action name="excelImportJcMainPlan" class="excelImportJcMainPlanForPlan">
+			<result type="redirect">/plan/findMPRecorderByMainPlanId.action?mainPlanId=${mainPlanId}</result>
+		</action>
+		
+		
+		<!-- 查询存在的检修计划   -->
+		<action name="queryExistJcMainPlan" class="queryExistJcMainPlanForPlan">
+			<result>/plan/planCompile/exist_main_plan.jsp</result>
+		</action>
+		
+		 <!-- 计划查询   -->
+		<action name="queryJcMainPlan" class="queryJcMainPlanForPlan">
+			<result>/plan/planSelect/query_main_plan.jsp</result>
+		</action>
+		
+		<!-- 计划兑现   -->
+		<action name="queryCashJcMainPlan" class="queryCashJcMainPlanForPlan">
+			<result>/plan/planCash/cash_main_plan.jsp</result>
+		</action>
+		
+		
+	</package>
+	
+	
+</struts>

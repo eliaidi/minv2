@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="usersPrivs" location="535,2355" size="1260,455">
+    <action name="usersLogin" location="1045,362" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="findUsersById" location="1045,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findUsersByDictAreaId" location="1045,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="updateUsersById" location="800,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delUsersById" location="555,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findAllUsers" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="usersManageChildIframe.jsp" />
+      </result>
+    </action>
+    <action name="findUsersByName" location="310,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findUsersByDictDepartId" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="functionPrivs" location="780,1480" size="525,350">
+    <action name="findAllFunction" location="65,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findFunctionById" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findFunctionByParentId" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="findAllOfFunctionOrderASC" location="310,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="roleFunctionPrivs" location="45,1830" size="525,455">
+    <action name="delRoleFunctionById" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delById" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delRoleFunctionByFunctionPrivsId" location="310,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delRoleFunctionByRolePrivsId" location="310,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="delByRolePrivsId" location="310,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="dictDepat" location="25,1130" size="1505,245">
+    <action name="addDictDepart" location="1290,57" size="150,41">
+      <result name="addDictDepat">
+        <resourceEdge source="addDictDepat" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findAllDictDepat" location="1045,57" size="150,41">
+      <result name="findAll">
+        <resourceEdge source="findAll" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="delDictDepatById" location="800,57" size="150,41">
+      <result name="delById">
+        <resourceEdge source="delById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="delDictDepatByName" location="555,57" size="150,41">
+      <result name="delByDepartName">
+        <resourceEdge source="delByDepartName" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findDictDepatById" location="310,57" size="150,41">
+      <result name="findById">
+        <resourceEdge source="findById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="updateDictDepatById" location="65,57" size="150,41">
+      <result name="updateById">
+        <resourceEdge source="updateById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findDictDepatByName" location="65,162" size="150,41">
+      <result name="findByName">
+        <resourceEdge source="findByName" routing="0" target="index.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="dictProteam" location="1425,220" size="525,875">
+    <action name="addDictProteam" location="65,57" size="150,41">
+      <result name="addDictProteam">
+        <resourceEdge source="addDictProteam" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="delDictProteamById" location="65,162" size="150,41">
+      <result name="delById">
+        <resourceEdge source="delById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="delDictProteamByName" location="65,267" size="150,41">
+      <result name="delByName">
+        <resourceEdge source="delByName" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findAllDictProteam" location="310,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="proteamManageIframe.jsp" />
+      </result>
+    </action>
+    <action name="findDictProteamByName" location="310,372" size="150,41">
+      <result name="findByName">
+        <resourceEdge source="findByName" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findDictProteamByWorkFlag" location="310,477" size="150,41">
+      <result name="findByWorkFlag">
+        <resourceEdge source="findByWorkFlag" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findDictProteamByAttendanceFlag" location="310,582" size="150,41">
+      <result name="findByAttendanceFlag">
+        <resourceEdge source="findByAttendanceFlag" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="UpdateDictProteamById" location="310,687" size="150,41">
+      <result name="UpdateById">
+        <resourceEdge source="UpdateById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="findDictProteamById" location="310,792" size="150,41">
+      <result name="findById">
+        <resourceEdge source="findById" routing="0" target="index.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="dictArea" location="2363,1480" size="280,980">
+    <action name="addDictArea" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="findDictAreaById" location="65,162" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="findDictAreaByJwdCode" location="65,267" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="findDictAreaByName" location="65,372" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="findDictAreaAll" location="65,477" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="deleteDictAreaById" location="65,582" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="deleteDictAreaByAreaName" location="65,687" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="deleteDictAreaByJwdCode" location="65,792" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+    <action name="updateDictAreaById" location="65,897" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dictAreaTestResult.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="rolePrivs" location="3006,1620" size="525,560">
+    <action name="addRolePrivs" location="65,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteRolePrivsById" location="65,162" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="deleteRolePrivsByRoleName" location="65,267" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="findRolePrivsAll" location="310,267" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="findRolePrivsById" location="310,372" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="updateRolePrivsById" location="310,477" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="main.jsp" path="/main.jsp" location="1850,2690" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="380,2690" size="150,55" />
+  <webResource name="test.jsp" path="/test/test.jsp" location="625,1850" size="150,55" />
+  <webResource name="usersManageChildIframe.jsp" path="/users/iframePage/proteam/usersManageChildIframe.jsp" location="111,2480" size="150,55" />
+  <webResource name="index.jsp" path="/test/users/dictDepart/index.jsp" location="61,975" size="150,55" />
+  <webResource name="proteamManageIframe.jsp" path="/users/iframePage/proteam/proteamManageIframe.jsp" location="1636,65" size="150,55" />
+  <webResource name="dictAreaTestResult.jsp" path="test/users/dictArea/dictAreaTestResult.jsp" location="2055,2235" size="150,55" />
+  <webResource name="rolePrivsResult.jsp" path="test/users/rolePrivs/rolePrivsResult.jsp" location="2708,1955" size="150,55" />
+  <webResource name="rolesManagerIframe.jsp" path="/users/iframePage/role/rolesManagerIframe.jsp" location="3239,1465" size="150,55" />
+  <webResource name="rolesManagerIframe.jsp" path="/users/iframePage/roles/rolesManagerIframe.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

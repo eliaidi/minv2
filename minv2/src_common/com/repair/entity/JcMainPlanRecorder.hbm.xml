@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity" >
+	<class name="JcMainPlanRecorder" table="JC_MAIN_PLAN_RECORDER" >
+		<id name="id" column="id" type="java.lang.Long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_MAIN_PLAN_RECORDER</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="jcMainPlan" column="JC_MAIN_PLAN_ID"></many-to-one>
+		
+		<many-to-one name="jcPlanDate" column="JC_PLAN_DATE_ID"></many-to-one>
+		
+		
+				
+		<property name="planDate" column="PLAN_DATE"></property>
+		
+		<property name="planWeek" column="PLAN_WEEK"></property>
+		
+		
+		<property name="mainPlanNum" column="MAIN_PLAN_NUM"></property>
+		
+		<property name="jcType" column="JC_TYPE"></property>
+	
+		<property name="jcTypeValue" column="JC_TYPE_VALUE"></property>
+		
+		<property name="jcNumber" column="JC_NUMBER"></property>
+		
+		<many-to-one name="dictJcFixMileage" column="JC_FIX_MILEAGE_ID"></many-to-one>
+		
+		<property name="planKilometre" column="PLAN_KILOMETRE"></property>
+		
+		<property name="realityKilometre" column="REALITY_KILOMETRE"></property>
+		
+		<many-to-one name="dictArea" column="AREA_ID"></many-to-one>
+		
+		<property name="cash" column="CASH"></property>
+		
+		<property name="noCashReason" column="NO_CASH_REASON"></property>		
+		
+		<property name="remark" column="REMARK"></property>
+		
+	</class>
+</hibernate-mapping>

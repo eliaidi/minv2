@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="DictFault" table="DICT_FAULT">
+		<cache usage="read-write" />
+
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence" >SEQ_DICT_FAULT</param>
+			</generator>
+		</id>
+		
+		<property name="unitType">
+			<column name="UNIT_TYPE">
+				<comment>部件种类表示符（0、一级部件；1、二级部件；2、三级部件）</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="parent">
+			<column name="PARENT_ID">
+				<comment>父级ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="unitName">
+			<column name="UNIT_NAME">
+				<comment>部件名称</comment>
+			</column>
+		</property>
+		
+		<property name="faultContent">
+			<column name="FAULT_CONTENT">
+				<comment>故障内容</comment>
+			</column>
+		</property>
+		
+		<property name="fixContent">
+			<column name="FIX_CONTENT">
+				<comment>检修处理意见</comment>
+			</column>
+		</property>
+		
+		<property name="score">
+			<column name="SCORE">
+				<comment>分数（默认值1）</comment>
+			</column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

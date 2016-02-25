@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcZxFixItem" table="JC_ZX_FIX_ITEM">
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_ZX_FIX_ITEM</param>
+			</generator>
+		</id>
+		<property name="itemName" type="string">
+			<column name="ITEM_NAME">
+				<comment>中修项目名称</comment>
+			</column>
+		</property>
+	
+		<many-to-one name="fixFlow" >
+			<column name="FIX_FLOW_ID">
+				<comment>车机检修流程节点ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="status" >
+			<column name="STATUS">
+				<comment>是否启用(0、禁用（删除）；1、启用（没删除）)（也就是逻辑删除的意思）</comment>
+			</column>
+		</property>
+		
+		<property name="itemType" >
+			<column name="ITEM_TYPE">
+				<comment>项目类型，0、检查项目；1、检修项目；检查项目DEFAULT_VAL有默认值，检测项目DEFAULT_VAL无默认值</comment>
+			</column>
+		</property>
+		
+		<property name="defaultVal" >
+			<column name="DEFAULT_VAL">
+				<comment>中修项目填报默认值，一般为"良好"，对应老数据库中的FILLDEFAVAL字段</comment>
+			</column>
+		</property>
+		
+		<property name="minValue" >
+			<column name="MIN_VALUE">
+				<comment>最小值，小数点后10</comment>
+			</column>
+		</property>
+		
+		<property name="maxValue" >
+			<column name="MAX_VALUE">
+				<comment>中修项目填报默认值，一般为"良好"，对应老数据库中的FILLDEFAVAL字段</comment>
+			</column>
+		</property>
+		
+		<property name="unitMeasure" >
+			<column name="UNIT_MEASURE">
+				<comment>计量单位</comment>
+			</column>
+		</property>
+		
+		<property name="leadCheck">
+			<column name="LEAD_CHECK">
+				<comment>工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="commitLeadCheck" >
+			<column name="COMMIT_LEAD_CHECK">
+				<comment>交车工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="qcCheck" >
+			<column name="QC_CHECK">
+				<comment>质检员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="acceptanceCheck" >
+			<column name="ACCEPTANCE_CHECK">
+				<comment>验收员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="technicianCheck" >
+			<column name="TECHNICIAN_CHECK">
+				<comment>技术员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="twoInspectionCheck" >
+			<column name="TWO_INSPECTION_CHECK">
+				<comment>复探是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="jcTypes" >
+			<column name="JC_TYPES">
+				<comment>适应车型（DF4，SS3...）</comment>
+			</column>
+		</property>
+		
+		<property name="jcFixMileages" >
+			<column name="JC_FIX_MILEAGES">
+				<comment>机车修程修次字符串(Z1，Z2，Z3…)</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="proteam" >
+			<column name="PROTEAM_ID">
+				<comment>班组</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="itemUnit" >
+			<column name="ITEM_UNIT">
+				<comment>部件名称</comment>
+			</column>
+		</property>
+		
+		<property name="itemPart" >
+			<column name="ITEM_PART">
+				<comment>部位名称</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="firstUnit" >
+			<column name="FIRST_UNIT_ID">
+				<comment>配件大部件（专业）</comment>
+			</column>
+		</many-to-one>
+				
+		<property name="fixDuration" >
+			<column name="FIX_DURATION">
+				<comment>项目检修时长(单位：天)</comment>
+			</column>
+		</property>
+	
+		<property name="remark">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="preinstallType" >
+			<column name="PREINSTALL_TYPE_ID">
+				<comment>检修项目预设分类主表（常规项目，中修和小辅修）ID</comment>
+			</column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

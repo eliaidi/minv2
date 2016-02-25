@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="ReportImgUrl" table="REPORT_IMG_URL">
+		<id name="id" column="id">
+			<generator class="sequence">
+				<param name="sequence">SEQ_REPORT_IMG_URL</param>
+			</generator>
+		</id>
+		
+		<property name="imgUrl">
+			<column name="IMG_URL">
+				<comment>图片路径</comment>
+			</column>
+		</property>
+		
+		<property name="remark">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="report" cascade="save-update">
+			<column name="JT_REPORT_ID">
+				<comment>机车中修\小辅修\临修，报活表（所有修程报活）表ID</comment>
+			</column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.repair.entity.DictionaryBase" table="DICTIONARY_BASE">
+		<cache usage="read-write" />
+		<id name="id" column="ID" type="java.lang.Long">
+			 <generator class="sequence">
+		        <param name="sequence">SEQ_DICTIONARY_BASE_ID</param>
+		    </generator>
+		</id>
+		<property name="codeType"  type="string">
+		   <column name="CODE_TYPE">
+		      <comment>类型码(CODE_TYPE)</comment>
+		   </column>
+		</property>
+		<property name="typeDesc"  type="string">
+		   <column name="TYPE_DESC">
+		      <comment>类型码描述(TYPE_DESC)</comment>
+		   </column> 
+		</property>
+		<property name="key"  type="string">
+		   <column name="KEY">
+		       <comment>数据键(KEY)</comment>
+		   </column>
+		</property>
+		<property name="value" type="string">
+		    <column name="VALUE">
+		       <comment>数据值(VALUE)</comment>
+		    </column>
+		</property>
+		<property name="isValid" type="int">
+		    <column name="ISVALID">
+		       <comment>是否有效或可见：0否，1是(ISVALID)</comment>
+		    </column>
+		</property>
+		<property name="orderId"  type="int">
+		    <column name="ORDERID">
+		      <comment>排序(ORDERID)</comment>
+		    </column>
+		</property>	
+	</class>
+</hibernate-mapping>

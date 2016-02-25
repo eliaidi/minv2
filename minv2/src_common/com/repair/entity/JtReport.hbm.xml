@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JtReport" table="JT_REPORT">
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_JT_REPORT</param>
+			</generator>
+		</id>
+		
+		<property name="reportType">
+			<column name="REPORT_TYPE">
+				<comment>报活类型：0、机统28报活；1、复检报活；2、检修过程报活；3、临修加改报活；6、零公里报活； 不是修程。</comment>
+			</column>
+		</property>
+		
+		<property name="reportTime">
+			<column name="REPORT_TIME">
+				<comment>报活时间。</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="planDate">
+			<column name="PLAN_DATE_ID">
+				<comment>机车检修日计划表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="reportPart">
+			<column name="REPORT_PART">
+				<comment>报活部位，从故障表中得到部位名，但数据库表不关联，可以在表中选，也可以在页面上输入</comment>
+			</column>
+		</property>
+		
+		
+		<property name="reportCondition">
+			<column name="REPORT_CONDITION">
+				<comment>报活情况，从故障表中得到部位名，但数据库表不关联，可以在表中选，也可以在页面上输入</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="reportUsers">
+			<column name="REPORT_USERS_ID">
+				<comment>报活人ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="proteam">
+			<column name="PROTEAM_ID">
+				<comment>检修班组ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="fixUsers">
+			<column name="FIX_USERS">
+				<comment>检修人（张飞_001,关羽_002），检修人必须是检修班组的人</comment>
+			</column>
+		</property>
+		
+		<property name="fixCondition">
+			<column name="FIX_CONDITION">
+				<comment>检修处理情况</comment>
+			</column>
+		</property>
+		
+		<property name="fixEndTime">
+			<column name="FIX_END_TIME">
+				<comment>检修结束时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="leadUsers">
+			<column name="LEAD_USERS_ID">
+				<comment>工长ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="leadCheck">
+			<column name="LEAD_CHECK">
+				<comment>工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="leadUsersCheckTime">
+			<column name="LEAD_USERS_CHECK_TIME">
+				<comment>工长签认时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="commitLeadUsers">
+			<column name="COMMIT_LEAD_USERS_ID">
+				<comment>交车工长ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="commitLeadCheck">
+			<column name="COMMIT_LEAD_CHECK">
+				<comment>交车工长是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="commitLeadCheckTime">
+			<column name="COMMIT_LEAD_CHECK_TIME">
+				<comment>交车工长验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="qcUsers">
+			<column name="QC_USERS_ID">
+				<comment>质检员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="qcCheck">
+			<column name="QC_CHECK">
+				<comment>质检员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="qcCheckTime">
+			<column name="QC_CHECK_TIME">
+				<comment>质检员验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="acceptanceUsers">
+			<column name="ACCEPTANCE_USERS_ID">
+				<comment>验收员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="acceptanceCheck">
+			<column name="ACCEPTANCE_CHECK">
+				<comment>验收员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="acceptanceCheckTime">
+			<column name="ACCEPTANCE_CHECK_TIME">
+				<comment>验收员验收时间</comment>
+			</column>
+		</property>
+		
+		<many-to-one name="technicianUsers">
+			<column name="TECHNICIAN_USERS_ID">
+				<comment>技术员ID</comment>
+			</column>
+		</many-to-one>
+		
+		<property name="technicianCheck">
+			<column name="TECHNICIAN_CHECK">
+				<comment>技术员是否卡控（0、不卡控；1、卡控）</comment>
+			</column>
+		</property>
+		
+		<property name="technicianCheckTime">
+			<column name="TECHNICIAN_CHECK_TIME">
+				<comment>技术员验收时间</comment>
+			</column>
+		</property>
+		
+		<property name="recordStatus">
+			<column name="RECORD_STATUS">
+				<comment>报活记录状态：0、作废审批不通过；1、审批；2、接收；3、处理完成；4、工长核验；5、质检员、验收员核验；6、完成存档；</comment>
+			</column>
+		</property>
+		
+		<property name="remark">
+			<column name="REMARK">
+				<comment>备注</comment>
+			</column>
+		</property>
+		
+		<set name="reportImgUrlSet" inverse="true" cascade="all">
+			<comment>报活ID</comment>
+			<key column="JT_REPORT_ID"></key>
+			<one-to-many class="ReportImgUrl"/>
+		</set>
+	</class>
+</hibernate-mapping>

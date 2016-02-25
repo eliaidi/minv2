@@ -1,0 +1,62 @@
+body,html{
+				padding:0px;
+				margin:0px;
+				width:100%;
+				height:100%;
+			}
+			#maps{
+				/*股道主页面图片*/
+				background:url(../images/1.jpg) left top no-repeat;
+				width:99%;
+				height:630px;
+				position:absolute;
+				border-left:1px solid #a0a0a0;
+				left:0px;
+			}
+			#content{
+				position:relative;
+				left:0px;
+				width:100%;
+				float:left;
+				height:100%;
+				background-color:#c0c0c0;
+				text-align: center;
+				overflow: auto;
+			}
+			.box{
+				width:35px;
+				height:14px;
+				line-height:15px;
+				border:1px solid #999;
+				text-align:center;
+				position:absolute;
+				background-color:#fff;	
+			}
+			
+			.box a{
+				display:block;
+				text-decoration:none;
+				font-size:12px;
+				font-weight:bold;
+			}
+			div.blue{
+				background:blue;
+			}
+			div.green{
+				background:#067d06;
+			}
+			div.red{
+				background-color:red;
+			}
+			div.black{
+				background-color:black;
+			}
+			div.yellow{
+				background-color: #ff9600
+			}
+			div.blue a,div.red a,div.black a,div.yellow a{
+				color:#FFF;
+			}
+			div.green a{
+				color:#FFF;
+			}

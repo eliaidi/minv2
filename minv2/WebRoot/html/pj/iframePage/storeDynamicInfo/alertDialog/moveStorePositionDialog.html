@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>配件管理-仓库-仓库管理-修改</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   	
+   	<!--uurframe页面框架 ------------------------------开始 -->
+	<!--uurframe框架必需			开始-->
+	<script type="text/javascript" src="../../../../../mainframe/js/jquery-1.4.js"></script>
+	<script type="text/javascript" src="../../../../../mainframe/js/framework.js"></script>
+	<link href="../../../../../mainframe/css/import_basic.css" rel="stylesheet" type="text/css"/>
+	<link  rel="stylesheet" type="text/css" id="skin" prePath="../../../../..//mainframe/"/>
+	<!--uurframe框架必需			结束-->
+	
+	<!-- uurframe多级树形表格组件				开始 -->
+	<script type="text/javascript" src="../../../../../js/dtree/dtree.js"></script>
+	<link href="../../../../js/dtree/dtree.css" rel="stylesheet" type="text/css"/>
+	<!-- uurframe多级树形表格组件				结束 -->
+	
+	<!--截取文字start-->
+	<script type="text/javascript" src="../../../../../js/flexigrid/text-overflow.js"></script>
+	<!--截取文字end-->
+	<!--uurframe页面框架 								结束 -->
+  </head>
+  <body>
+    <!--uurframe盒子模型   上方					开始-->
+     <div class="box8" panelWidth="536" panelHeight="300">
+	    <table class="tableStyle" transMode="true">
+		   <tr>
+		   		<td><input type="radio" value="0"/>配件仓库移库班组库</td>
+		   		<td><input type="radio" value="1"/>班组库移库配件仓库</td>	
+		   		<td><input type="radio" value="2"/>班祖库移库班祖库</td>
+		   </tr>
+		   <tr>
+		   		<td>配件库名称:继电器;编号:00004</td>
+		   		<td>配件库名称:继电器;编号:00004</td>	
+		   		<td>配件库名称:继电器;编号:00004</td>
+		   </tr>
+		   <tr>
+		   		<td>配件仓库人员:张飞</td>
+		   		<td>制动班组库人员:刘备</td>	
+		   		<td>制动班组库人员:刘备</td>
+		   </tr>
+		    <tr>
+		   		<td>
+		   			移入仓库
+		   			<select>
+		   				<option value="0">制动班组仓库</option>
+		   			</select>
+		   		</td>
+		   		<td>
+		   			移入仓库
+		   			<select>
+		   				<option value="2">长沙平库</option>
+		   			</select>
+		   		</td>	
+		   		<td>
+		   			移入仓库
+		   			<select>
+		   				<option value="1">电器班组仓库</option>
+		   			</select>
+		   		</td>
+		   </tr>
+		    <tr>
+		   		<td>
+		   			班组人员：
+		   			<select>
+		   				<option value="0">制动班组人员-刘备</option>
+		   			</select>
+		   		</td>
+		   		<td>
+		   			配件仓库人员:
+		   			<select>
+		   				<option value="2">配件仓库人员-蝙蝠侠</option>
+		   			</select>
+		   		</td>	
+		   		<td>
+		   			班组人员:
+		   			<select>
+		   				<option value="1">电器班组人员-孙权</option>
+		   			</select>
+		   		</td>
+		   </tr>
+		    <tr>
+		   		<td><input type="submit" value="移库"></td>
+		   		<td><input type="submit" value="移库"></td>	
+		   		<td><input type="submit" value="移库"></td>
+		   </tr>
+		    
+		</table>
+     </div>
+        <!--uurframe盒子模型下方						结束-->
+  </body>
+</html>

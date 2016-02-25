@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="OilAMIJcType" table="OIL_A_M_I_JC_TYPE">
+		<id name="id" column="id" >
+			<generator class="sequence">
+				<param name="sequence">SEQ_OIL_A_M_I_JC_TYPE</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="item">
+			<column name="OIL_ASSAY_MAIN_ITEM_ID">
+				<comment>机车油水化验项目主表ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="jcType">
+			<column name="JC_TYPE_ID">
+				<comment>机车型号表ID</comment>
+			</column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

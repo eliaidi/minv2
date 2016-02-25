@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="pjSSInfoForPjFixPkg" location="0,0" size="0,0">
+    <action name="queryPjSSInfoForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pjCategoriesManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="findPjSSInfoByIdForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addUnattendedAccessoriesDialogl.jsp" />
+      </result>
+    </action>
+    <action name="findPjSSInfoListByDictJcTypeId" location="0,0" size="0,0" />
+  </package>
+  <package name="pjSDInfoForPjFix" location="0,0" size="0,0">
+    <action name="queryPjSDInfoForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pjSDIRecordFixCheckManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="toChoosePjSDInfo" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="choosePjSDInfoDialog.jsp" />
+      </result>
+    </action>
+    <action name="findPjSDInfoRecordByPjSDInfoIdForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pjSDIRecordFixCheckDialog.jsp" />
+      </result>
+    </action>
+    <action name="findPjSDRByPjSDInfoIdForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pjSDIRecordFixCheckDetailsDialog.jsp" />
+      </result>
+    </action>
+    <action name="findPjSDRByPjSDIdForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target=" selectChildPjDialog.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="jcInformationForPjFixPkg" location="0,0" size="0,0">
+    <action name="findJcInformationListByDictJcTypeIdForPjFix" location="0,0" size="0,0" />
+  </package>
+  <package name="pjFixPjStoreDynamicInfoPkg" location="0,0" size="0,0">
+    <action name="findDynamicByPjdCodeForPjFixPjSDInfo" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="pjSDInfoForRepairCheckIframe.jsp" />
+      </result>
+    </action>
+    <action name="addToRepairExistPjSDInfoForFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewDynamicPjPage.jsp" />
+      </result>
+    </action>
+    <action name="addToRepairNotExistPjSDInfo" location="0,0" size="0,0" />
+    <action name="toAddPjSDInfoForRepairChildIframe" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="addPjSDInfoForRepairChildIframe.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="pjFixDictJcTypePkg" location="0,0" size="0,0">
+    <action name="findAllDictJcTypeForPjFix" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="pjSDInfoRecordFixForPjFix" location="0,0" size="0,0">
+    <action name="queryPjSDInfoByChooseFixPjForPjFix" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="viewDynamicPjPage.jsp" />
+      </result>
+    </action>
+    <action name="signFixItemByFixUsersForPjFix" location="0,0" size="0,0" />
+    <action name="signFixItemByLeadForPjFix" location="0,0" size="0,0" />
+    <action name="signAllCheckFixItemByLeadForPjFix" location="0,0" size="0,0" />
+    <action name="signAllJianCeFixItemByLeadForPjFix" location="0,0" size="0,0" />
+  </package>
+  <package name="pjFixItem" location="0,0" size="0,0">
+    <action name="queryPjSSInfoByChooseFixPj" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="chooseFixManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByAcceptance" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByFixUsers" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByLead" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByCommitLead" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByTechnician" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+    <action name="queryPjSSInfoByQC" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="dynamicPjListManagerIframe.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="testResult.jsp" path="/test/testResult.jsp" location="1764,870" size="150,55" />
+  <webResource name="lenoveIndex.jsp" path="/test/lenovoInput/lenoveIndex.jsp" location="1230,730" size="150,55" />
+  <webResource name="test.jsp" path="/test/test.jsp" location="65,345" size="150,55" />
+  <webResource name="testPage.jsp" path="/test/testPage.jsp" location="787,730" size="150,55" />
+  <webResource name="testAutocomplete.jsp" path="/test/testAutocomplete.jsp" location="236,450" size="150,55" />
+  <webResource name="pjCategoriesManagerIframe.jsp" path="/pj/pjFix/iframePage/pjCategories/pjCategoriesManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="pjCategoriesManagerIframe.jsp" path="/pjFix/iframePage/pjCategories/pjCategoriesManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="pjSDIRecordFixCheck.jsp" path="/pjFix/iframePage/pjSDIRecordFixCheck/pjSDIRecordFixCheck.jsp" location="0,0" size="0,0" />
+  <webResource name="pjSDIRecordFixCheckManagerIframe.jsp" path="/pjFix/iframePage/pjSDIRecordFixCheck/pjSDIRecordFixCheckManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="chooseDialogl.jsp" path="/pjFix/iframePage/pjCategories/alertDialog/chooseDialogl.jsp" location="0,0" size="0,0" />
+  <webResource name="addUnattendedAccessoriesDialogl.jsp" path="/pjFix/iframePage/pjCategories/alertDialog/addUnattendedAccessoriesDialogl.jsp" location="0,0" size="0,0" />
+  <webResource name="pjSDIRecordFixCheckDialog.jsp" path="/pjFix/iframePage/pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDialog.jsp" location="0,0" size="0,0" />
+  <webResource name="pjSDIRecordFixCheckDetailsDialog.jsp" path="/pjFix/iframePage/pjSDIRecordFixCheck/alertDialog/pjSDIRecordFixCheckDetailsDialog.jsp" location="0,0" size="0,0" />
+  <webResource name=" selectChildPjDialog.jsp" path="/pjFix/iframePage/pjSDIRecordFixCheck/alertDialog/ selectChildPjDialog.jsp" location="0,0" size="0,0" />
+  <webResource name="choosePjSDInfoDialog.jsp" path="/pjFix/iframePage/pjCategories/alertDialog/choosePjSDInfoDialog.jsp" location="0,0" size="0,0" />
+  <webResource name="pjSDInfoForRepairCheckIframe.jsp" path="/pjFix/iframePage/pjSDInfoForRepair/pjSDInfoForRepairCheckIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="addPjSDInfoForRepairChildIframe.jsp" path="/pjFix/iframePage/pjSDInfoForRepair/addPjSDInfoForRepairChildIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="chooseFixManagerIframe.jsp" path="/pjFix/iframePage/chooseFixPj/chooseFixManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="unattendedPj.jsp" path="/pjFix/iframePage/chooseFixPj/alertDialog/unattendedPj.jsp" location="0,0" size="0,0" />
+  <webResource name="viewDynamicPjPage.jsp" path="chooseFixPj/page/viewDynamicPjPage.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/acceptance/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/fixUsers/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/lead/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/commitLead/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/technician/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="dynamicPjListManagerIframe.jsp" path="/pjFix/iframePage/checkFixPj/qc/dynamicPjListManagerIframe.jsp" location="0,0" size="0,0" />
+  <webResource name="viewDynamicPjPage.jsp" path="/pjFix/iframePage/chooseFixPj/page/viewDynamicPjPage.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

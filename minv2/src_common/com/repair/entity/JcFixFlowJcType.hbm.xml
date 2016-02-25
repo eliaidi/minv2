@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.repair.entity">
+	<class name="JcFixFlowJcType" table="JC_FIX_FLOW_JC_TYPE">
+		
+		<id name="id" column="ID" type="long">
+			<generator class="sequence">
+				<param name="sequence">SEQ_JC_FIX_FLOW_JC_TYPEE</param>
+			</generator>
+		</id>
+		
+		<many-to-one name="fixFlow" >
+			<column name="FIX_FLOW_ID">
+				<comment>关联JC_FIX_FLOW（机车检修流程节点表）-字段ID</comment>
+			</column>
+		</many-to-one>
+		
+		<many-to-one name="jcType" >
+			<column name="JC_TYPE_ID">
+				<comment>关联DICT_JC_TYPE（机车型号表）-字段ID</comment>
+			</column>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>
